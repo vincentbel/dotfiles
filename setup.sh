@@ -30,5 +30,5 @@ nvm install 6
 # http://brew.sh/
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-# install homebrew formulars
+# install homebrew formulas
 ./brew.sh
