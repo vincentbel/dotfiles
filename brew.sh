@@ -9,7 +9,9 @@ brew update
 brew upgrade
 
 brew install proxychains-ng
-
+brew install diff-so-fancy
+# use diff-so-fancy globally
+git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
 
 ############################################
 # Brew cask time!
