@@ -3,6 +3,7 @@ alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias wifipass="wifi-password"
 
 alias rm="trash" # always soft delete
+alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 
 # git
 # git alias already managed by oh-my-zsh git plugin
