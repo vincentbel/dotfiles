@@ -2,6 +2,11 @@
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias wifipass="wifi-password"
 
+# use openssl to generate a random password
+# usage: genpass 16 (password with length of 16)
+alias genpass="openssl rand -base64"
+
+
 alias rm="trash" # always soft delete
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 
