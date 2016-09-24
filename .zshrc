@@ -12,11 +12,12 @@ fpath=( "$HOME/.zfunctions" $fpath )
 source ~/.zsh/antigen/antigen.zsh
 
 # load the oh-my-zsh's library.
-# don't load on-my-zsh lib, takes too long
+# don't load oh-my-zsh lib, takes too long
 # antigen use oh-my-zsh
 
 local b="antigen-bundle"
 
+$b robbyrussell/oh-my-zsh lib/git.zsh
 $b git
 
 # guess what to install when running an unknown command.
