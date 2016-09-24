@@ -1,0 +1,40 @@
+# load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+local b="antigen-bundle"
+
+$b git
+
+# guess what to install when running an unknown command.
+# $b command-not-found
+
+# homebrew  - autocomplete on 'brew install'
+# $b brew
+# $b brew-cask
+
+# tracks your most used directories, based on 'frecency'.
+$b rupa/z z.sh
+
+# syntax highlighting bundle.
+$b zsh-users/zsh-syntax-highlighting
+
+# history search
+$b zsh-users/zsh-history-substring-search
+
+# auto suggestions
+$b zsh-users/zsh-autosuggestions
+
+# use pure,
+# https://github.com/sindresorhus/pure#antigen
+$b mafredri/zsh-async
+$b sindresorhus/pure
+
+# install nvm
+$b lukechilds/zsh-nvm
+
+# don't set a theme, because pure does it for you
+# antigen theme agnoster
+
+# tell antigen that you're done.
+antigen apply
+ 

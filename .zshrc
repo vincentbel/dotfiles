@@ -11,48 +11,12 @@ fpath=( "$HOME/.zfunctions" $fpath )
 # use antigen to manage plugins!
 source ~/.zsh/antigen/antigen.zsh
 
-# load the oh-my-zsh's library.
-# don't load oh-my-zsh lib, takes too long
-# antigen use oh-my-zsh
-
-local b="antigen-bundle"
-
-$b robbyrussell/oh-my-zsh lib/git.zsh
-$b git
-
-# guess what to install when running an unknown command.
-# $b command-not-found
-
-# homebrew  - autocomplete on 'brew install'
-# $b brew
-# $b brew-cask
-
-# tracks your most used directories, based on 'frecency'.
-$b rupa/z z.sh
-
-# syntax highlighting bundle.
-$b zsh-users/zsh-syntax-highlighting
-
-# history search
-$b zsh-users/zsh-history-substring-search
-
-# auto suggestions
-$b zsh-users/zsh-autosuggestions
-
-# use pure,
-# https://github.com/sindresorhus/pure#antigen
-$b mafredri/zsh-async
-$b sindresorhus/pure
-
-# install nvm
+# lazy load nvm, extremely fast startup 
 export NVM_LAZY_LOAD=true
-$b lukechilds/zsh-nvm
 
-# don't set a theme, because pure does it for you
-# antigen theme agnoster
-
-# tell antigen that you're done.
-antigen apply
+# use antigen init to improve startup
+# see more at <https://github.com/zsh-users/antigen/blob/develop/CHANGELOG.md#110---2016-09-10>
+antigen init .antigenrc
 
 # bind keyboard shortcuts for history-substring-search
 # https://github.com/zsh-users/zsh-history-substring-search#usage
@@ -77,7 +41,6 @@ function f_notifyme {
 # need to set PROMPT_SUBST in order to make `f_notifyme` works in prompt
 # see more at <http://superuser.com/questions/142099/get-function-into-ps1-zsh>
 setopt PROMPT_SUBST
-
 export PS1='$(f_notifyme)'$PS1
 
 source ~/.aliases
