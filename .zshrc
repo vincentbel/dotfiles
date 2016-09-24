@@ -1,3 +1,4 @@
+# zmodload zsh/zprof
 # larger history
 SAVEHIST=100000
 
@@ -11,18 +12,19 @@ fpath=( "$HOME/.zfunctions" $fpath )
 source ~/.zsh/antigen/antigen.zsh
 
 # load the oh-my-zsh's library.
-antigen use oh-my-zsh
+# don't load on-my-zsh lib, takes too long
+# antigen use oh-my-zsh
 
 local b="antigen-bundle"
 
 $b git
 
 # guess what to install when running an unknown command.
-$b command-not-found
+# $b command-not-found
 
 # homebrew  - autocomplete on 'brew install'
-$b brew
-$b brew-cask
+# $b brew
+# $b brew-cask
 
 # tracks your most used directories, based on 'frecency'.
 $b rupa/z z.sh
@@ -70,7 +72,7 @@ function f_notifyme {
   # No point in waiting for the command to complete
   notifyme "$CMD" "$LAST_EXIT_CODE" &
 }
-export PS1='$(f_notifyme)'$PS1
+#  export PS1='$(f_notifyme)'$PS1
 
 
 source ~/.aliases
