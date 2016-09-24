@@ -20,9 +20,8 @@ antigen init .antigenrc
 
 # bind keyboard shortcuts for history-substring-search
 # https://github.com/zsh-users/zsh-history-substring-search#usage
-zmodload zsh/terminfo
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
 
 # set default user to shorter prompt style
 # https://gist.github.com/kevin-smets/8568070#shorter-prompt-style

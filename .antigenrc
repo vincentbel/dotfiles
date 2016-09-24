@@ -5,13 +5,15 @@ local b="antigen-bundle"
 
 $b git
 
+$b vi-mode
+
 # guess what to install when running an unknown command.
 # $b command-not-found
 
 # homebrew  - autocomplete on 'brew install'
 # $b brew
 # $b brew-cask
-
+#
 # tracks your most used directories, based on 'frecency'.
 $b rupa/z z.sh
 
