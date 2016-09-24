@@ -45,6 +45,7 @@ $b mafredri/zsh-async
 $b sindresorhus/pure
 
 # install nvm
+export NVM_LAZY_LOAD=true
 $b lukechilds/zsh-nvm
 
 # don't set a theme, because pure does it for you
