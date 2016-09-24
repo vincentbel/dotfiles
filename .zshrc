@@ -73,8 +73,11 @@ function f_notifyme {
   # No point in waiting for the command to complete
   notifyme "$CMD" "$LAST_EXIT_CODE" &
 }
-#  export PS1='$(f_notifyme)'$PS1
+# need to set PROMPT_SUBST in order to make `f_notifyme` works in prompt
+# see more at <http://superuser.com/questions/142099/get-function-into-ps1-zsh>
+setopt PROMPT_SUBST
 
+export PS1='$(f_notifyme)'$PS1
 
 source ~/.aliases
 source ~/.functions
