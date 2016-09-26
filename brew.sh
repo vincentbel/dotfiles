@@ -37,6 +37,14 @@ brew cask install atom
 brew cask install sublime-text
 brew cask install gitup
 
+# quick look plugin
+# <https://github.com/sindresorhus/quick-look-plugins>
+brew cask install qlcolorcode
+brew cask install qlstephen
+brew cask install qlmarkdown
+brew cask install quicklook-json
+brew cask install betterzipql
+
 # tools
 brew cask install imageoptim # compress image
 brew cask install licecap # gif maker
