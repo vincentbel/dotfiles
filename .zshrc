@@ -5,6 +5,9 @@ SAVEHIST=100000
 # add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
 
+# add `./node_modules/.bin` to `$PATH`
+export PATH="./node_modules/.bin:$PATH";
+
 # zsh function path
 fpath=( "$HOME/.zfunctions" $fpath )
 
