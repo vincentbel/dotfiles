@@ -117,6 +117,12 @@ nnoremap <leader>u :GundoToggle<cr>
 let g:gundo_width = 72
 let g:gundo_preview_height = 20
 
+" full path fuzzy file, buffer, mru, tag, ... finder for vim
+Plug 'ctrlpvim/ctrlp.vim'
+" open ctrlp with cmd+p
+" let g:ctrlp_map = '<D-p>'
+
+
 " Plugin 'Lokaltog/vim-easymotion'
 " map <Space> <Plug>(easymotion-s2)
 " map <Space>h <Plug>(easymotion-lineforward)
