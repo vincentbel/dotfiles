@@ -17,7 +17,7 @@ set encoding=utf-8 nobomb     " BOM often causes trouble
 set number                    " show the line number
 syntax on                     " turn on syntax highlight
 set cursorline                " highlight current line
-set spell                     " spell checking on
+" set spell                   " spell checking on
 set showmode                  " display the current mode
 
 set scrolljump=5              " lines to scroll when cursor leaves screen
@@ -111,6 +111,11 @@ highlight link SyntasticWarningSign SignColumn
 highlight link SyntasticStyleErrorSign SignColumn
 highlight link SyntasticStyleWarningSign SignColumn
 
+" visualize your vim undo tree
+Plug 'sjl/gundo.vim'
+nnoremap <leader>u :GundoToggle<cr>
+let g:gundo_width = 72
+let g:gundo_preview_height = 20
 
 " Plugin 'Lokaltog/vim-easymotion'
 " map <Space> <Plug>(easymotion-s2)
