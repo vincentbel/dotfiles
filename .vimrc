@@ -122,6 +122,9 @@ Plug 'ctrlpvim/ctrlp.vim'
 " open ctrlp with cmd+p
 " let g:ctrlp_map = '<D-p>'
 
+" quoting/parenthesizing made simple
+Plug 'tpope/vim-surround'
+
 
 " Plugin 'Lokaltog/vim-easymotion'
 " map <Space> <Plug>(easymotion-s2)
