@@ -125,6 +125,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 " quoting/parenthesizing made simple
 Plug 'tpope/vim-surround'
 
+" preview colors in source code while editing
+Plug 'ap/vim-css-color'
 
 " Plugin 'Lokaltog/vim-easymotion'
 " map <Space> <Plug>(easymotion-s2)
