@@ -71,7 +71,9 @@ call plug#begin('~/.vim/plugged')
 " lean & mean status/tabline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-let g:airline_theme='solarized'
+let g:airline_theme='luna'
+let g:airline_powerline_fonts=1
+set laststatus=2
 
 " Plugin 'scrooloose/nerdtree'
 " Plugin 'jistr/vim-nerdtree-tabs'

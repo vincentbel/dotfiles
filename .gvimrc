@@ -1,3 +1,4 @@
-set guifont=Menlo:h14         " use 14pt Monaco
-set guicursor=n:blinkon0      " don’t blink cursor in normal mode
-set linespace=6               " better line-height
+set guifont=Meslo\ LG\ M\ DZ\ for\ Powerline:h14
+
+" don’t blink cursor in normal mode
+set guicursor=n:blinkon0

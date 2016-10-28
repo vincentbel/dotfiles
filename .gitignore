@@ -1,2 +1,8 @@
 .DS_Store
+
+# vim
+.vim/.netrwhist
 .vim/plugged/
+.vim/swaps/
+.vim/undo/
+.vim/viminfo/
