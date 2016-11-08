@@ -68,6 +68,20 @@
   'ctrl-w f': 'open-this:split-down'
   'ctrl-w F': 'open-this:split-right'
 
+  # open-on-github, git-diff: g
+  # -------------------------
+  'space g o': 'open-on-github:file'
+  'space g b': 'open-on-github:blame'
+  'space g h': 'open-on-github:history'
+  'space g i': 'open-on-github:issues'
+  'space g c': 'open-on-github:copy-url'
+  'space g r': 'open-on-github:branch-compare'
+  'space g g': 'open-on-github:repository'
+
+  'space g n': 'git-diff:move-to-next-diff'
+  'space g p': 'git-diff:move-to-previous-diff'
+  'space g d': 'git-diff:toggle-diff-list'
+
   # surround: ys
   # -------------------------
   'S': 'vim-mode-plus:surround-smart-word'
