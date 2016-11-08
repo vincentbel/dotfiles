@@ -1,0 +1,97 @@
+# Your keymap
+#
+# Atom keymaps work similarly to style sheets. Just as style sheets use
+# selectors to apply styles to elements, Atom keymaps use selectors to associate
+# keystrokes with events in specific contexts.
+#
+# You can create a new keybinding in this file by typing "key" and then hitting
+# tab.
+#
+# Here's an example taken from Atom's built-in keymap:
+#
+# 'atom-text-editor':
+#   'enter': 'editor:newline'
+#
+# 'atom-workspace':
+#   'ctrl-shift-p': 'core:move-up'
+#   'ctrl-p': 'core:move-down'
+#
+# You can find more information about keymaps in these guides:
+# * https://atom.io/docs/latest/using-atom-basic-customization#customizing-key-bindings
+# * https://atom.io/docs/latest/behind-atom-keymaps-in-depth
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it here:
+# https://github.com/bevry/cson#what-is-cson
+
+
+# '.settings-view':
+#   'cmd-c': 'settings-view:core'
+#   'cmd-e': 'settings-view:editor'
+#   'cmd-k': 'settings-view:show-keybindings'
+#   'cmd-p': 'settings-view:uninstall-packages'
+#   'cmd-t': 'settings-view:change-themes'
+#   'cmd-u': 'settings-view:check-for-package-updates'
+#   'cmd-i': 'settings-view:install-packages-and-themes'
+
+# overwrite in tree view
+'.platform-darwin':
+  'ctrl-,': 'tree-view:toggle-focus'
+
+
+'.platform-darwin .tree-view':
+  'cmd-1':	'pane:show-item-1'
+  'cmd-2':	'pane:show-item-2'
+  'cmd-3':	'pane:show-item-3'
+  'cmd-4':	'pane:show-item-4'
+  'cmd-5':	'pane:show-item-5'
+  'cmd-6':	'pane:show-item-6'
+  'cmd-7':	'pane:show-item-7'
+  'cmd-8':	'pane:show-item-8'
+  'o':      'tree-view:open-selected-entry'
+
+# split window
+'body':
+  'ctrl-h': 'window:focus-pane-on-left'
+  'ctrl-j': 'window:focus-pane-on-down'
+  'ctrl-k': 'window:focus-pane-on-up'
+  'ctrl-l': 'window:focus-pane-on-right'
+  'ctrl-w v': 'pane:split-right-and-copy-active-item'
+
+'.platform-darwin atom-text-editor:not(.mini)':
+  'cmd-l': 'linter:next-error'
+
+
+'atom-text-editor.vim-mode-plus.normal-mode':
+  # open this
+  'g f':      'open-this:here'
+  'ctrl-w f': 'open-this:split-down'
+  'ctrl-w F': 'open-this:split-right'
+
+  # surround: ys
+  # -------------------------
+  'S': 'vim-mode-plus:surround-smart-word'
+  'd s': 'vim-mode-plus:delete-surround-any-pair'
+  'c s': 'vim-mode-plus:change-surround-any-pair'
+  'y s': 'vim-mode-plus:surround'
+  'y s w': 'vim-mode-plus:surround-word'
+  'y s m': 'vim-mode-plus:map-surround'
+
+'atom-text-editor.vim-mode-plus.visual-mode':
+  'S': 'vim-mode-plus:surround'
+
+
+'.platform-darwin atom-text-editor:not([mini])':
+  'cmd-shift-v': 'clipboard-plus:toggle'
+
+# '.platform-darwin atom-text-editor.vim-mode-plus:not(.insert-mode)':
+  # 'ctrl-p': 'clipboard-plus:toggle'
+
+
+# cursor-history
+# swap keymap since `within editor` is used more frequently by me
+'atom-workspace':
+  'ctrl-i':   'cursor-history:next-within-editor'
+  'ctrl-o':   'cursor-history:prev-within-editor'
+  'ctrl-cmd-i': 'cursor-history:next'
+  'ctrl-cmd-o': 'cursor-history:prev'

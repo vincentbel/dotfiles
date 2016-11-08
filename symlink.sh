@@ -142,7 +142,7 @@ print_success() {
 # finds all .dotfiles in this folder
 declare -a FILES_TO_SYMLINK=$(find . -type f -maxdepth 1 -name ".*" -not -name .DS_Store -not -name .git | sed -e 's|//|/|' | sed -e 's|./.|.|')
 FILES_TO_SYMLINK="$FILES_TO_SYMLINK .vim bin" # add in vim and the binaries
-
+FILES_TO_SYMLINK="$FILES_TO_SYMLINK .atom/config.cson .atom/init.coffee .atom/keymap.cson .atom/snippets.cson .atom/styles.less" # add in atom
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -155,7 +155,11 @@ main() {
   for i in ${FILES_TO_SYMLINK[@]}; do
 
     sourceFile="$(pwd)/$i"
-    targetFile="$HOME/$(printf "%s" "$i" | sed "s/.*\/\(.*\)/\1/g")"
+    # no need to link all file to $HOME dir
+    # just keep the dir stucture. e.g:
+    # link: .atom/config.cson -> ~/.atom/config.cson, rather than: .atom/config.cson -> ~/config.cson
+    # targetFile="$HOME/$(printf "%s" "$i" | sed "s/.*\/\(.*\)/\1/g")"
+    targetFile="$HOME/$(printf "%s" "$i")"
 
     if [ -e "$targetFile" ]; then
       if [ "$(readlink "$targetFile")" != "$sourceFile" ]; then

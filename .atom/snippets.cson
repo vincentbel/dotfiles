@@ -1,0 +1,116 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it here:
+# https://github.com/bevry/cson#what-is-cson
+
+'.source.js':
+  'console.log':
+    'prefix': 'log'
+    'body': 'console.log(${1:"crash"});$2'
+  'import':
+    'prefix': 'im'
+    'body': "import $2 from '$1'"
+
+  'componentDidMount':
+    'prefix': 'cdm'
+    'body': 'componentDidMount() {\n$1\n}'
+  'componentWillReceiveProps':
+    'prefix': 'cwrp'
+    'body': 'componentWillReceiveProp(nextProps) {\n$1\n}'
+
+  'react function component':
+    'prefix': 'rfc'
+    'body': """
+    import React, { PropTypes } from 'react'
+
+    export function $1 ({ $2 }) {
+      return (
+        <div>
+        </div>
+      )
+    }
+
+    $1.propTypes = {
+
+    }
+
+    """
+  'react functional component':
+    'prefix': 'rfc'
+    'body': """
+    import React, { PropTypes } from 'react'
+
+    export function $1({ $2 }) {
+      return (
+        <div>
+          ${4:My React Functional Component}
+        </div>
+      )
+    }
+
+    $1.propTypes = {
+      ${3:children: PropTypes.node,}
+    }
+
+  """
+
+  'react class component':
+    'prefix': 'rcc'
+    'body': """
+    import React, { PropTypes, Component } from 'react'
+
+    export class $1 extends Component {
+
+      static propTypes = {}
+
+      render() {
+        return (
+          <div>
+            ${2:My React Component}
+          </div>
+        )
+      }
+    }
+
+    """
+  'react pure class component':
+    'prefix': 'rpcc'
+    'body': """
+    import React, { PropTypes, PureComponent } from 'react'
+
+    export class $1 extends PureComponent {
+
+      static propTypes = {}
+
+      static defaultProps = {}
+
+      render() {
+        return (
+          <div>
+            ${2:My React Component}
+          </div>
+        )
+      }
+    }
+
+    """
+
+
+'.source.md':
+  'code':
+    'prefix': 'code'
+    'body': '```${1:javascript}\n${2}\n```'
