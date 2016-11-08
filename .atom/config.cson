@@ -91,6 +91,7 @@
     gitProjectDirectories: [
       "~/dev"
     ]
+    gitProjectSearchMaxDepth: 3
     projectRootDirectories: [
       "~/dev"
     ]
