@@ -40,7 +40,6 @@
       "vim-mode-clipboard-plus"
       "markdown-scroll-sync"
       "markdown-preview"
-      "project-manager"
     ]
     packagesWithKeymapsDisabled: [
       "cursor-history"
@@ -88,6 +87,13 @@
   "one-dark-ui": {}
   "open-recent":
     maxRecentDirectories: 10
+  "project-folder":
+    gitProjectDirectories: [
+      "~/dev"
+    ]
+    projectRootDirectories: [
+      "~/dev"
+    ]
   "project-manager": {}
   react: {}
   "spell-check": {}

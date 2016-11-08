@@ -38,6 +38,16 @@
 '.platform-darwin':
   'ctrl-,': 'tree-view:toggle-focus'
 
+'atom-workspace:not([mini])':
+  # project-folder
+  # -------------------------
+  # Privously I liked to add multi related projects in one window.
+  # But it messed up the fuzzy finder and find & replace in project.
+  # So now I'd like to just open one project in one window.
+  # And When I want to open another project, I'll quickly open it
+  # by using `project-folder`.
+  'cmd-p': 'project-folder:add'
+
 
 '.platform-darwin .tree-view':
   'cmd-1':	'pane:show-item-1'
@@ -86,6 +96,10 @@
   'space g n': 'git-diff:move-to-next-diff'
   'space g p': 'git-diff:move-to-previous-diff'
   'space g d': 'git-diff:toggle-diff-list'
+
+  # project-folder
+  # -------------------------
+  'space p': 'project-folder:add'
 
   # surround: ys
   # -------------------------
