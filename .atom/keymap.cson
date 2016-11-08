@@ -56,11 +56,16 @@
   'ctrl-j': 'window:focus-pane-on-down'
   'ctrl-k': 'window:focus-pane-on-up'
   'ctrl-l': 'window:focus-pane-on-right'
-  'ctrl-w v': 'pane:split-right-and-copy-active-item'
+  'ctrl-w v': 'pane:split-right-and-move-active-item'
+  'ctrl-w s': 'pane:split-down-and-move-active-item'
 
 '.platform-darwin atom-text-editor:not(.mini)':
   'cmd-l': 'linter:next-error'
 
+'atom-text-editor.vim-mode-plus:not(.insert-mode)':
+  # override vim-mode-plus mapping to: `pane:split-right-and-copy-active-item`
+  'ctrl-w v': 'pane:split-right-and-move-active-item'
+  'ctrl-w s': 'pane:split-down-and-move-active-item'
 
 'atom-text-editor.vim-mode-plus.normal-mode':
   # open this
