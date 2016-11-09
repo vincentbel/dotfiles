@@ -78,10 +78,8 @@
   'ctrl-w s': 'pane:split-down-and-move-active-item'
 
 'atom-text-editor.vim-mode-plus.normal-mode':
-  # open this
-  'g f':      'open-this:here'
-  'ctrl-w f': 'open-this:split-down'
-  'ctrl-w F': 'open-this:split-right'
+  # hyperclick
+  'g f':      'hyperclick:confirm-cursor'
 
   # open-on-github, git-diff: g
   # -------------------------
