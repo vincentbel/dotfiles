@@ -43,8 +43,13 @@
     ]
     packagesWithKeymapsDisabled: [
       "cursor-history"
+      "dash"
     ]
     telemetryConsent: "limited"
+    themes: [
+      "one-dark-ui"
+      "one-dark-vivid-syntax"
+    ]
   "cursor-history":
     flashOnLand: true
   editor:
@@ -54,6 +59,9 @@
     showInvisibles: true
   "exception-reporting":
     userId: "e1b6dbe9-7236-13b4-cec4-75a356ec01c5"
+  "find-and-replace":
+    openProjectFindResultsInRightPane: true
+    scrollToResultOnLiveSearch: true
   "js-hyperclick": {}
   jsformat: {}
   "language-elm":
@@ -107,7 +115,7 @@
     useVimModePlus: true
   "vim-mode-plus":
     smoothScrollOnHalfScrollMotion: true
-    smoothScrollOnHalfScrollMotionDuration: 200
+    smoothScrollOnHalfScrollMotionDuration: 120
   welcome:
     showOnStartup: false
 ".ansi.text":

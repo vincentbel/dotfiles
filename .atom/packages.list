@@ -7,6 +7,7 @@ autocomplete-modules@1.6.7
 base16-ocean-dark-spacegray@0.12.0
 clipboard-plus@0.5.1
 cursor-history@0.7.0
+dash@1.7.0
 docblockr@0.8.7
 file-icons@1.7.24
 hyperclick@0.0.39
