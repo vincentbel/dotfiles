@@ -1,0 +1,106 @@
+@import "ui-variables.less";
+
+@main-background-color: @ui-site-color-1;
+
+.theme-one-dark-ui {
+  .tree-view {
+    &:focus {
+      li.directory.selected {
+        > .list-item {
+          color: @text-color-selected;
+        }
+
+        &::before {
+          background-color: @main-background-color;
+        }
+
+        &.status-modified {
+           > .list-item {
+            color: @text-color-selected;
+          }
+
+          &::before {
+            background-color: @background-color-warning;
+          }
+        }
+
+        &.status-added {
+          > .list-item {
+            color: @text-color-selected;
+          }
+
+          &::before {
+            background-color: @background-color-success;
+          }
+        }
+
+        &.status-renamed {
+          > .list-item {
+            color: @text-color-selected;
+          }
+
+          &::before {
+            background-color: @background-color-info;
+          }
+        }
+
+        &.status-removed {
+          > .list-item {
+            color: @text-color-selected;
+          }
+
+          &::before {
+            background-color: @background-color-error;
+          }
+        }
+      }
+
+      li.list-nested-item > .list-item,
+      li:not(.list-nested-item) {
+        &.selected {
+          color: @text-color-selected;
+
+          &::before {
+            background-color: @main-background-color;
+          }
+
+          .name.icon::before {
+            color: currentColor;
+          }
+
+          &.status-modified {
+            color: @text-color-selected;
+
+            &::before {
+              background-color: @background-color-warning;
+            }
+          }
+
+          &.status-added {
+            color: @text-color-selected;
+
+            &::before {
+              background-color: @background-color-success;
+            }
+          }
+
+          &.status-renamed {
+            color: @text-color-selected;
+
+            &::before {
+              background-color: @background-color-info;
+            }
+          }
+
+          &.status-removed {
+            color: @text-color-selected;
+
+            &::before {
+              background-color: @background-color-error;
+            }
+          }
+        }
+      }
+    }
+  }
+}
