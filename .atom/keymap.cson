@@ -71,6 +71,10 @@
   'space g p': 'git-diff:move-to-previous-diff'
   'space g d': 'git-diff:toggle-diff-list'
 
+  # atom-beautify
+  # -------------------------
+  'space b': 'atom-beautify:beautify-editor'
+
   # project-folder
   # -------------------------
   'space p': 'project-folder:add'
