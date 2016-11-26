@@ -61,8 +61,8 @@
     ]
     telemetryConsent: "limited"
     themes: [
-      "one-dark-ui"
-      "one-dark-vivid-syntax"
+      "atom-material-ui"
+      "atom-material-syntax"
     ]
   "cursor-history":
     flashOnLand: true

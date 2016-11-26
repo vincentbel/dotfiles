@@ -1,5 +1,7 @@
 activate-power-mode@1.1.0
 atom-beautify@0.29.13
+atom-material-syntax@0.4.6
+atom-material-ui@1.3.6
 atom-ternjs@0.15.0
 autocomplete-emojis@2.5.0
 autocomplete-json@5.1.0
@@ -23,6 +25,7 @@ linter-eslint@8.0.0
 local-history@3.4.1
 markdown-preview-plus@2.4.0
 nuclide@0.179.0
+one-dark-syntax@1.5.0
 open-recent@5.0.0
 pigments@0.37.0
 project-folder@1.1.1
