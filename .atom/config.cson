@@ -2,6 +2,20 @@
   "atom-beautify":
     general:
       _analyticsUserId: "b840580d-f474-4605-bf31-6bcc8b71de65"
+    json:
+      indent_size: 2
+    less:
+      indent_size: 2
+  "atom-material-ui":
+    colors: {}
+    fonts: {}
+    tabs: {}
+    treeView:
+      compactList: true
+    ui:
+      animations: false
+      panelContrast: true
+      panelShadows: true
   "atom-ternjs":
     snippetsFirst: true
     useSnippets: true

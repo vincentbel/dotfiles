@@ -30,7 +30,7 @@
     'body': 'componentDidMount() {\n$1\n}'
   'componentWillReceiveProps':
     'prefix': 'cwrp'
-    'body': 'componentWillReceiveProp(nextProps) {\n$1\n}'
+    'body': 'componentWillReceiveProps(nextProps) {\n$1\n}'
 
   'react function component':
     'prefix': 'rfc'
