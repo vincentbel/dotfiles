@@ -141,8 +141,7 @@ print_success() {
 
 # finds all .dotfiles in this folder
 declare -a FILES_TO_SYMLINK=$(find . -type f -maxdepth 1 -name ".*" -not -name .DS_Store -not -name .git | sed -e 's|//|/|' | sed -e 's|./.|.|')
-FILES_TO_SYMLINK="$FILES_TO_SYMLINK .vim bin" # add in vim and the binaries
-FILES_TO_SYMLINK="$FILES_TO_SYMLINK .atom/config.cson .atom/init.coffee .atom/keymap.cson .atom/snippets.cson .atom/styles.less" # add in atom
+FILES_TO_SYMLINK="$FILES_TO_SYMLINK .vim .atom bin" # add in vim and the binaries
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
