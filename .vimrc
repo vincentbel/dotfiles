@@ -75,10 +75,9 @@ let g:airline_theme='luna'
 let g:airline_powerline_fonts=1
 set laststatus=2
 
-" Plugin 'scrooloose/nerdtree'
-" Plugin 'jistr/vim-nerdtree-tabs'
-" map <F3> :NERDTreeToggle<CR>
-" let g:nerdtree_tabs_open_on_console_startup = 1
+Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
+map <Leader>n <plug>NERDTreeTabsToggle<CR>
 
 
 " show relative number in normal mode
