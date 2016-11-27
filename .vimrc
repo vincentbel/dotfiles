@@ -75,10 +75,11 @@ let g:airline_theme='luna'
 let g:airline_powerline_fonts=1
 set laststatus=2
 
+" a tree explorer plugin for vim
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-let g:NERDTreeShowHidden=1
+let g:NERDTreeShowHidden=1 " show hidden file by default
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
 
 
@@ -114,7 +115,10 @@ highlight link SyntasticWarningSign SignColumn
 highlight link SyntasticStyleErrorSign SignColumn
 highlight link SyntasticStyleWarningSign SignColumn
 
+
+" a code-completion engine for vim
 Plug 'Valloric/YouCompleteMe'
+
 
 " visualize your vim undo tree
 Plug 'sjl/gundo.vim'
