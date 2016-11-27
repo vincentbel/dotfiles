@@ -140,6 +140,11 @@ Plug 'ctrlpvim/ctrlp.vim'
 " quoting/parenthesizing made simple
 Plug 'tpope/vim-surround'
 
+
+" vastly improved Javascript indentation and syntax support in vim
+Plug 'pangloss/vim-javascript'
+
+
 " preview colors in source code while editing
 Plug 'ap/vim-css-color'
 
