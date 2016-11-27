@@ -114,6 +114,8 @@ highlight link SyntasticWarningSign SignColumn
 highlight link SyntasticStyleErrorSign SignColumn
 highlight link SyntasticStyleWarningSign SignColumn
 
+Plug 'Valloric/YouCompleteMe'
+
 " visualize your vim undo tree
 Plug 'sjl/gundo.vim'
 nnoremap <leader>u :GundoToggle<cr>
