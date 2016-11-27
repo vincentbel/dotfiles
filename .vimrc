@@ -1,7 +1,7 @@
 " ========================  general ========================
 
 set nocompatible              " be iMproved
-let mapleader = ","           " let leader key map to ',' rather than '\'
+let mapleader = " "           " let leader key map to ',' rather than '\'
 
 set t_Co=256
 set background=dark
