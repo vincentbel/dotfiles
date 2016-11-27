@@ -77,6 +77,7 @@ set laststatus=2
 
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
+let g:NERDTreeShowHidden=1
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
 
 
