@@ -134,8 +134,12 @@ let g:gundo_preview_height = 20
 
 " full path fuzzy file, buffer, mru, tag, ... finder for vim
 Plug 'ctrlpvim/ctrlp.vim'
-" open ctrlp with cmd+p
-" let g:ctrlp_map = '<D-p>'
+" custom ignore
+" use 'ag' to search faster, and ignore files by '~/.agignore'
+" <https://github.com/kien/ctrlp.vim/issues/58#issuecomment-247017402>
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+endif
 
 " quoting/parenthesizing made simple
 Plug 'tpope/vim-surround'

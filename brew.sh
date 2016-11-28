@@ -1,14 +1,19 @@
 #!/bin/bash
 
-# Install command-line tools using Homebrew
+# install command-line tools using Homebrew
 
-# Make sure we’re using the latest Homebrew
+# make sure we’re using the latest Homebrew
 brew update
 
-# Upgrade any already-installed formulae
+# upgrade any already-installed formulae
 brew upgrade
 
+# proxy on terminal
 brew install proxychains-ng
+
+# a code-searching tool similar to ack, but faster
+brew install the_silver_searcher
+
 brew install diff-so-fancy
 # use diff-so-fancy globally
 git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
