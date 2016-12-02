@@ -3,11 +3,6 @@
 set nocompatible              " be iMproved
 let mapleader = " "           " let leader key map to ',' rather than '\'
 
-set t_Co=256
-set background=dark
-colorscheme spacegray-eighties " set color scheme to solarized
-let g:solarized_termtrans=1
-
 set backupdir=~/.vim/backups  " backup directory
 set directory=~/.vim/swaps    " swaps directory
 set undodir=~/.vim/undo       " undo directory
@@ -67,6 +62,10 @@ nnoremap <C-y> 3<C-y>
 " ========================  plugins ========================
 
 call plug#begin('~/.vim/plugged')
+
+" color scheme
+Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'chriskempson/base16-vim'
 
 " lean & mean status/tabline
 Plug 'vim-airline/vim-airline'
@@ -165,5 +164,9 @@ Plug 'ap/vim-css-color'
 
 call plug#end()
 
-" autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-" autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
+set t_Co=256
+set background=dark
+ " should set color scheme after plug#end()
+ " <https://github.com/junegunn/vim-plug/wiki/faq#im-getting-cannot-find-color-scheme--does-vim-plug-support-color-schemes>
+colorscheme Tomorrow-Night-Eighties
