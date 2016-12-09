@@ -19,9 +19,6 @@ export NVM_LAZY_LOAD=true
 
 # use antigen init to improve startup
 # see more at <https://github.com/zsh-users/antigen/blob/develop/CHANGELOG.md#110---2016-09-10>
-# antigen init has bug on v1.2.3. use source for a quick fixed.
-# will change to `antigen init` after fixed on 1.2.4
-# see more at <https://github.com/zsh-users/antigen/issues/321>
 antigen init ~/.antigenrc
 
 # bind keyboard shortcuts for history-substring-search
