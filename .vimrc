@@ -144,6 +144,13 @@ endif
 Plug 'tpope/vim-surround'
 
 
+" vim plugin for the Perl module / CLI script 'ack'
+Plug 'mileszs/ack.vim'
+" use 'ag' to search
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+  endif
+
 " vastly improved Javascript indentation and syntax support in vim
 Plug 'pangloss/vim-javascript'
 
