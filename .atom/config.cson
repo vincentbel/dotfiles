@@ -17,6 +17,7 @@
       panelContrast: true
       panelShadows: true
   "atom-ternjs":
+    inlineFnCompletion: false
     snippetsFirst: true
     useSnippets: true
     useSnippetsAndFunction: true
@@ -85,6 +86,7 @@
     elmMakeExecutablePath: "/usr/local/bin/elm-make"
   "linter-eslint":
     fixOnSave: true
+  "linter-stylelint": {}
   "local-history": {}
   "markdown-preview-plus": {}
   nuclide:
@@ -123,6 +125,7 @@
   "tree-view":
     autoReveal: true
     focusOnReveal: false
+    squashDirectoryNames: true
   "vim-mode":
     useClipboardAsDefaultRegister: true
   "vim-mode-clipboard-plus":
