@@ -49,6 +49,10 @@
   'alt-o': 'dash:shortcut'
 
 'atom-text-editor.vim-mode-plus:not(.insert-mode)':
+  # wrapped lines goes down/up to next row, rather than next line in file.
+  'j': 'vim-mode-plus:move-down-screen',
+  'k': 'vim-mode-plus:move-up-screen',
+
   # override vim-mode-plus mapping to: `pane:split-right-and-copy-active-item`
   'ctrl-w v': 'pane:split-right-and-move-active-item'
   'ctrl-w s': 'pane:split-down-and-move-active-item'
