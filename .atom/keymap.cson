@@ -98,6 +98,9 @@
 
 '.platform-darwin atom-text-editor:not([mini])':
   'cmd-shift-v': 'clipboard-plus:toggle'
+  'cmd-y': 'clip-history:paste'
+  'cmd-shift-y': 'clip-history:paste-newer'
+  'ctrl-y': 'clip-history:paste-last'
 
 # '.platform-darwin atom-text-editor.vim-mode-plus:not(.insert-mode)':
   # 'ctrl-p': 'clipboard-plus:toggle'
