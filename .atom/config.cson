@@ -138,7 +138,6 @@
   "vim-mode-plus":
     smoothScrollOnHalfScrollMotion: true
     smoothScrollOnHalfScrollMotionDuration: 120
-    useClipboardAsDefaultRegister: true
   welcome:
     showOnStartup: false
 ".ansi.text":
