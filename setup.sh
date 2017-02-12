@@ -32,3 +32,6 @@ nvm install 6
 
 # install homebrew formulas
 ./brew.sh
+
+# GitHub markdown TOC
+wget https://raw.githubusercontent.com/ekalinin/github-markdown-toc/master/gh-md-toc -o .gh-md-toc
