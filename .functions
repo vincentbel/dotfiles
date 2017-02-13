@@ -1,3 +1,23 @@
+# Markdown TOC
+#   Usage: `toc ${src}`
+function toc() {
+  if [[ -z "$@" ]]; then
+    echo "bad input"
+    return
+  fi
+
+  echo "generating toc for $@..."
+  echo ""
+
+  local TOC=`cat "$@" | ~/.gh-md-toc -`
+  echo $TOC
+  echo $TOC | pbcopy
+
+  echo ""
+  echo "copied to pasteboard"
+}
+
+
 # Create a new directory and enter it
 function mcd() {
 	mkdir -p "$@" && cd "$@"
