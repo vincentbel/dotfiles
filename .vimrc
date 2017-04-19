@@ -1,7 +1,7 @@
 " ========================  general ========================
 
 set nocompatible              " be iMproved
-let mapleader = " "           " let leader key map to ',' rather than '\'
+let mapleader = " "           " let leader key map to ' ' rather than '\'
 
 set backupdir=~/.vim/backups  " backup directory
 set directory=~/.vim/swaps    " swaps directory
@@ -174,6 +174,6 @@ call plug#end()
 
 set t_Co=256
 set background=dark
- " should set color scheme after plug#end()
- " <https://github.com/junegunn/vim-plug/wiki/faq#im-getting-cannot-find-color-scheme--does-vim-plug-support-color-schemes>
+" should set color scheme after plug#end()
+" <https://github.com/junegunn/vim-plug/wiki/faq#im-getting-cannot-find-color-scheme--does-vim-plug-support-color-schemes>
 colorscheme Tomorrow-Night-Eighties
