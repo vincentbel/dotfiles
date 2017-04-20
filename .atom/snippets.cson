@@ -17,6 +17,11 @@
 # If you are unfamiliar with CSON, you can read more about it here:
 # https://github.com/bevry/cson#what-is-cson
 
+'.source.md':
+  'code':
+    'prefix': 'code'
+    'body': '```${1:javascript}\n${2}\n```'
+
 '.source.js':
   'console.log':
     'prefix': 'log'
@@ -25,92 +30,152 @@
     'prefix': 'im'
     'body': "import $2 from '$1'"
 
-  'componentDidMount':
-    'prefix': 'cdm'
-    'body': 'componentDidMount() {\n$1\n}'
-  'componentWillReceiveProps':
-    'prefix': 'cwrp'
-    'body': 'componentWillReceiveProps(nextProps) {\n$1\n}'
 
-  'react function component':
+  ######### React #########
+
+  'React Functional Component':
     'prefix': 'rfc'
     'body': """
-    import React, { PropTypes } from 'react'
+      import React, { PropTypes } from 'react'
 
-    export function $1 ({ $2 }) {
-      return (
-        <div>
-        </div>
-      )
-    }
+      export function ${1}({ $2 }) {
+        return (
+          ${3:<div>MyComponent</div>}
+        )
+      }
 
-    $1.propTypes = {
-
-    }
+      ${1}.propTypes = {
+      }
 
     """
-  'react functional component':
-    'prefix': 'rfc'
-    'body': """
-    import React, { PropTypes } from 'react'
 
-    export function $1({ $2 }) {
-      return (
-        <div>
-          ${4:My React Functional Component}
-        </div>
-      )
-    }
-
-    $1.propTypes = {
-      ${3:children: PropTypes.node,}
-    }
-
-  """
-
-  'react class component':
+  'React Class Component':
     'prefix': 'rcc'
     'body': """
-    import React, { PropTypes, Component } from 'react'
+      import React, { Component, PropTypes } from 'react'
 
-    export class $1 extends Component {
+      export class ${1:MyComponent} extends Component {
+        static propTypes = {}
 
-      static propTypes = {}
-
-      render() {
-        return (
-          <div>
-            ${2:My React Component}
-          </div>
-        )
+        render() {
+          return (${2:<div>MyComponent</div>})
+        }
       }
-    }
 
     """
-  'react pure class component':
-    'prefix': 'rpcc'
+
+  'React Class Pure Component':
+    'prefix': 'rcpc'
     'body': """
-    import React, { PropTypes, PureComponent } from 'react'
+      import React, { PureComponent, PropTypes } from 'react'
 
-    export class $1 extends PureComponent {
+      export class ${1:MyComponent} extends PureComponent {
+        static propTypes = {}
 
-      static propTypes = {}
-
-      static defaultProps = {}
-
-      render() {
-        return (
-          <div>
-            ${2:My React Component}
-          </div>
-        )
+        render() {
+          return (${2:<div>MyComponent</div>})
+        }
       }
-    }
 
     """
 
+  # PropType string
+  'React PropType string':
+    'prefix': 'rpstr',
+    'body': "${1:myProp}: PropTypes.string,"
+  'React PropType string required':
+    'prefix': 'rpstrr',
+    'body': "${1:myProp}: PropTypes.string.isRequired,"
 
-'.source.md':
-  'code':
-    'prefix': 'code'
-    'body': '```${1:javascript}\n${2}\n```'
+  # PropType number
+  'React PropType number':
+    'prefix': 'rpn',
+    'body': "${1:myProp}: PropTypes.number,"
+  'React PropType number required':
+    'prefix': 'rpnr',
+    'body': "${1:myProp}: PropTypes.number.isRequired,"
+
+  # PropType object
+  'React PropType object':
+    'prefix': 'rpo',
+    'body': "${1:myProp}: PropTypes.object,"
+  'React PropType object required':
+    'prefix': 'rpor',
+    'body': "${1:myProp}: PropTypes.object.isRequired,"
+
+  # PropType array
+  'React PropType array':
+    'prefix': 'rpa',
+    'body': "${1:myProp}: PropTypes.array,"
+  'React PropType array required':
+    'prefix': 'rpar',
+    'body': "${1:myProp}: PropTypes.array.isRequired,"
+
+  # PropType bool
+  'React PropType bool':
+    'prefix': 'rpb',
+    'body': "${1:myProp}: PropTypes.bool,"
+  'React PropType bool required':
+    'prefix': 'rpbr',
+    'body': "${1:myProp}: PropTypes.bool.isRequired,"
+
+  # PropType element
+  'React PropType element':
+    'prefix': 'rpe',
+    'body': "${1:myProp}: PropTypes.element,"
+  'React PropType element required':
+    'prefix': 'rper',
+    'body': "${1:myProp}: PropTypes.element.isRequired,"
+
+  # PropType function
+  'React PropType function':
+    'prefix': 'rpf',
+    'body': "${1:myProp}: PropTypes.func,"
+  'React PropType function required':
+    'prefix': 'rpfr',
+    'body': "${1:myProp}: PropTypes.func.isRequired,"
+
+  # PropType shape
+  'React PropType shape':
+    'prefix': 'rps',
+    'body': """
+      ${1:myProp}: PropTypes.shape({
+        ${2}
+      }),
+    """
+  'React PropType shape required':
+    'prefix': 'rpsr',
+    'body': """
+      ${1:myProp}: PropTypes.shape({
+        ${2}
+      }).isRequired,
+    """
+
+  # lifecycle methods
+  "React: componentWillMount() { ... }":
+    prefix: "cwm"
+    body: "componentWillMount() {\n\t${1}\n}${2}"
+
+  "React: componentDidMount() { ... }":
+    prefix: "cdm"
+    body: "componentDidMount() {\n\t${1}\n}${2}"
+
+  "React: componentWillReceiveProps(np) { ... }":
+    prefix: "cwrp"
+    body: "componentWillReceiveProps(nextProps) {\n\t${1}\n}${2}"
+
+  "React: shouldComponentUpdate(np, ns) { ... }":
+    prefix: "scu"
+    body: "shouldComponentUpdate(nextProps, nextState) {\n\t${1}\n}${2}"
+
+  "React: componentWillUpdate(np, ns) { ... }":
+    prefix: "cwu"
+    body: "componentWillUpdate(nextProps, nextState) {\n\t${1}\n}${2}"
+
+  "React: componentDidUpdate(pp, ps) { ... }":
+    prefix: "cdu"
+    body: "componentDidUpdate(prevProps, prevState) {\n\t${1}\n}${2}"
+
+  "React: componentWillUnmount() { ... }":
+    prefix: "cwum"
+    body: "componentWillUnmount() {\n\t${1}\n}${2}"
