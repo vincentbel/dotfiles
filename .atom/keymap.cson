@@ -45,7 +45,7 @@
   'ctrl-w s': 'pane:split-down-and-move-active-item'
 
 '.platform-darwin atom-text-editor:not(.mini)':
-  'cmd-l': 'linter:next-error'
+  'cmd-l': 'linter-ui-default:next-error'
   'alt-o': 'dash:shortcut'
 
 'atom-text-editor.vim-mode-plus:not(.insert-mode)':
