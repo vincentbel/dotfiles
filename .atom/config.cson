@@ -53,11 +53,19 @@
       "jsformat"
       "activate-power-mode"
       "react"
-      "nuclide"
       "synced-sidebar"
       "vim-mode-clipboard-plus"
       "markdown-scroll-sync"
       "markdown-preview"
+      "linter-spell"
+      "linter-spell-javascript"
+      "prettier-atom"
+    ]
+    ignoredNames: [
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "desktop.ini"
     ]
     packagesWithKeymapsDisabled: [
       "cursor-history"
@@ -78,19 +86,27 @@
   "exception-reporting":
     userId: "e1b6dbe9-7236-13b4-cec4-75a356ec01c5"
   "find-and-replace":
-    openProjectFindResultsInRightPane: true
+    projectSearchResultsPaneSplitDirection: "right"
     scrollToResultOnLiveSearch: true
+  "fuzzy-finder":
+    searchAllPanes: true
+    useAlternateScoring: false
+  "ionide-fsharp":
+    MonoPath: "/Library/Frameworks/Mono.framework/Versions/Current/Commands/mono"
   "js-hyperclick": {}
   jsformat: {}
   "language-elm":
     elmOraclePath: "/usr/local/bin/elm-oracle"
-  linter:
-    errorPanelHeight: 320
+  linter: {}
   "linter-elm-make":
     elmMakeExecutablePath: "/usr/local/bin/elm-make"
   "linter-eslint":
     fixOnSave: true
+  "linter-rust": {}
+  "linter-spell": {}
   "linter-stylelint": {}
+  "linter-ui-default":
+    panelHeight: 107
   "local-history": {}
   "markdown-preview-plus": {}
   nuclide:
@@ -115,6 +131,13 @@
   "one-dark-ui": {}
   "open-recent":
     maxRecentDirectories: 10
+  "prettier-atom":
+    formatOnSaveOptions:
+      enabled: true
+    prettierOptions:
+      semi: false
+      singleQuote: true
+    useEslint: true
   "project-folder":
     gitProjectDirectories: [
       "~/dev"
@@ -124,12 +147,20 @@
       "~/dev"
     ]
   "project-manager": {}
+  racer:
+    racerBinPath: "/Users/VincentBel/.cargo/bin/racer"
+    rustSrcPath: "/Users/VincentBel/.multirust/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src"
   react: {}
+  "react-function-to-class":
+    semicolons: false
+  "relative-numbers":
+    softWrapsCount: false
   "spell-check": {}
   "todo-show": {}
   "tree-view":
     autoReveal: true
     focusOnReveal: false
+    hideIgnoredNames: true
     squashDirectoryNames: true
   "vim-mode":
     useClipboardAsDefaultRegister: true
@@ -138,6 +169,10 @@
   "vim-mode-plus":
     smoothScrollOnHalfScrollMotion: true
     smoothScrollOnHalfScrollMotionDuration: 120
+    stayOnDelete: true
+    stayOnTransformString: true
+    stayOnYank: true
+    useClipboardAsDefaultRegister: false
   welcome:
     showOnStartup: false
 ".ansi.text":
