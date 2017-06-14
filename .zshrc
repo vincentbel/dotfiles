@@ -40,8 +40,17 @@ bindkey -M vicmd 'j' history-substring-search-down
 function f_notifyme {
   LAST_EXIT_CODE=$?
   CMD=$(fc -ln -1)
+
+  TERM_PROGRAM_NAME="Electron" # embed terminal inside vscode
+  # <https://apple.stackexchange.com/questions/193437/get-terminal-application-name-from-shell>
+  if [[ $TERM_PROGRAM == "iTerm.app" ]]; then
+    TERM_PROGRAM_NAME="iTerm2"
+  elif [[ $TERM_PROGRAM == "Apple_Terminal" ]]; then
+    TERM_PROGRAM_NAME="Terminal"
+  fi
+
   # No point in waiting for the command to complete
-  notifyme "$CMD" "$LAST_EXIT_CODE" &
+  notifyme "$TERM_PROGRAM_NAME" "$CMD" "$LAST_EXIT_CODE" &
 }
 # need to set PROMPT_SUBST in order to make `f_notifyme` works in prompt
 # see more at <http://superuser.com/questions/142099/get-function-into-ps1-zsh>
