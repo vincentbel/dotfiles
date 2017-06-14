@@ -1,0 +1,142 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+  {
+    "key": "ctrl+i",
+    "command": "workbench.action.navigateBack"
+  },
+  {
+    "key": "ctrl+-",
+    "command": "-workbench.action.navigateBack"
+  },
+  {
+    "key": "ctrl+o",
+    "command": "workbench.action.navigateForward"
+  },
+  {
+    "key": "ctrl+shift+-",
+    "command": "-workbench.action.navigateForward"
+  },
+  {
+    "key": "cmd+y",
+    "command": "clipring.pasteRingItem",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+shift+v",
+    "command": "-clipring.pasteRingItem",
+    "when": "editorFocus"
+  },
+  {
+    "key": "cmd+e",
+    "command": "editor.action.marker.next",
+    "when": "editorFocus && !editorReadonly"
+  },
+  {
+    "key": "f8",
+    "command": "-editor.action.marker.next",
+    "when": "editorFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+cmd+e",
+    "command": "editor.action.marker.prev",
+    "when": "editorFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+f8",
+    "command": "-editor.action.marker.prev",
+    "when": "editorFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+,",
+    "command": "workbench.files.action.focusFilesExplorer"
+  },
+  // see more at <https://github.com/VSCodeVim/Vim/issues/754>
+  {
+    "key": "j",
+    "command": "list.focusDown",
+    "when": "listFocus"
+  },
+  {
+    "key": "k",
+    "command": "list.focusUp",
+    "when": "listFocus"
+  },
+  {
+    "key": "enter",
+    "command": "list.select",
+    "when": "explorerViewletVisible && filesExplorerFocus"
+  },
+  {
+    "key": "o",
+    "command": "list.toggleExpand",
+    "when": "listFocus"
+  },
+  {
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "explorerViewletVisible && filesExplorerFocus"
+  },
+  {
+    "key": "f",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletVisible && filesExplorerFocus"
+  },
+  {
+    "key": "cmd+1",
+    "command": "workbench.action.openEditorAtIndex1"
+  },
+  {
+    "key": "ctrl+1",
+    "command": "-workbench.action.openEditorAtIndex1"
+  },
+  {
+    "key": "cmd+2",
+    "command": "workbench.action.openEditorAtIndex2"
+  },
+  {
+    "key": "ctrl+2",
+    "command": "-workbench.action.openEditorAtIndex2"
+  },
+  {
+    "key": "cmd+3",
+    "command": "workbench.action.openEditorAtIndex3"
+  },
+  {
+    "key": "ctrl+3",
+    "command": "-workbench.action.openEditorAtIndex3"
+  },
+  {
+    "key": "cmd+4",
+    "command": "workbench.action.openEditorAtIndex4"
+  },
+  {
+    "key": "ctrl+4",
+    "command": "-workbench.action.openEditorAtIndex4"
+  },
+  {
+    "key": "cmd+5",
+    "command": "workbench.action.openEditorAtIndex5"
+  },
+  {
+    "key": "ctrl+5",
+    "command": "-workbench.action.openEditorAtIndex5"
+  },
+  {
+    "key": "m",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus"
+  },
+  {
+    "key": "enter",
+    "command": "-renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus"
+  },
+  {
+    "key": "ctrl+shift+alt+cmd+1",
+    "command": "prettier-eslint.format"
+  },
+  {
+    "key": "alt+cmd+p",
+    "command": "-prettier-eslint.format"
+  }
+]
