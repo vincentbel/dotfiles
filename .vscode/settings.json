@@ -8,6 +8,7 @@
     "editor.formatOnPaste": true,
     // "editor.formatOnSave": true,
     "editor.lineNumbers": "relative",
+    "editor.snippetSuggestions": "top",
     "files.autoSave": "onFocusChange",
     "files.insertFinalNewline": true,
     "gitProjectManager.searchInsideProjects": false,
@@ -23,6 +24,7 @@
     "prettier.singleQuote": true,
     "prettier.printWidth": 100,
     "vim.disableAnnoyingNeovimMessage": true,
+    "vim.disableAnnoyingGcMessage": true,
     "vim.useSystemClipboard": true,
     "vim.leader": " ",
     "vim.otherModesKeyBindingsNonRecursive": [
@@ -78,5 +80,12 @@
         }
     ],
     "vsicons.presets.foldersAllDefaultIcon": true,
-    "terminal.external.osxExec": "iTerm.app"
+    "terminal.external.osxExec": "iTerm.app",
+    "cSpell.userWords": [
+        "errored",
+        "rentity",
+        "waypoint",
+        "unmount",
+        "polyfill"
+    ]
 }
