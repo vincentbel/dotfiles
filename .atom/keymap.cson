@@ -21,7 +21,7 @@
   # So now I'd like to just open one project in one window.
   # And When I want to open another project, I'll quickly open it
   # by using `project-folder`.
-  'cmd-p': 'project-folder:add'
+  'alt-cmd-p': 'project-folder:add'
 
 
 '.platform-darwin .tree-view':

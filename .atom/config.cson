@@ -57,9 +57,6 @@
       "vim-mode-clipboard-plus"
       "markdown-scroll-sync"
       "markdown-preview"
-      "linter-spell"
-      "linter-spell-javascript"
-      "prettier-atom"
     ]
     ignoredNames: [
       ".DS_Store"
@@ -83,6 +80,7 @@
     invisibles: {}
     scrollPastEnd: true
     showInvisibles: true
+    softWrap: true
   "exception-reporting":
     userId: "e1b6dbe9-7236-13b4-cec4-75a356ec01c5"
   "find-and-replace":
@@ -100,8 +98,7 @@
   linter: {}
   "linter-elm-make":
     elmMakeExecutablePath: "/usr/local/bin/elm-make"
-  "linter-eslint":
-    fixOnSave: true
+  "linter-eslint": {}
   "linter-rust": {}
   "linter-spell": {}
   "linter-stylelint": {}
@@ -155,7 +152,21 @@
     semicolons: false
   "relative-numbers":
     softWrapsCount: false
-  "spell-check": {}
+  "spell-check":
+    addKnownWords: true
+    grammars: [
+      "source.asciidoc"
+      "source.gfm"
+      "text.git-commit"
+      "text.plain"
+      "text.plain.null-grammar"
+      "source.js.jsx"
+    ]
+    knownWords: [
+      "eslint"
+      "scss"
+      "sass"
+    ]
   "todo-show": {}
   "tree-view":
     autoReveal: true
@@ -172,7 +183,6 @@
     stayOnDelete: true
     stayOnTransformString: true
     stayOnYank: true
-    useClipboardAsDefaultRegister: false
   welcome:
     showOnStartup: false
 ".ansi.text":
