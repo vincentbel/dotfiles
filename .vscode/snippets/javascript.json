@@ -15,12 +15,12 @@
 */
   "import": {
     "prefix": "imp",
-    "body": "import $2 from '${1}'$0",
+    "body": "import ${2:name} from '${1:module}'$0",
     "description": "Imports entire module statement in ES6 syntax"
   },
 	"importDestructing": {
 		"prefix": "imd",
-		"body": "import { $2 } from '${1:module}'$0",
+		"body": "import { ${2:name} } from '${1:module}'$0",
 		"description": "Imports only a portion of the module in ES6 syntax"
 	},
 	"importEverything": {
@@ -64,7 +64,7 @@
 	},
 	"reactFunctionComponent": {
 		"prefix": "rfc",
-		"body": "import React, { PropTypes } from 'react'\n\nexport function ${1:ComponentName}() {\n\treturn (\n\t\t<div>\n\t\t\t\n\t\t</div>\n\t)\n}\n\n${1:ComponentName}.propTypes = {\n\t$0\n}",
+		"body": "import React from 'react'\nimport PropTypes from 'prop-types'\n\nexport function ${1:ComponentName}() {\n\treturn (\n\t\t<div>\n\t\t\t\n\t\t</div>\n\t)\n}\n\n${1:ComponentName}.propTypes = {\n\t$0\n}",
 		"description": "Creates a stateless React component with PropTypes and ES6 module system"
 	},
 	"componentWillMount": {

@@ -57,6 +57,8 @@
       "vim-mode-clipboard-plus"
       "markdown-scroll-sync"
       "markdown-preview"
+      "autocomplete-modules"
+      "haskell-ghc-mod"
     ]
     ignoredNames: [
       ".DS_Store"
@@ -89,6 +91,8 @@
   "fuzzy-finder":
     searchAllPanes: true
     useAlternateScoring: false
+  "ide-haskell":
+    onCursorMove: "Show Tooltip"
   "ionide-fsharp":
     MonoPath: "/Library/Frameworks/Mono.framework/Versions/Current/Commands/mono"
   "js-hyperclick": {}
@@ -104,6 +108,7 @@
   "linter-stylelint": {}
   "linter-ui-default":
     panelHeight: 107
+    showPanel: true
   "local-history": {}
   "markdown-preview-plus": {}
   nuclide:
@@ -130,7 +135,11 @@
     maxRecentDirectories: 10
   "prettier-atom":
     formatOnSaveOptions:
+      cssScopes: [
+        ""
+      ]
       enabled: true
+      showInStatusBar: true
     prettierOptions:
       semi: false
       singleQuote: true

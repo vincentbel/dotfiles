@@ -1,13 +1,14 @@
 {
 
     "workbench.activityBar.visible": true,
-    "workbench.colorTheme": "One Dark Pro",
+    "workbench.colorTheme": "Atom One Dark",
     "workbench.iconTheme": "vscode-icons",
     "editor.tabSize": 2,
     "editor.fontSize": 14,
     "editor.formatOnPaste": true,
     // "editor.formatOnSave": true,
     "editor.lineNumbers": "relative",
+    "editor.wordWrap": "on",
     "editor.snippetSuggestions": "top",
     "files.autoSave": "onFocusChange",
     "files.insertFinalNewline": true,
@@ -19,12 +20,12 @@
         "node_modules"
     ],
     "local-history.path": "/Users/VincentBel/dev/dotfiles/.vscode/",
+    "prettier.eslintIntegration": true,
     "prettier.semi": false,
     "prettier.trailingComma": "all",
     "prettier.singleQuote": true,
     "prettier.printWidth": 100,
     "vim.disableAnnoyingNeovimMessage": true,
-    "vim.disableAnnoyingGcMessage": true,
     "vim.useSystemClipboard": true,
     "vim.leader": " ",
     "vim.otherModesKeyBindingsNonRecursive": [
@@ -59,11 +60,20 @@
             ]
         },
         {
-            "before": ["<leader>", "l", "f"],
+            "before": ["<leader>", "f", "d"],
             "after": [],
             "commands": [
                 {
-                    "command": "prettier-eslint.format",
+                    "command": "editor.action.formatDocument",
+                    "args": []
+                }
+            ]
+        },        {
+            "before": ["<leader>", "f", "s"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "editor.action.formatSelection",
                     "args": []
                 }
             ]
@@ -82,10 +92,35 @@
     "vsicons.presets.foldersAllDefaultIcon": true,
     "terminal.external.osxExec": "iTerm.app",
     "cSpell.userWords": [
+        "dropdown",
         "errored",
+        "hdfs",
+        "lifecycle",
+        "polyfill",
+        "redshift",
+        "refetch",
         "rentity",
-        "waypoint",
         "unmount",
-        "polyfill"
+        "waypoint"
+    ],
+    "vim.easymotion": true,
+    "todohighlight.isEnable": false,
+    "cSpell.enabledLanguageIds": [
+        "c",
+        "cpp",
+        "csharp",
+        "go",
+        "javascript",
+        "javascriptreact",
+        "json",
+        "latex",
+        "markdown",
+        "php",
+        "plaintext",
+        "python",
+        "text",
+        "typescript",
+        "typescriptreact",
+        "yml"
     ]
 }
