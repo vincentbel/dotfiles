@@ -62,6 +62,11 @@
 		"body": "import React, { Component } from 'react'\n\nexport class ${1:ComponentName} extends Component {\n\trender() {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t)\n\t}\n}",
 		"description": "Creates a React component class with ES6 module system"
 	},
+	"reactClassPureComponent": {
+		"prefix": "rcpc",
+		"body": "import React, { PureComponent } from 'react'\n\nexport class ${1:ComponentName} extends PureComponent {\n\trender() {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t)\n\t}\n}",
+		"description": "Creates a React component class with ES6 module system"
+	},
 	"reactFunctionComponent": {
 		"prefix": "rfc",
 		"body": "import React from 'react'\nimport PropTypes from 'prop-types'\n\nexport function ${1:ComponentName}() {\n\treturn (\n\t\t<div>\n\t\t\t\n\t\t</div>\n\t)\n}\n\n${1:ComponentName}.propTypes = {\n\t$0\n}",

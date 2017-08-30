@@ -24,7 +24,8 @@
     "prettier.semi": false,
     "prettier.trailingComma": "all",
     "prettier.singleQuote": true,
-    "prettier.printWidth": 100,
+    "prettier.printWidth": 80,
+    "vsicons.presets.foldersAllDefaultIcon": true,
     "vim.disableAnnoyingNeovimMessage": true,
     "vim.useSystemClipboard": true,
     "vim.leader": " ",
@@ -87,13 +88,25 @@
                     "args": []
                 }
             ]
+        },
+        {
+            "before": ["<leader>", "r", "s"],
+            "after": [],
+            "commands": [
+                {
+                    "command": "editor.action.rename",
+                    "args": []
+                }
+            ]
         }
     ],
-    "vsicons.presets.foldersAllDefaultIcon": true,
     "terminal.external.osxExec": "iTerm.app",
     "cSpell.userWords": [
+        "deletable",
+        "denormalize",
         "dropdown",
         "errored",
+        "frontmatter",
         "hdfs",
         "lifecycle",
         "polyfill",
@@ -104,7 +117,6 @@
         "waypoint"
     ],
     "vim.easymotion": true,
-    "todohighlight.isEnable": false,
     "cSpell.enabledLanguageIds": [
         "c",
         "cpp",
@@ -122,5 +134,6 @@
         "typescript",
         "typescriptreact",
         "yml"
-    ]
+    ],
+    "importCost.bundleSizeDecoration": "gzipped"
 }
