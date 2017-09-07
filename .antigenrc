@@ -32,7 +32,7 @@ $b mafredri/zsh-async
 $b sindresorhus/pure
 
 # install nvm
-$b lukechilds/zsh-nvm
+# $b lukechilds/zsh-nvm
 
 # don't set a theme, because pure does it for you
 # antigen theme agnoster

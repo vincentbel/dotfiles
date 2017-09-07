@@ -18,7 +18,7 @@ fpath=( "$HOME/.zfunctions" $fpath )
 source ~/.zsh/antigen/antigen.zsh
 
 # lazy load nvm, extremely fast startup
-export NVM_LAZY_LOAD=true
+# export NVM_LAZY_LOAD=true
 
 # use antigen init to improve startup
 # see more at <https://github.com/zsh-users/antigen/blob/develop/CHANGELOG.md#110---2016-09-10>
@@ -59,3 +59,9 @@ export PS1='$(f_notifyme)'$PS1
 
 source ~/.aliases
 source ~/.functions
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
