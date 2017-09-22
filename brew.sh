@@ -30,15 +30,17 @@ brew tap caskroom/versions
 brew cask install google-chrome
 brew cask install firefox
 brew cask install google-drive
-brew cask install evernote
 brew cask install rescuetime
-brew cask install neteasemusic
+# install from App Store
+# brew cask install evernote
+# brew cask install neteasemusic
 
 # dev
 brew cask install iterm2
 brew cask install alfred
 brew cask install dash
 brew cask install atom
+brew cask install visual-studio-code
 brew cask install sublime-text
 brew cask install gitup
 
