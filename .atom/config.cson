@@ -28,6 +28,9 @@
     webpack: true
     webpackConfigFilename: "webpack.config*.js"
   "autocomplete-plus":
+    fileBlacklist: [
+      ""
+    ]
     suppressActivationForEditorClasses: [
       "vim-mode-plus.normal-mode"
       "vim-mode-plus.visual-mode"
@@ -51,7 +54,6 @@
       ]
     disabledPackages: [
       "jsformat"
-      "activate-power-mode"
       "react"
       "synced-sidebar"
       "vim-mode-clipboard-plus"
@@ -59,6 +61,12 @@
       "markdown-preview"
       "autocomplete-modules"
       "haskell-ghc-mod"
+      "atom-ternjs"
+      "clipboard-plus"
+      "stylefmt"
+      "pangu"
+      "symbols-tree-view"
+      "linter"
     ]
     ignoredNames: [
       ".DS_Store"
@@ -71,10 +79,6 @@
       "dash"
     ]
     telemetryConsent: "limited"
-    themes: [
-      "one-dark-ui"
-      "one-dark-vivid-syntax"
-    ]
   "cursor-history":
     flashOnLand: true
   editor:
@@ -107,9 +111,10 @@
   "linter-spell": {}
   "linter-stylelint": {}
   "linter-ui-default":
-    panelHeight: 107
+    panelHeight: 429
     showPanel: true
   "local-history": {}
+  "markdown-image-paste": {}
   "markdown-preview-plus": {}
   nuclide:
     "nuclide-arcanist": {}
@@ -139,10 +144,14 @@
         ""
       ]
       enabled: true
+      jsonScopes: [
+        ""
+      ]
       showInStatusBar: true
     prettierOptions:
       semi: false
       singleQuote: true
+      trailingComma: "es5"
     useEslint: true
   "project-folder":
     gitProjectDirectories: [
@@ -194,6 +203,7 @@
     stayOnYank: true
   welcome:
     showOnStartup: false
+  wordcount: {}
 ".ansi.text":
   editor:
     scrollPastEnd: false
