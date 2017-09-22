@@ -22,16 +22,6 @@
 3. read and run [`setup.sh`](./setup.sh)
 4. read and run [`symlink.sh`](./symlink.sh)
 
-## Development
-
-### pre-commit
-
-Symbolic link pre-commit file:
-
-```bash
-ln -s "$(pwd)/pre-commit" "$(pwd)/.git/hooks/pre-commit"
-```
-
 ## Thanks
 
 * [paulirish's dotfiles](https://github.com/paulirish/dotfiles) for most parts

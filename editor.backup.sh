@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# atom
 apm list --installed --bare > .atom/packages.list
+
+# vscode
 code --list-extensions > .vscode/extensions.list
-git add .atom/packages.list .vscode/extensions.list
