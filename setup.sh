@@ -13,12 +13,11 @@ zsh
 
 ################## Node.js ###########################
 
-# since we use lukechilds/zsh-nvm to manage nvm
-# the following cmds should be excuted at the configed zsh shell
-# upgrade nvm to latest version
-nvm upgrade
-# install node.js version 6.x
-nvm install 6
+# install nvm
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.4/install.sh | bash
+
+# install node.js version 8.x
+nvm install 8
 
 # install global npm dependencies
 ./npm.sh
