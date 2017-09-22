@@ -67,9 +67,11 @@ brew cask install betterzipql
 # tools
 brew cask install imageoptim # compress image
 brew cask install the-unarchiver # addtional unzipper for .7z .rar
-brew cask install slowquitapps # delay cmd+q
 brew cask install keycastr # keystroke visualizer
 # brew cask install karabiner # custom key binding
+brew tap dteoh/sqa
+brew cask install slowquitapps # delay cmd+q
+defaults write com.dteoh.SlowQuitApps delay -int 700
 
 brew cask install shadowsocksx-ng # over the fucking wall
 
