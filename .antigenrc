@@ -13,7 +13,7 @@ $b vi-mode
 # homebrew  - autocomplete on 'brew install'
 # $b brew
 # $b brew-cask
-#
+
 # tracks your most used directories, based on 'frecency'.
 $b rupa/z z.sh
 
@@ -33,6 +33,9 @@ $b sindresorhus/pure
 
 # install nvm
 # $b lukechilds/zsh-nvm
+
+# install git flow completion
+$b bobthecow/git-flow-completion
 
 # don't set a theme, because pure does it for you
 # antigen theme agnoster
