@@ -1,139 +1,150 @@
 {
-
-    "workbench.activityBar.visible": true,
-    "workbench.colorTheme": "Atom One Dark",
-    "workbench.iconTheme": "vscode-icons",
-    "editor.tabSize": 2,
-    "editor.fontSize": 14,
-    "editor.formatOnPaste": true,
-    // "editor.formatOnSave": true,
-    "editor.lineNumbers": "relative",
-    "editor.wordWrap": "on",
-    "editor.snippetSuggestions": "top",
-    "files.autoSave": "onFocusChange",
-    "files.insertFinalNewline": true,
-    "gitProjectManager.searchInsideProjects": false,
-    "gitProjectManager.baseProjectsFolders": [
-        "/Users/VincentBel/dev/"
-    ],
-    "gitProjectManager.ignoredFolders": [
-        "node_modules"
-    ],
-    "local-history.path": "/Users/VincentBel/dev/dotfiles/.vscode/",
-    "prettier.eslintIntegration": true,
-    "prettier.semi": false,
-    "prettier.trailingComma": "all",
-    "prettier.singleQuote": true,
-    "prettier.printWidth": 80,
-    "vsicons.presets.foldersAllDefaultIcon": true,
-    "vim.disableAnnoyingNeovimMessage": true,
-    "vim.useSystemClipboard": true,
-    "vim.leader": " ",
-    "vim.otherModesKeyBindingsNonRecursive": [
+  "workbench.activityBar.visible": true,
+  "workbench.colorTheme": "One Dark Pro",
+  "workbench.iconTheme": "vscode-icons",
+  "editor.tabSize": 2,
+  "editor.fontSize": 14,
+  "editor.formatOnPaste": true,
+  // "editor.formatOnSave": true,
+  "editor.lineNumbers": "relative",
+  "editor.wordWrap": "on",
+  "editor.snippetSuggestions": "top",
+  "files.autoSave": "onFocusChange",
+  "files.insertFinalNewline": true,
+  "gitProjectManager.searchInsideProjects": false,
+  "gitProjectManager.baseProjectsFolders": ["/Users/VincentBel/dev/"],
+  "gitProjectManager.ignoredFolders": ["node_modules"],
+  "local-history.path": "/Users/VincentBel/dev/dotfiles/.vscode/",
+  "prettier.eslintIntegration": true,
+  "prettier.semi": false,
+  "prettier.trailingComma": "all",
+  "prettier.singleQuote": true,
+  "prettier.printWidth": 80,
+  "vsicons.presets.foldersAllDefaultIcon": true,
+  "vim.disableAnnoyingNeovimMessage": true,
+  "vim.useSystemClipboard": true,
+  "vim.leader": " ",
+  "vim.otherModesKeyBindingsNonRecursive": [
+    {
+      "before": ["j"],
+      "after": ["g", "j"]
+    },
+    {
+      "before": ["k"],
+      "after": ["g", "k"]
+    },
+    {
+      "before": ["<leader>", "g", "o"],
+      "after": [],
+      "commands": [
         {
-            "before": ["<leader>", "g", "o"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "extension.openInGitHub",
-                    "args": []
-                }
-            ]
-        },
-        {
-            "before": ["<leader>", "g", "d"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "git.openChange",
-                    "args": []
-                }
-            ]
-        },
-        {
-            "before": ["<leader>", "l", "h"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "local-history.compareToActive",
-                    "args": []
-                }
-            ]
-        },
-        {
-            "before": ["<leader>", "f", "d"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "editor.action.formatDocument",
-                    "args": []
-                }
-            ]
-        },        {
-            "before": ["<leader>", "f", "s"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "editor.action.formatSelection",
-                    "args": []
-                }
-            ]
-        },
-        {
-            "before": ["<leader>", "l", "n"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "editor.action.marker.next",
-                    "args": []
-                }
-            ]
-        },
-        {
-            "before": ["<leader>", "r", "s"],
-            "after": [],
-            "commands": [
-                {
-                    "command": "editor.action.rename",
-                    "args": []
-                }
-            ]
+          "command": "extension.openInGitHub",
+          "args": []
         }
-    ],
-    "terminal.external.osxExec": "iTerm.app",
-    "cSpell.userWords": [
-        "deletable",
-        "denormalize",
-        "dropdown",
-        "errored",
-        "frontmatter",
-        "hdfs",
-        "lifecycle",
-        "polyfill",
-        "redshift",
-        "refetch",
-        "rentity",
-        "unmount",
-        "waypoint"
-    ],
-    "vim.easymotion": true,
-    "cSpell.enabledLanguageIds": [
-        "c",
-        "cpp",
-        "csharp",
-        "go",
-        "javascript",
-        "javascriptreact",
-        "json",
-        "latex",
-        "markdown",
-        "php",
-        "plaintext",
-        "python",
-        "text",
-        "typescript",
-        "typescriptreact",
-        "yml"
-    ],
-    "importCost.bundleSizeDecoration": "gzipped"
+      ]
+    },
+    {
+      "before": ["<leader>", "g", "d"],
+      "after": [],
+      "commands": [
+        {
+          "command": "git.openChange",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "l", "h"],
+      "after": [],
+      "commands": [
+        {
+          "command": "local-history.compareToActive",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "f", "d"],
+      "after": [],
+      "commands": [
+        {
+          "command": "editor.action.formatDocument",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "f", "s"],
+      "after": [],
+      "commands": [
+        {
+          "command": "editor.action.formatSelection",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "l", "n"],
+      "after": [],
+      "commands": [
+        {
+          "command": "editor.action.marker.next",
+          "args": []
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "r", "s"],
+      "after": [],
+      "commands": [
+        {
+          "command": "editor.action.rename",
+          "args": []
+        }
+      ]
+    }
+  ],
+  "terminal.external.osxExec": "iTerm.app",
+  "cSpell.userWords": [
+    "deletable",
+    "denormalize",
+    "dropdown",
+    "errored",
+    "frontmatter",
+    "hdfs",
+    "lifecycle",
+    "polyfill",
+    "redshift",
+    "refetch",
+    "rentity",
+    "unmount",
+    "waypoint"
+  ],
+  "vim.easymotion": true,
+  "cSpell.enabledLanguageIds": [
+    "c",
+    "cpp",
+    "csharp",
+    "go",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "latex",
+    "markdown",
+    "php",
+    "plaintext",
+    "python",
+    "text",
+    "typescript",
+    "typescriptreact",
+    "yml"
+  ],
+  "importCost.bundleSizeDecoration": "gzipped",
+  "docker.showExplorer": false,
+  "vsicons.dontShowNewVersionMessage": true,
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": true
+  },
+  "workbench.panel.location": "right"
 }
