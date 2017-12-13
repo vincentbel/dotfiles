@@ -114,5 +114,9 @@
   {
     "key": "cmd+t",
     "command": "-workbench.action.showAllSymbols"
+  },
+  {
+    "key": "ctrl+cmd+`",
+    "command": "workbench.action.terminal.kill"
   }
 ]
