@@ -13,12 +13,18 @@ eg2.tslint
 eg2.vscode-npm-script
 esbenp.prettier-vscode
 felipecaputo.git-project-manager
+freebroccolo.reasonml
+geddski.macros
 jprestidge.theme-material-theme
 justusadam.language-haskell
 leizongmin.node-module-intellisense
+mathiasfrohlich.Kotlin
 mrmlnc.vscode-scss
+ms-vscode.azure-account
 msjsdiag.debugger-for-chrome
 mushan.vscode-paste-image
+patrys.vscode-code-outline
+rebornix.scheme
 robertohuertasm.vscode-icons
 robinbentley.sass-indented
 streetsidesoftware.code-spell-checker
@@ -28,5 +34,6 @@ vscodevim.vim
 wayou.vscode-todo-highlight
 wix.vscode-import-cost
 xyz.local-history
+yzhang.markdown-all-in-one
 zhuangtongfa.Material-theme
 ziyasal.vscode-open-in-github
