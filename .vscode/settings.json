@@ -146,5 +146,10 @@
     "editor.wordWrap": "on",
     "editor.quickSuggestions": true
   },
-  "workbench.panel.location": "right"
+  "macros": {
+    "commentAndCursorDown": [
+      "editor.action.addCommentLine",
+      "cursorDown"
+    ]
+  }
 }

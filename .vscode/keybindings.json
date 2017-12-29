@@ -29,21 +29,6 @@
     "when": "editorFocus && !editorReadonly"
   },
   {
-    "key": "ctrl+,",
-    "command": "workbench.files.action.focusFilesExplorer"
-  },
-  // see more at <https://github.com/VSCodeVim/Vim/issues/754>
-  {
-    "key": "a",
-    "command": "explorer.newFile",
-    "when": "explorerViewletVisible && filesExplorerFocus"
-  },
-  {
-    "key": "f",
-    "command": "explorer.newFolder",
-    "when": "explorerViewletVisible && filesExplorerFocus"
-  },
-  {
     "key": "cmd+1",
     "command": "workbench.action.openEditorAtIndex1"
   },
@@ -84,14 +69,29 @@
     "command": "-workbench.action.openEditorAtIndex5"
   },
   {
+    "key": "ctrl+,",
+    "command": "workbench.files.action.focusFilesExplorer"
+  },
+  // see more at <https://github.com/VSCodeVim/Vim/issues/754>
+  {
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "f",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  {
     "key": "m",
     "command": "renameFile",
-    "when": "explorerViewletVisible && filesExplorerFocus"
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
   },
   {
     "key": "enter",
     "command": "-renameFile",
-    "when": "explorerViewletVisible && filesExplorerFocus"
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
   },
   {
     "key": "ctrl+shift+alt+cmd+1",
@@ -118,5 +118,9 @@
   {
     "key": "ctrl+cmd+`",
     "command": "workbench.action.terminal.kill"
+  },
+  {
+    "key": "cmd+/",
+    "command": "macros.commentAndCursorDown"
   }
 ]
