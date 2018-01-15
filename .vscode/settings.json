@@ -24,6 +24,7 @@
   "vim.disableAnnoyingNeovimMessage": true,
   "vim.useSystemClipboard": true,
   "vim.leader": " ",
+  "vim.overrideCopy": false,
   "vim.otherModesKeyBindingsNonRecursive": [
     {
       "before": ["j"],
@@ -84,6 +85,7 @@
       ]
     },
     {
+      // lint next
       "before": ["<leader>", "l", "n"],
       "after": [],
       "commands": [
@@ -94,6 +96,7 @@
       ]
     },
     {
+      // rename symbol
       "before": ["<leader>", "r", "s"],
       "after": [],
       "commands": [
@@ -148,8 +151,12 @@
   },
   "macros": {
     "commentAndCursorDown": [
-      "editor.action.addCommentLine",
+      "editor.action.commentLine",
       "cursorDown"
     ]
-  }
+  },
+  "vsicons.projectDetection.disableDetect": true,
+  "pasteImage.path": "./images",
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false
 }

@@ -122,5 +122,15 @@
   {
     "key": "cmd+/",
     "command": "macros.commentAndCursorDown"
+  },
+  {
+    "key": "cmd+right",
+    "command": "-extension.vim_cmd+right",
+    "when": "editorTextFocus && vim.active && vim.use<D-right> && !inDebugRepl && vim.mode != 'Insert'"
+  },
+  {
+    "key": "cmd+left",
+    "command": "-extension.vim_cmd+left",
+    "when": "editorTextFocus && vim.active && vim.use<D-left> && !inDebugRepl && vim.mode != 'Insert'"
   }
 ]
