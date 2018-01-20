@@ -158,5 +158,6 @@
   "vsicons.projectDetection.disableDetect": true,
   "pasteImage.path": "./images",
   "explorer.confirmDragAndDrop": false,
-  "explorer.confirmDelete": false
+  "explorer.confirmDelete": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false
 }
