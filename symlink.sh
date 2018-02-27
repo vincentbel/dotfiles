@@ -2,7 +2,7 @@
 
 # from: https://github.com/paulirish/dotfiles/blob/master/symlink-setup.sh
 # this symlinks all the dotfiles (and .vim/) to ~/
-# it also symlinks ~/bin for easy updating
+# it also symlinks ~/.bin for easy updating
 
 # this is safe to run multiple times and will prompt you about anything unclear
 
@@ -160,7 +160,7 @@ link() {
 
 # finds all .dotfiles in this folder
 declare -a FILES_TO_SYMLINK=$(find . -type f -maxdepth 1 -name ".*" -not -name .DS_Store -not -name .git -not -name .gitignore | sed -e 's|//|/|' | sed -e 's|./.|.|')
-FILES_TO_SYMLINK="$FILES_TO_SYMLINK .vim .atom bin" # add in vim and the binaries
+FILES_TO_SYMLINK="$FILES_TO_SYMLINK .vim .atom .bin" # add in vim and the binaries
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
