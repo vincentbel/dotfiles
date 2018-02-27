@@ -2,14 +2,7 @@
 # larger history
 SAVEHIST=100000
 
-# add `~/bin` to the `$PATH`
-export PATH="$HOME/bin:$PATH";
-
-# add rust
-export PATH="$HOME/.cargo/bin:$PATH";
-
-# add `./node_modules/.bin` to `$PATH`
-export PATH="./node_modules/.bin:$PATH";
+[ -f ~/.profile ] && source ~/.profile
 
 # zsh function path
 fpath=( "$HOME/.zfunctions" $fpath )
@@ -65,3 +58,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# add `./node_modules/.bin` to `$PATH`
+export PATH="./node_modules/.bin:$PATH";
