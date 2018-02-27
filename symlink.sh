@@ -131,8 +131,27 @@ print_success() {
   printf "\e[0;32m  [✔] $1\e[0m\n"
 }
 
+link() {
+  local sourceFile=$1
+  local targetFile=$2
+  if [ -e "$targetFile" ]; then
+    if [ "$(readlink "$targetFile")" != "$sourceFile" ]; then
 
+      ask_for_confirmation "'$targetFile' already exists, do you want to overwrite it?"
+      if answer_is_yes; then
+        rm -rf "$targetFile"
+        execute "ln -fs $sourceFile $targetFile" "$targetFile → $sourceFile"
+      else
+        print_error "$targetFile → $sourceFile"
+      fi
 
+    else
+      print_success "$targetFile → $sourceFile"
+    fi
+  else
+    execute "ln -fs $sourceFile $targetFile" "$targetFile → $sourceFile"
+  fi
+}
 
 #
 # actual symlink stuff
@@ -140,8 +159,8 @@ print_success() {
 
 
 # finds all .dotfiles in this folder
-declare -a FILES_TO_SYMLINK=$(find . -type f -maxdepth 1 -name ".*" -not -name .DS_Store -not -name .git | sed -e 's|//|/|' | sed -e 's|./.|.|')
-FILES_TO_SYMLINK="$FILES_TO_SYMLINK .vim .atom .vscode bin" # add in vim and the binaries
+declare -a FILES_TO_SYMLINK=$(find . -type f -maxdepth 1 -name ".*" -not -name .DS_Store -not -name .git -not -name .gitignore | sed -e 's|//|/|' | sed -e 's|./.|.|')
+FILES_TO_SYMLINK="$FILES_TO_SYMLINK .vim .atom bin" # add in vim and the binaries
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -160,26 +179,12 @@ main() {
     # targetFile="$HOME/$(printf "%s" "$i" | sed "s/.*\/\(.*\)/\1/g")"
     targetFile="$HOME/$(printf "%s" "$i")"
 
-    if [ -e "$targetFile" ]; then
-      if [ "$(readlink "$targetFile")" != "$sourceFile" ]; then
-
-        ask_for_confirmation "'$targetFile' already exists, do you want to overwrite it?"
-        if answer_is_yes; then
-          rm -rf "$targetFile"
-          execute "ln -fs $sourceFile $targetFile" "$targetFile → $sourceFile"
-        else
-          print_error "$targetFile → $sourceFile"
-        fi
-
-      else
-        print_success "$targetFile → $sourceFile"
-      fi
-    else
-      execute "ln -fs $sourceFile $targetFile" "$targetFile → $sourceFile"
-    fi
-
+    link "$sourceFile" "$targetFile"
   done
-
 }
 
 main
+
+# vscode config location:
+# https://code.visualstudio.com/docs/getstarted/settings#_settings-file-locations
+link "$(pwd)/.vscode" "$HOME/Library/Application Support/Code/User"
