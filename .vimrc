@@ -49,13 +49,13 @@ map <C-H> <C-W>h
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
-" if has('clipboard')
-"     if has('unnamedplus')  " when possible use + register for copy-paste
-"         set clipboard=unnamed,unnamedplus
-"     else         " On mac and Windows, use * register for copy-paste
-"         set clipboard=unnamed
-"     endif
-" endif
+if has('clipboard')
+    if has('unnamedplus')  " when possible use + register for copy-paste
+        set clipboard=unnamed,unnamedplus
+    else         " On mac and Windows, use * register for copy-paste
+        set clipboard=unnamed
+    endif
+endif
 
 
 
