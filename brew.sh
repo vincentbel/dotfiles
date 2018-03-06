@@ -8,6 +8,9 @@ brew update
 # upgrade any already-installed formulae
 brew upgrade
 
+# GNU File, Shell, and Text utilities
+brew install coreutils
+
 # proxy on terminal
 brew install proxychains-ng
 
