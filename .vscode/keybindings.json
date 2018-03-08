@@ -1,33 +1,6 @@
 // Place your key bindings in this file to overwrite the defaults
 [
-  {
-    "key": "ctrl+-",
-    "command": "-workbench.action.navigateBack"
-  },
-  {
-    "key": "ctrl+shift+-",
-    "command": "-workbench.action.navigateForward"
-  },
-  {
-    "key": "cmd+e",
-    "command": "editor.action.marker.next",
-    "when": "editorFocus && !editorReadonly"
-  },
-  {
-    "key": "f8",
-    "command": "-editor.action.marker.next",
-    "when": "editorFocus && !editorReadonly"
-  },
-  {
-    "key": "shift+cmd+e",
-    "command": "editor.action.marker.prev",
-    "when": "editorFocus && !editorReadonly"
-  },
-  {
-    "key": "shift+f8",
-    "command": "-editor.action.marker.prev",
-    "when": "editorFocus && !editorReadonly"
-  },
+  // =========== Editor ===========
   {
     "key": "cmd+1",
     "command": "workbench.action.openEditorAtIndex1"
@@ -69,6 +42,50 @@
     "command": "-workbench.action.openEditorAtIndex5"
   },
   {
+    "key": "ctrl+-",
+    "command": "-workbench.action.navigateBack"
+  },
+  {
+    "key": "ctrl+shift+-",
+    "command": "-workbench.action.navigateForward"
+  },
+  {
+    "key": "cmd+e",
+    "command": "editor.action.marker.next",
+    "when": "editorFocus && !editorReadonly"
+  },
+  {
+    "key": "f8",
+    "command": "-editor.action.marker.next",
+    "when": "editorFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+cmd+e",
+    "command": "editor.action.marker.prev",
+    "when": "editorFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+f8",
+    "command": "-editor.action.marker.prev",
+    "when": "editorFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+y",
+    "command": "clipring.pasteRingItem",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+shift+v",
+    "command": "-clipring.pasteRingItem",
+    "when": "editorFocus"
+  },
+  {
+    "key": "cmd+/",
+    "command": "macros.commentAndCursorDown"
+  },
+
+  // =========== Explorer ===========
+  {
     "key": "ctrl+,",
     "command": "workbench.files.action.focusFilesExplorer"
   },
@@ -93,20 +110,75 @@
     "command": "-renameFile",
     "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
   },
+
+  // =========== Terminal ===========
   {
-    "key": "ctrl+shift+alt+cmd+1",
-    "command": "prettier-eslint.format"
+    "key": "cmd+t",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalFocus"
   },
   {
-    "key": "cmd+y",
-    "command": "clipring.pasteRingItem",
-    "when": "editorFocus"
+    "key": "cmd+w",
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalFocus"
   },
   {
-    "key": "ctrl+shift+v",
-    "command": "-clipring.pasteRingItem",
-    "when": "editorFocus"
+    "key": "cmd+d",
+    "command": "workbench.action.terminal.split",
+    "when": "terminalFocus"
   },
+  {
+    "key": "cmd+\\",
+    "command": "-workbench.action.terminal.split",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+]",
+    "command": "workbench.action.terminal.focusNextPane",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "alt+cmd+right",
+    "command": "-workbench.action.terminal.focusNextPane",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+[",
+    "command": "workbench.action.terminal.focusPreviousPane",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "alt+cmd+left",
+    "command": "-workbench.action.terminal.focusPreviousPane",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+1",
+    "command": "workbench.action.terminal.focusAtIndex1",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+2",
+    "command": "workbench.action.terminal.focusAtIndex2",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+3",
+    "command": "workbench.action.terminal.focusAtIndex3",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+4",
+    "command": "workbench.action.terminal.focusAtIndex4",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+5",
+    "command": "workbench.action.terminal.focusAtIndex5",
+    "when": "terminalFocus"
+  },
+
+  // =========== Misc ===========
   {
     "key": "cmd+t",
     "command": "workbench.action.quickOpen"
@@ -114,14 +186,6 @@
   {
     "key": "cmd+t",
     "command": "-workbench.action.showAllSymbols"
-  },
-  {
-    "key": "ctrl+cmd+`",
-    "command": "workbench.action.terminal.kill"
-  },
-  {
-    "key": "cmd+/",
-    "command": "macros.commentAndCursorDown"
   },
   {
     "key": "cmd+right",
