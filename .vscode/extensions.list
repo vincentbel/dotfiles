@@ -1,5 +1,6 @@
 EditorConfig.EditorConfig
 HookyQR.beautify
+PKief.material-icon-theme
 PeterJausovec.vscode-docker
 SirTobi.code-clip-ring
 WallabyJs.quokka-vscode
@@ -25,12 +26,17 @@ msjsdiag.debugger-for-chrome
 mushan.vscode-paste-image
 patrys.vscode-code-outline
 rebornix.scheme
+redhat.java
 robertohuertasm.vscode-icons
 robinbentley.sass-indented
 streetsidesoftware.code-spell-checker
 teabyii.ayu
 techer.open-in-browser
 telesoho.vscode-markdown-paste-image
+vscjava.vscode-java-debug
+vscjava.vscode-java-pack
+vscjava.vscode-java-test
+vscjava.vscode-maven
 vscodevim.vim
 wayou.vscode-todo-highlight
 wix.vscode-import-cost

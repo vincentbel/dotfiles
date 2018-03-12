@@ -1,7 +1,7 @@
 {
   "workbench.activityBar.visible": true,
   "workbench.colorTheme": "One Dark Pro",
-  "workbench.iconTheme": "vscode-icons",
+  "workbench.iconTheme": "material-icon-theme",
   "editor.tabSize": 2,
   "editor.fontSize": 14,
   "editor.formatOnPaste": true,
@@ -20,7 +20,6 @@
   "prettier.trailingComma": "es5",
   "prettier.singleQuote": true,
   "prettier.printWidth": 80,
-  "vsicons.presets.foldersAllDefaultIcon": true,
   "vim.useSystemClipboard": true,
   "vim.leader": " ",
   "vim.overrideCopy": false,
@@ -116,6 +115,7 @@
     "frontmatter",
     "hdfs",
     "lifecycle",
+    "nginx",
     "polyfill",
     "redshift",
     "refetch",
@@ -144,7 +144,6 @@
   ],
   "importCost.bundleSizeDecoration": "gzipped",
   "docker.showExplorer": false,
-  "vsicons.dontShowNewVersionMessage": true,
   "[markdown]": {
     "editor.wordWrap": "on",
     "editor.quickSuggestions": true
@@ -155,9 +154,10 @@
       "cursorDown"
     ]
   },
-  "vsicons.projectDetection.disableDetect": true,
   "pasteImage.path": "./images",
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
-  "workbench.editor.enablePreviewFromQuickOpen": false
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "material-icon-theme.folders.theme": "classic",
+  "material-icon-theme.folders.color": "#78909c"
 }
