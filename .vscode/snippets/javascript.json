@@ -13,47 +13,26 @@
 		"description": "Log output to console"
 	}
 */
-  "import": {
-    "prefix": "imp",
-    "body": "import ${2:name} from '${1:module}'$0",
-    "description": "Imports entire module statement in ES6 syntax"
-  },
-	"importDestructing": {
-		"prefix": "imd",
+	"importNamed": {
+		"prefix": "imp",
 		"body": "import { ${2:name} } from '${1:module}'$0",
-		"description": "Imports only a portion of the module in ES6 syntax"
+		"description": "Named import"
 	},
-	"importEverything": {
-		"prefix": "ime",
+	"importDefault": {
+		"prefix": "imd",
+		"body": "import ${2:name} from '${1:module}'$0",
+		"description": "Default import"
+	},
+	"importNamespace": {
+		"prefix": "imn",
 		"body": "import * as ${2:alias} from '${1:module}'$0",
-		"description": "Imports everything as alias from the module in ES6 syntax"
+		"description": "Namespace import"
 	},
-
 	"constructor": {
 		"prefix": "con",
 		"body": "constructor(${1:params}) {\n\t${0}\n}",
-		"description": "Add default constructor in a class in ES6 syntax"
+		"description": "Constructor"
 	},
-	"method": {
-		"prefix": "met",
-		"body": "${1:methodName}(${2:params}) {\n\t${0}\n}",
-		"description": "Creates a method inside a class in ES6 syntax"
-	},
-	"boundMethod": {
-		"prefix": "bmet",
-		"body": "${1:methodName} = (${2:params}) => {\n\t${0}\n}",
-		"description": "Creates a method inside a class in ES6 syntax"
-	},
-	"anonymousFunction": {
-		"prefix": "anfn",
-		"body": "(${1:params}) => {\n\t${2}\n}",
-		"description": "Creates an anonymous function in ES6 syntax"
-	},
-	 "namedFunction": {
-    "prefix": "nfn",
-    "body": "const ${1:name} = (${2:params}) => {\n\t${3}\n}",
-    "description": "Creates a named function in ES6 syntax"
-  },
 
 
 	// React
@@ -111,11 +90,6 @@
 		"prefix": "ren",
 		"body": "render() {\n\treturn (\n\t\t<div>\n\t\t\t$0\n\t\t</div>\n\t)\n}",
 		"description": "When called, it should examine this.props and this.state and return a single child element."
-	},
-	"componentSetStateObject": {
-		"prefix": "sst",
-		"body": "this.setState($0)",
-		"description": "Performs a shallow merge of nextState into current state"
 	},
 	"staticPropTypes": {
 		"prefix": "spt",
