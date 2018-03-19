@@ -103,6 +103,17 @@
           "args": []
         }
       ]
+    },
+    {
+      // open markdown preview
+      "before": ["<leader>", "m", "p"],
+      "after": [],
+      "commands": [
+        {
+          "command": "markdown.showPreviewToSide",
+          "args": []
+        }
+      ]
     }
   ],
   "terminal.external.osxExec": "iTerm.app",
