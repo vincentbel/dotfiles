@@ -43,3 +43,38 @@ cdf() {  # short for cdfinder
   cd $CWD
 }
 
+# <https://github.com/not-an-aardvark/git-delete-squashed>
+function delete_squashed_branches {
+  local merged_to_branch=${1-master}
+  git checkout -q "$merged_to_branch"
+
+  local all_local_branches=$(git for-each-ref refs/heads/ "--format=%(refname:short)")
+
+  echo "$all_local_branches" | while read branch; do
+    # Get the base commit when checking out this `$branch` from `$merged_to_branch`
+    # <https://git-scm.com/docs/git-merge-base>
+    local merge_base="$(git merge-base $merged_to_branch $branch)"
+
+    # The following `git commit-tree` command need `tree` object rather than
+    # a `commit` object, so we use `^{tree}` to get the `tree` object.
+    # Learn more about git objects at:
+    # <https://matthew-brett.github.io/curious-git/git_object_types.html>
+    # and `git rev-parse ^{type}` at:
+    # <https://git-scm.com/docs/git-rev-parse#git-rev-parse-emltrevgtlttypegtemegemv0998commitem>
+    local tree_object="$(git rev-parse "$branch^{tree}")"
+
+    # Create commit object
+    # <https://git-scm.com/docs/git-commit-tree>
+    local commit_object="$(git commit-tree $tree_object -p $merge_base -m _)"
+
+    # Find commits yet to be applied to `$merged_to_branch`
+    # <https://git-scm.com/docs/git-cherry>
+    local cherry_result="$(git cherry $merged_to_branch $commit_object)"
+    if [[ "$cherry_result" == "-"* ]]; then
+      git branch -D $branch;
+    fi
+  done
+
+  # check back to origin branch
+  git checkout -
+}
