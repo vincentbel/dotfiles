@@ -12,6 +12,26 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
+	"importNamed": {
+		"prefix": "imp",
+		"body": "import { ${2:name} } from '${1:module}'$0",
+		"description": "Named import"
+	},
+	"importDefault": {
+		"prefix": "imd",
+		"body": "import ${2:name} from '${1:module}'$0",
+		"description": "Default import"
+	},
+	"importNamespace": {
+		"prefix": "imn",
+		"body": "import * as ${2:alias} from '${1:module}'$0",
+		"description": "Namespace import"
+	},
+	"constructor": {
+		"prefix": "con",
+		"body": "constructor(${1:params}) {\n\t${0}\n}",
+		"description": "Constructor"
+	},
 	"reactClassComponent": {
 		"prefix": "rcc",
 		"body": [

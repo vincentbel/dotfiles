@@ -46,8 +46,16 @@
     "command": "-workbench.action.navigateBack"
   },
   {
+    "key": "ctrl+o",
+    "command": "workbench.action.navigateBack"
+  },
+  {
     "key": "ctrl+shift+-",
     "command": "-workbench.action.navigateForward"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "workbench.action.navigateForward"
   },
   {
     "key": "cmd+e",
@@ -196,5 +204,15 @@
     "key": "cmd+left",
     "command": "-extension.vim_cmd+left",
     "when": "editorTextFocus && vim.active && vim.use<D-left> && !inDebugRepl && vim.mode != 'Insert'"
+  },
+  {
+    "key": "cmd+r cmd+s",
+    "command": "editor.action.rename",
+    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "f2",
+    "command": "-editor.action.rename",
+    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
   }
 ]

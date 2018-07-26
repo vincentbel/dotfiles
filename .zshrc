@@ -60,3 +60,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # add `./node_modules/.bin` to `$PATH`
 export PATH="./node_modules/.bin:$PATH";
+
+# jenv init
+eval "$(jenv init -)"

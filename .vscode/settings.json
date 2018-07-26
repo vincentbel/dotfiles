@@ -4,9 +4,7 @@
   "workbench.iconTheme": "material-icon-theme",
   "editor.tabSize": 2,
   "editor.fontSize": 14,
-  "editor.formatOnPaste": true,
-  // "editor.formatOnSave": true,
-  "editor.lineNumbers": "relative",
+  "editor.formatOnPaste": false,
   "editor.wordWrap": "on",
   "editor.snippetSuggestions": "top",
   "files.autoSave": "onFocusChange",
@@ -23,6 +21,7 @@
   "vim.useSystemClipboard": true,
   "vim.leader": " ",
   "vim.overrideCopy": false,
+  "vim.easymotion": true,
   "vim.otherModesKeyBindingsNonRecursive": [
     {
       "before": ["j"],
@@ -118,23 +117,12 @@
   ],
   "terminal.external.osxExec": "iTerm.app",
   "cSpell.userWords": [
-    "couchbase",
-    "deletable",
-    "denormalize",
-    "dropdown",
-    "errored",
     "frontmatter",
-    "hdfs",
+    "kubernetes",
     "lifecycle",
     "nginx",
-    "polyfill",
-    "redshift",
-    "refetch",
-    "rentity",
-    "unmount",
-    "waypoint"
+    "polyfill"
   ],
-  "vim.easymotion": true,
   "cSpell.enabledLanguageIds": [
     "c",
     "cpp",
@@ -153,6 +141,7 @@
     "typescriptreact",
     "yml"
   ],
+  "cSpell.showStatus": false,
   "importCost.bundleSizeDecoration": "gzipped",
   "docker.showExplorer": false,
   "[markdown]": {
@@ -170,5 +159,30 @@
   "explorer.confirmDelete": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "material-icon-theme.folders.theme": "classic",
-  "material-icon-theme.folders.color": "#78909c"
+  "material-icon-theme.folders.color": "#78909c",
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/*.scss.d.ts": true
+  },
+  "workbench.editor.showTabs": true,
+  "files.defaultLanguage": "markdown",
+  "python.pythonPath": "/usr/local/bin/python3",
+  "amVim.smartRelativeLineNumbers": true,
+  "window.title": "${activeEditorMedium}",
+  "gitlens.advanced.messages": {
+    "suppressShowKeyBindingsNotice": true
+  },
+  "gitlens.statusBar.command": "gitlens.toggleFileBlame",
+  "gitlens.settings.mode": "advanced",
+  "gitlens.historyExplorer.location": "scm",
+  "gitlens.currentLine.enabled": false,
+  "gitlens.statusBar.enabled": false,
+  "gitlens.historyExplorer.enabled": true,
+  "gitlens.codeLens.enabled": false,
+  "workbench.tree.horizontalScrolling": true,
+  "python.formatting.provider": "yapf",
 }
