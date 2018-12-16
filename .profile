@@ -7,3 +7,7 @@ export PATH="$PATH:$HOME/.cargo/bin"
 
 # add `~/.bin` to the `$PATH`
 export PATH="$PATH:$HOME/.bin";
+
+# add `~/.local/bin` to the `$PATH`
+export PATH="$PATH:$HOME/.local/bin";
+

@@ -121,9 +121,14 @@
 		"body": "render() {\n\treturn (\n\t\t<div>\n\t\t\t$0\n\t\t</div>\n\t)\n}",
 		"description": "When called, it should examine this.props and this.state and return a single child element."
 	},
+	"getDerivedStateFromProps": {
+		"prefix": "gdsfp",
+		"body": "static getDerivedStateFromProps(props: ${1:Props}, state: ${2:State}) {\n\t$0\n\n\treturn null\n}",
+		"description": "getDerivedStateFromProps"
+	},
 	"staticDefaultProps": {
 		"prefix": "sdp",
-		"body": "static defaultProps = {\n\t$2\n}",
+		"body": "static defaultProps = {\n\t$0\n}",
 		"description": "Creates empty defaultProps declaration"
 	}
 }

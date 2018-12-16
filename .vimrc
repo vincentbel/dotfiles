@@ -116,9 +116,9 @@ highlight link SyntasticStyleWarningSign SignColumn
 
 
 " a code-completion engine for vim
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
 " don't map <tab> key. <tab> key for the use of 'ultisnips'
-let g:ycm_key_list_select_completion = ['<Down>']
+" let g:ycm_key_list_select_completion = ['<Down>']
 
 " the ultimate snippet solution for vim
 Plug 'SirVer/ultisnips'

@@ -1,0 +1,45 @@
+#!/usr/bin/env node
+
+'use strict'
+
+const execSync = require('child_process').execSync
+
+/**
+ * @param {Buffer} stdOut std out
+ */
+function stdOutToArray(stdOut) {
+  return stdOut
+    .toString()
+    .trim()
+    .split(/\s+/)
+}
+
+/**
+ * @param {string} formula
+ */
+function isUsedByOthers(formula) {
+  const stdOut = execSync(`brew uses --installed ${formula}`)
+  return stdOut.toString().trim() !== ''
+}
+
+function main() {
+  const allDeps = stdOutToArray(execSync('brew list --full-name'))
+  const topLevelDeps = new Set(stdOutToArray(execSync('brew leaves')))
+
+  console.log('Start checking dependencies...')
+
+  allDeps.forEach(dep => {
+    if (!topLevelDeps.has(dep)) {
+      if (isUsedByOthers(dep)) {
+        console.log(`Skip in used dependency: ${dep}`)
+      } else {
+        execSync(`brew uninstall ${dep}`)
+        console.log(`Removed unused dependency: ${dep}`)
+      }
+    }
+  })
+
+  console.log('Done!')
+}
+
+main()

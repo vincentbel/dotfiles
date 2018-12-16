@@ -1,6 +1,6 @@
 {
   "workbench.activityBar.visible": true,
-  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorTheme": "Night Owl No Italics",
   "workbench.iconTheme": "material-icon-theme",
   "editor.tabSize": 2,
   "editor.fontSize": 14,
@@ -13,7 +13,6 @@
   "gitProjectManager.baseProjectsFolders": ["/Users/VincentBel/dev/"],
   "gitProjectManager.ignoredFolders": ["node_modules"],
   "local-history.path": "/Users/VincentBel/dev/dotfiles/.vscode/",
-  "prettier.eslintIntegration": true,
   "prettier.semi": false,
   "prettier.trailingComma": "es5",
   "prettier.singleQuote": true,
@@ -123,24 +122,6 @@
     "nginx",
     "polyfill"
   ],
-  "cSpell.enabledLanguageIds": [
-    "c",
-    "cpp",
-    "csharp",
-    "go",
-    "javascript",
-    "javascriptreact",
-    "json",
-    "latex",
-    "markdown",
-    "php",
-    "plaintext",
-    "python",
-    "text",
-    "typescript",
-    "typescriptreact",
-    "yml"
-  ],
   "cSpell.showStatus": false,
   "importCost.bundleSizeDecoration": "gzipped",
   "docker.showExplorer": false,
@@ -149,10 +130,7 @@
     "editor.quickSuggestions": true
   },
   "macros": {
-    "commentAndCursorDown": [
-      "editor.action.commentLine",
-      "cursorDown"
-    ]
+    "commentAndCursorDown": ["editor.action.commentLine", "cursorDown"]
   },
   "pasteImage.path": "./images",
   "explorer.confirmDragAndDrop": false,
@@ -168,7 +146,6 @@
     "**/.DS_Store": true,
     "**/*.scss.d.ts": true
   },
-  "workbench.editor.showTabs": true,
   "files.defaultLanguage": "markdown",
   "python.pythonPath": "/usr/local/bin/python3",
   "amVim.smartRelativeLineNumbers": true,
@@ -185,4 +162,14 @@
   "gitlens.codeLens.enabled": false,
   "workbench.tree.horizontalScrolling": true,
   "python.formatting.provider": "yapf",
+  "typescript.updateImportsOnFileMove.enabled": "prompt",
+  "workbench.settings.editor": "json",
+  "terminal.integrated.scrollback": 10000,
+  "editor.formatOnSave": false,
+  "gitlens.views.fileHistory.enabled": true,
+  "gitlens.views.fileHistory.location": "scm",
+  "gitlens.views.lineHistory.enabled": true,
+  "gitlens.views.lineHistory.location": "scm",
+  "gitlens.views.repositories.branches.layout": "list",
+  "window.zoomLevel": 0,
 }

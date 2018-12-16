@@ -58,26 +58,6 @@
     "command": "workbench.action.navigateForward"
   },
   {
-    "key": "cmd+e",
-    "command": "editor.action.marker.next",
-    "when": "editorFocus && !editorReadonly"
-  },
-  {
-    "key": "f8",
-    "command": "-editor.action.marker.next",
-    "when": "editorFocus && !editorReadonly"
-  },
-  {
-    "key": "shift+cmd+e",
-    "command": "editor.action.marker.prev",
-    "when": "editorFocus && !editorReadonly"
-  },
-  {
-    "key": "shift+f8",
-    "command": "-editor.action.marker.prev",
-    "when": "editorFocus && !editorReadonly"
-  },
-  {
     "key": "cmd+y",
     "command": "clipring.pasteRingItem",
     "when": "editorFocus"
@@ -90,6 +70,14 @@
   {
     "key": "cmd+/",
     "command": "macros.commentAndCursorDown"
+  },
+  {
+    "key": "cmd+e",
+    "command": "editor.action.marker.next"
+  },
+  {
+    "key": "shift+cmd+e",
+    "command": "editor.action.marker.prev"
   },
 
   // =========== Explorer ===========
@@ -189,11 +177,11 @@
   // =========== Misc ===========
   {
     "key": "cmd+t",
-    "command": "workbench.action.quickOpen"
+    "command": "workbench.action.gotoSymbol"
   },
   {
-    "key": "cmd+t",
-    "command": "-workbench.action.showAllSymbols"
+    "key": "shift+cmd+o",
+    "command": "-workbench.action.gotoSymbol"
   },
   {
     "key": "cmd+right",
@@ -214,5 +202,5 @@
     "key": "f2",
     "command": "-editor.action.rename",
     "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
-  }
+  },
 ]

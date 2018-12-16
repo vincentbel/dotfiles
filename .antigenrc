@@ -5,7 +5,7 @@ local b="antigen-bundle"
 
 $b git
 
-$b vi-mode
+# $b vi-mode
 
 # guess what to install when running an unknown command.
 # $b command-not-found
