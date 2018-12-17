@@ -70,11 +70,11 @@ Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'chriskempson/base16-vim'
 
 " lean & mean status/tabline
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-let g:airline_theme='luna'
-let g:airline_powerline_fonts=1
+Plug 'itchyny/lightline.vim'
 set laststatus=2
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
 
 " a tree explorer plugin for vim
 Plug 'scrooloose/nerdtree'
