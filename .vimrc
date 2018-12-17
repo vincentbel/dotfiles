@@ -132,6 +132,17 @@ Plug 'sheerun/vim-polyglot'
 " preview colors in source code while editing
 Plug 'ap/vim-css-color'
 
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  " 1. install python3
+  " 2. install newvim python client: pip3 install neovim
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
+
 " Plugin 'Lokaltog/vim-easymotion'
 " map <Space> <Plug>(easymotion-s2)
 " map <Space>h <Plug>(easymotion-lineforward)
