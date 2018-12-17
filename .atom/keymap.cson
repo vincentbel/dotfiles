@@ -113,3 +113,6 @@
   'ctrl-o':   'cursor-history:prev-within-editor'
   'ctrl-cmd-i': 'cursor-history:next'
   'ctrl-cmd-o': 'cursor-history:prev'
+
+'.platform-darwin atom-workspace':
+  'cmd-j': 'platformio-ide-terminal:new'

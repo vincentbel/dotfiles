@@ -131,6 +131,28 @@
   "one-dark-ui": {}
   "open-recent":
     maxRecentDirectories: 10
+  "platformio-ide-terminal":
+    ansiColors:
+      normal:
+        black: "#282a36"
+        blue: "#57c7ff"
+        cyan: "#9aedfe"
+        green: "#5af78e"
+        magenta: "#ff6ac1"
+        red: "#ff5c57"
+        white: "#f1f1f0"
+        yellow: "#f3f99d"
+      zBright:
+        brightBlack: "#686868"
+        brightBlue: "#57c7ff"
+        brightCyan: "#9aedfe"
+        brightGreen: "#5af78e"
+        brightMagenta: "#ff6ac1"
+        brightRed: "#ff5c57"
+        brightWhite: "#eff0eb"
+        brightYellow: "#f3f99d"
+    core:
+      scrollback: 100000
   "prettier-atom":
     formatOnSaveOptions:
       cssScopes: [
