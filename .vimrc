@@ -141,7 +141,7 @@ Plug 'ap/vim-css-color'
 " let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
 " let g:EasyMotion_smartcase = 1
 
-" Plugin 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-multiple-cursors'
 
 call plug#end()
 
