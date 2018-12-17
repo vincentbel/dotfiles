@@ -188,3 +188,8 @@ main
 # vscode config location:
 # https://code.visualstudio.com/docs/getstarted/settings#_settings-file-locations
 link "$(pwd)/.vscode" "$HOME/Library/Application Support/Code/User"
+
+# neovim config file
+# https://neovim.io/doc/user/starting.html#config
+mkdir -p "$HOME/.config/nvim"
+link "$(pwd)/neovim-config.vim" "$HOME/.config/nvim/init.vim"

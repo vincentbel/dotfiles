@@ -23,6 +23,7 @@ git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
 
 brew install vim
 brew install macvim
+brew install neovim
 
 brew install git-flow
 
