@@ -32,6 +32,8 @@ set shiftwidth=2              " number of spaces to use for each step of (auto)i
 set expandtab                 " make the tab key (in insert mode) insert spaces instead of tab characters
 set smarttab                  " at start of line, <Tab> inserts shiftwidth spaces, <Bs> deletes shiftwidth spaces
 
+set backspace=indent,eol,start" make backspace work norally <https://vi.stackexchange.com/a/2163>
+
 " wrapped lines goes down/up to next row, rather than next line in file.
 noremap j gj
 noremap k gk
@@ -89,32 +91,6 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 " show a git diff in the gutter (sign column) and stages/undoes hunks
 Plug 'airblade/vim-gitgutter'
 
-
-" syntax checking hacks for vim
-Plug 'scrooloose/syntastic'
-" setting from: <http://usevim.com/2016/03/07/linting/>
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_loc_list_height = 5
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 1
-let g:syntastic_javascript_checkers = ['eslint']
-
-let g:syntastic_error_symbol = '❌'
-let g:syntastic_style_error_symbol = '⁉️'
-let g:syntastic_warning_symbol = '⚠️'
-let g:syntastic_style_warning_symbol = '💩'
-
-highlight link SyntasticErrorSign SignColumn
-highlight link SyntasticWarningSign SignColumn
-highlight link SyntasticStyleErrorSign SignColumn
-highlight link SyntasticStyleWarningSign SignColumn
-
-
 " a code-completion engine for vim
 " Plug 'Valloric/YouCompleteMe'
 " don't map <tab> key. <tab> key for the use of 'ultisnips'
@@ -151,9 +127,7 @@ if executable('ag')
     let g:ackprg = 'ag --vimgrep'
   endif
 
-" vastly improved Javascript indentation and syntax support in vim
-Plug 'pangloss/vim-javascript'
-
+Plug 'sheerun/vim-polyglot'
 
 " preview colors in source code while editing
 Plug 'ap/vim-css-color'
