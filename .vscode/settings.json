@@ -193,5 +193,7 @@
     "terminal.ansiBrightMagenta": "#ff6ac1",
     "terminal.ansiBrightCyan": "#9aedfe",
     "terminal.ansiBrightWhite": "#eff0eb"
-  }
+  },
+  "workbench.statusBar.feedback.visible": false,
+  "pasteImage.basePath": "${currentFileDir}/images"
 }
