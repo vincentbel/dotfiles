@@ -1,0 +1,24 @@
+patch:
+  switcher:
+    caption: 〔方案选单〕
+    hotkeys:
+      - Control+grave
+
+  menu:
+    page_size: 5  # 每页候选词数
+
+  ascii_composer:
+    good_old_caps_lock: true
+    switch_key:
+      # 中文状态下输入 Shift 键，直接将已输入的英文上屏，并切换为英文输入
+      Shift_L: commit_code
+      Shift_R: commit_code
+      Control_L: noop
+      Control_R: noop
+      Caps_Lock: noop
+      Eisu_toggle: clear
+
+  schema_list:
+    - schema: luna_pinyin_simp
+    - schema: luna_pinyin
+    - schema: luna_pinyin_fluency  # 语句流

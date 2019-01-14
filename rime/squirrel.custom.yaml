@@ -1,0 +1,47 @@
+patch:
+  show_notifications_when: appropriate  # 状态通知，适当(appropriate)，开（always）关（never）
+  
+  style:
+    color_scheme: lol
+  preset_color_schemes:
+    lol: 
+      name: "lol"
+      author: "Alien"
+      horizontal: true # 水平排列
+      inline_preedit: true # true: 单行显示，false: 双行显示
+      candidate_format: "\u2005%c\u2005%@\u2005" # 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间
+      corner_radius: 4
+      border_height: 0 
+      border_width: 0
+      back_color: 0xffffff #候选条背景色
+      font_face: "PingFangSC-Regular" # 候选词字体
+      font_point: 16 # 候选字词大小
+      text_color: 0x333333  #高亮选中词颜色
+      label_font_face: "STHeitiSC-Light" # 候选词编号字体
+      label_font_point: 12   # 候选编号大小
+      hilited_candidate_text_color: 0x333333 # 候选文字颜色
+      hilited_candidate_back_color: 0xfff0e4 # 候选文字背景色
+      comment_text_color: 0x999999 # 拼音等提示文字颜色
+
+# 右键「应用.app」-> 显示包内容 Contents/Info.plist -> BundleIdentifier
+app_options:
+  com.apple.Spotlight:
+    ascii_mode: true
+  com.alfredapp.Alfred:
+    ascii_mode: true
+  com.apple.Terminal:
+    ascii_mode: true
+    no_inline: true
+  com.googlecode.iterm2:
+    ascii_mode: true
+  org.vim.MacVim:
+    ascii_mode: true
+    no_inline: true
+  com.apple.dt.Xcode:
+    ascii_mode: true
+  com.github.atom:
+    ascii_mode: true
+  com.microsoft.VSCode:
+    ascii_mode: true
+  com.sublimetext.3:
+    ascii_mode: true
