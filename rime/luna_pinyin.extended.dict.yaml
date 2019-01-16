@@ -46,7 +46,10 @@ import_tables:
   - luna_pinyin.computer
   - luna_pinyin.english
   - luna_pinyin.extra_hanzi
-  - luna_pinyin.hanyu
+  - luna_pinyin.sgmain
+  - luna_pinyin.sgplus
+  - luna_pinyin.sgplus2
+  # - luna_pinyin.hanyu
   - luna_pinyin.poetry
   - luna_pinyin.cn_en
 ...
