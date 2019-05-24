@@ -23,7 +23,7 @@ antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
 
 # install nvm
-# antigen bundle lukechilds/zsh-nvm
+antigen bundle lukechilds/zsh-nvm
 
 # tell antigen that you're done.
 antigen apply
