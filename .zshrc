@@ -1,4 +1,6 @@
+# uncomment following line and add `zprof` to the end of this file to enable profiling.
 # zmodload zsh/zprof
+
 # larger history
 SAVEHIST=100000
 
