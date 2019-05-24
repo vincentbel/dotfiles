@@ -3,39 +3,39 @@ antigen use oh-my-zsh
 
 local b="antigen-bundle"
 
-$b git
+antigen bundle git
 
-# $b vi-mode
+# antigen bundle vi-mode
 
 # guess what to install when running an unknown command.
-# $b command-not-found
+# antigen bundle command-not-found
 
 # homebrew  - autocomplete on 'brew install'
-# $b brew
-# $b brew-cask
+# antigen bundle brew
+# antigen bundle brew-cask
 
 # tracks your most used directories, based on 'frecency'.
-$b rupa/z z.sh
+antigen bundle rupa/z z.sh
 
 # syntax highlighting bundle.
-$b zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-syntax-highlighting
 
 # history search
-$b zsh-users/zsh-history-substring-search
+antigen bundle zsh-users/zsh-history-substring-search
 
 # auto suggestions
-$b zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-autosuggestions
 
 # use pure,
 # https://github.com/sindresorhus/pure#antigen
-$b mafredri/zsh-async
-$b sindresorhus/pure
+antigen bundle mafredri/zsh-async
+antigen bundle sindresorhus/pure
 
 # install nvm
-# $b lukechilds/zsh-nvm
+# antigen bundle lukechilds/zsh-nvm
 
 # install git flow completion
-$b bobthecow/git-flow-completion
+antigen bundle bobthecow/git-flow-completion
 
 # don't set a theme, because pure does it for you
 # antigen theme agnoster
