@@ -5,15 +5,6 @@ local b="antigen-bundle"
 
 antigen bundle git
 
-# antigen bundle vi-mode
-
-# guess what to install when running an unknown command.
-# antigen bundle command-not-found
-
-# homebrew  - autocomplete on 'brew install'
-# antigen bundle brew
-# antigen bundle brew-cask
-
 # tracks your most used directories, based on 'frecency'.
 antigen bundle rupa/z z.sh
 
@@ -33,12 +24,6 @@ antigen bundle sindresorhus/pure
 
 # install nvm
 # antigen bundle lukechilds/zsh-nvm
-
-# install git flow completion
-antigen bundle bobthecow/git-flow-completion
-
-# don't set a theme, because pure does it for you
-# antigen theme agnoster
 
 # tell antigen that you're done.
 antigen apply
