@@ -32,55 +32,6 @@
 		"body": "constructor(${1:params}) {\n\t${0}\n}",
 		"description": "Constructor"
 	},
-	"reactClassComponent": {
-		"prefix": "rcc",
-		"body": [
-			"import * as React from 'react'\n",
-			"type ${1:ComponentName}Props = {}\n",
-			"export class ${1:ComponentName} extends React.Component<${1:ComponentName}Props> {",
-			"\trender() {",
-			"\t\treturn (",
-			"\t\t\t<div>",
-			"\t\t\t\t$0",
-			"\t\t\t</div>",
-			"\t\t)",
-			"\t}",
-			"}",
-		],
-		"description": "Create a React component class"
-	},
-	"reactClassPureComponent": {
-		"prefix": "rcpc",
-		"body": [
-			"import * as React from 'react'\n",
-			"type ${1:ComponentName}Props = {}\n",
-			"export class ${1:ComponentName} extends React.PureComponent<${1:ComponentName}Props> {",
-			"\trender() {",
-			"\t\treturn (",
-			"\t\t\t<div>",
-			"\t\t\t\t$0",
-			"\t\t\t</div>",
-			"\t\t)",
-			"\t}",
-			"}",
-		],
-		"description": "Creates a React pure component class"
-	},
-	"reactFunctionComponent": {
-		"prefix": "rfc",
-		"body": [
-			"import * as React from 'react'\n",
-			"type ${1:ComponentName}Props = {}\n",
-			"export const ${1:ComponentName}: React.SFC<${1:ComponentName}Props> = () => {",
-			"\treturn (",
-			"\t\t<div>",
-			"\t\t\t$0",
-			"\t\t</div>",
-			"\t)",
-			"}",
-		],
-		"description": "Creates a stateless React component with PropTypes and ES6 module system"
-	},
 	"componentWillMount": {
 		"prefix": "cwm",
 		"body": "\ncomponentWillMount() {\n\t$0\n}\n",

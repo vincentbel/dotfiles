@@ -2,6 +2,7 @@
   "workbench.activityBar.visible": true,
   "workbench.colorTheme": "One Dark Pro",
   "workbench.iconTheme": "material-icon-theme",
+  "workbench.settings.useSplitJSON": true,
   "editor.tabSize": 2,
   "editor.fontSize": 14,
   "editor.formatOnPaste": false,
@@ -127,12 +128,15 @@
   "docker.showExplorer": false,
   "[markdown]": {
     "editor.wordWrap": "on",
-    "editor.quickSuggestions": true
+    "editor.quickSuggestions": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "macros": {
     "commentAndCursorDown": ["editor.action.commentLine", "cursorDown"]
   },
-  "pasteImage.path": "./images",
+  "pasteImage.path": "${currentFileDir}/images",
+  "pasteImage.showFilePathConfirmInputBox": true,
+  "pasteImage.filePathConfirmInputBoxMode": "onlyName",
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
@@ -195,5 +199,20 @@
     "terminal.ansiBrightWhite": "#eff0eb"
   },
   "workbench.statusBar.feedback.visible": false,
-  "pasteImage.basePath": "${currentFileDir}/images"
+  "workbench.list.automaticKeyboardNavigation": false,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "editor.gotoLocation.multiple": "gotoAndPeek",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "javascript.preferences.renameShorthandProperties": false,
+  "typescript.preferences.renameShorthandProperties": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "python.jediEnabled": false,
 }

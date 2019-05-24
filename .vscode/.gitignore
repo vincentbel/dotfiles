@@ -3,3 +3,4 @@ workspaceStorage
 gpm-recentItems.json
 locale.json
 *.backup
+globalStorage
