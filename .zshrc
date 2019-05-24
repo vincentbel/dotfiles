@@ -54,4 +54,4 @@ source ~/.aliases
 source ~/.functions
 
 # jenv init
-eval "$(jenv init -)"
+# eval "$(jenv init -)"
