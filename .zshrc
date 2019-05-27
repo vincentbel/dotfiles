@@ -12,9 +12,6 @@ fpath=( "$HOME/.zfunctions" $fpath )
 # use antigen to manage plugins!
 source ~/.zsh/antigen/antigen.zsh
 
-# lazy load nvm, extremely fast startup
-export NVM_LAZY_LOAD=true
-
 # use antigen init to improve startup
 # see more at <https://github.com/zsh-users/antigen/blob/develop/CHANGELOG.md#110---2016-09-10>
 antigen init ~/.antigenrc
@@ -63,3 +60,7 @@ source ~/.functions
 
 # jenv init
 # eval "$(jenv init -)"
+
+# fnm: https://github.com/Schniz/fnm
+# `--multi` is for the multishell support
+eval "$(fnm env --multi)"
