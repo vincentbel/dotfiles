@@ -215,4 +215,8 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "python.jediEnabled": false,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "breadcrumbs.enabled": false,
 }
