@@ -1,27 +1,121 @@
 {
-  "workbench.activityBar.visible": true,
-  "workbench.colorTheme": "One Dark Pro",
-  "workbench.iconTheme": "material-icon-theme",
-  "workbench.settings.useSplitJSON": true,
-  "editor.tabSize": 2,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.quickSuggestions": true,
+    "editor.wordWrap": "on"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "amVim.smartRelativeLineNumbers": true,
+  "breadcrumbs.enabled": false,
+  "cSpell.showStatus": false,
+  "cSpell.userWords": [
+    "frontmatter",
+    "kubernetes",
+    "lifecycle",
+    "nginx",
+    "polyfill"
+  ],
   "editor.fontSize": 14,
   "editor.formatOnPaste": false,
-  "editor.wordWrap": "on",
+  "editor.formatOnSave": false,
+  "editor.gotoLocation.multiple": "gotoAndPeek",
   "editor.snippetSuggestions": "top",
+  "editor.suggestSelection": "first",
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
   "files.autoSave": "onFocusChange",
+  "files.defaultLanguage": "markdown",
+  "files.exclude": {
+    "**/*.scss.d.ts": true,
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.svn": true,
+    "**/CVS": true
+  },
   "files.insertFinalNewline": true,
+  "git.autofetch": true,
+  "gitProjectManager.baseProjectsFolders": [
+    "/Users/VincentBel/dev/"
+  ],
+  "gitProjectManager.ignoredFolders": [
+    "node_modules"
+  ],
   "gitProjectManager.searchInsideProjects": false,
-  "gitProjectManager.baseProjectsFolders": ["/Users/VincentBel/dev/"],
-  "gitProjectManager.ignoredFolders": ["node_modules"],
+  "gitlens.advanced.messages": {
+    "suppressShowKeyBindingsNotice": true
+  },
+  "gitlens.codeLens.enabled": false,
+  "gitlens.currentLine.enabled": false,
+  "gitlens.gitCommands.closeOnFocusOut": true,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.statusBar.command": "gitlens.toggleFileBlame",
+  "gitlens.statusBar.enabled": false,
+  "gitlens.views.compare.files.layout": "tree",
+  "gitlens.views.compare.location": "gitlens",
+  "gitlens.views.fileHistory.enabled": true,
+  "gitlens.views.fileHistory.location": "gitlens",
+  "gitlens.views.lineHistory.enabled": true,
+  "gitlens.views.lineHistory.location": "gitlens",
+  "gitlens.views.repositories.branches.layout": "list",
+  "gitlens.views.repositories.location": "gitlens",
+  "gitlens.views.search.location": "gitlens",
+  "javascript.preferences.renameShorthandProperties": false,
   "local-history.path": "/Users/VincentBel/dev/dotfiles/.vscode/",
-  "prettier.semi": false,
-  "prettier.trailingComma": "es5",
-  "prettier.singleQuote": true,
+  "macros": {
+    "commentAndCursorDown": [
+      "editor.action.commentLine",
+      "cursorDown"
+    ]
+  },
+  "material-icon-theme.folders.color": "#78909c",
+  "material-icon-theme.folders.theme": "classic",
+  "pasteImage.filePathConfirmInputBoxMode": "onlyName",
+  "pasteImage.path": "${currentFileDir}/images",
+  "pasteImage.showFilePathConfirmInputBox": true,
   "prettier.printWidth": 80,
-  "vim.useSystemClipboard": true,
-  "vim.leader": " ",
-  "vim.overrideCopy": false,
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "python.formatting.provider": "yapf",
+  "python.jediEnabled": false,
+  "python.pythonPath": "/usr/local/bin/python3",
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.rendererType": "dom",
+  "terminal.integrated.scrollback": 10000,
+  "todo-tree.general.statusBar": "top three",
+  "todo-tree.highlights.customHighlight": {
+    "FIXME": {
+      "background": "#f06292",
+      "foreground": "white",
+      "iconColour": "#f06292",
+      "opacity": 90
+    },
+    "TODO": {
+      "background": "yellow",
+      "foreground": "black",
+      "iconColour": "yellow",
+      "opacity": 90
+    }
+  },
+  "typescript.preferences.renameShorthandProperties": false,
+  "typescript.updateImportsOnFileMove.enabled": "prompt",
+  "versionlens.showVersionLensesAtStartup": false,
   "vim.easymotion": true,
+  "vim.leader": " ",
   "vim.otherModesKeyBindingsNonRecursive": [
     {
       "before": ["j"],
@@ -115,127 +209,40 @@
       ]
     }
   ],
-  "terminal.external.osxExec": "iTerm.app",
-  "cSpell.userWords": [
-    "frontmatter",
-    "kubernetes",
-    "lifecycle",
-    "nginx",
-    "polyfill"
-  ],
-  "cSpell.showStatus": false,
-  "[markdown]": {
-    "editor.wordWrap": "on",
-    "editor.quickSuggestions": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "macros": {
-    "commentAndCursorDown": ["editor.action.commentLine", "cursorDown"]
-  },
-  "pasteImage.path": "${currentFileDir}/images",
-  "pasteImage.showFilePathConfirmInputBox": true,
-  "pasteImage.filePathConfirmInputBoxMode": "onlyName",
-  "explorer.confirmDragAndDrop": false,
-  "explorer.confirmDelete": false,
-  "workbench.editor.enablePreviewFromQuickOpen": false,
-  "material-icon-theme.folders.theme": "classic",
-  "material-icon-theme.folders.color": "#78909c",
-  "files.exclude": {
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/CVS": true,
-    "**/.DS_Store": true,
-    "**/*.scss.d.ts": true
-  },
-  "files.defaultLanguage": "markdown",
-  "python.pythonPath": "/usr/local/bin/python3",
-  "amVim.smartRelativeLineNumbers": true,
+  "vim.overrideCopy": false,
+  "vim.useSystemClipboard": true,
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "window.title": "${activeEditorMedium}",
-  "gitlens.advanced.messages": {
-    "suppressShowKeyBindingsNotice": true
-  },
-  "gitlens.statusBar.command": "gitlens.toggleFileBlame",
-  "workbench.tree.horizontalScrolling": true,
-  "python.formatting.provider": "yapf",
-  "typescript.updateImportsOnFileMove.enabled": "prompt",
-  "workbench.settings.editor": "json",
-  "terminal.integrated.scrollback": 10000,
-  "editor.formatOnSave": false,
-  "gitlens.views.fileHistory.enabled": true,
-  "gitlens.views.fileHistory.location": "gitlens",
-  "gitlens.views.lineHistory.enabled": true,
-  "gitlens.views.lineHistory.location": "gitlens",
-  "gitlens.views.repositories.branches.layout": "list",
   "window.zoomLevel": 0,
+  "workbench.activityBar.visible": true,
   // https://github.com/Tyriar/vscode-snazzy
   "workbench.colorCustomizations": {
     // The background is optional
     // "terminal.background": "#282a36",
-    "terminal.foreground": "#eff0eb",
     "terminal.ansiBlack": "#282a36",
-    "terminal.ansiRed": "#ff5c57",
-    "terminal.ansiGreen": "#5af78e",
-    "terminal.ansiYellow": "#f3f99d",
     "terminal.ansiBlue": "#57c7ff",
-    "terminal.ansiMagenta": "#ff6ac1",
-    "terminal.ansiCyan": "#9aedfe",
-    "terminal.ansiWhite": "#f1f1f0",
     "terminal.ansiBrightBlack": "#686868",
-    "terminal.ansiBrightRed": "#ff5c57",
-    "terminal.ansiBrightGreen": "#5af78e",
-    "terminal.ansiBrightYellow": "#f3f99d",
     "terminal.ansiBrightBlue": "#57c7ff",
-    "terminal.ansiBrightMagenta": "#ff6ac1",
     "terminal.ansiBrightCyan": "#9aedfe",
+    "terminal.ansiBrightGreen": "#5af78e",
+    "terminal.ansiBrightMagenta": "#ff6ac1",
+    "terminal.ansiBrightRed": "#ff5c57",
     "terminal.ansiBrightWhite": "#eff0eb",
+    "terminal.ansiBrightYellow": "#f3f99d",
+    "terminal.ansiCyan": "#9aedfe",
+    "terminal.ansiGreen": "#5af78e",
+    "terminal.ansiMagenta": "#ff6ac1",
+    "terminal.ansiRed": "#ff5c57",
+    "terminal.ansiWhite": "#f1f1f0",
+    "terminal.ansiYellow": "#f3f99d",
+    "terminal.foreground": "#eff0eb",
     "terminal.selectionBackground": "#ffdb1081"
   },
+  "workbench.colorTheme": "One Dark Pro",
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.iconTheme": "material-icon-theme",
   "workbench.list.automaticKeyboardNavigation": false,
-  "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "editor.gotoLocation.multiple": "gotoAndPeek",
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "javascript.preferences.renameShorthandProperties": false,
-  "typescript.preferences.renameShorthandProperties": false,
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "python.jediEnabled": false,
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "breadcrumbs.enabled": false,
-  "terminal.integrated.rendererType": "dom",
-  "gitlens.views.compare.files.layout": "tree",
-  "git.autofetch": true,
-  "versionlens.showVersionLensesAtStartup": false,
-  "todo-tree.highlights.customHighlight": {
-    "TODO": {
-      "foreground": "black",
-      "background": "yellow",
-      "opacity": 90,
-      "iconColour": "yellow"
-    },
-    "FIXME": {
-      "foreground": "white",
-      "background": "#f06292",
-      "opacity": 90,
-      "iconColour": "#f06292"
-    }
-  },
-  "todo-tree.general.statusBar": "top three",
-  "gitlens.currentLine.enabled": false,
-  "gitlens.hovers.currentLine.over": "line",
-  "gitlens.codeLens.enabled": false,
-  "gitlens.statusBar.enabled": false,
-  "gitlens.views.repositories.location": "gitlens",
-  "gitlens.views.compare.location": "gitlens",
-  "gitlens.views.search.location": "gitlens",
-  "gitlens.gitCommands.closeOnFocusOut": true,
+  "workbench.settings.editor": "json",
+  "workbench.settings.useSplitJSON": true,
+  "workbench.tree.horizontalScrolling": true
 }
