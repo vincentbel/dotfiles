@@ -106,6 +106,7 @@
   "linter-stylelint": {}
   "linter-ui-default":
     panelHeight: 300
+    showPanel: true
   "local-history": {}
   "markdown-image-paste": {}
   "markdown-preview-plus": {}

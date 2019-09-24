@@ -124,8 +124,6 @@
     "polyfill"
   ],
   "cSpell.showStatus": false,
-  "importCost.bundleSizeDecoration": "gzipped",
-  "docker.showExplorer": false,
   "[markdown]": {
     "editor.wordWrap": "on",
     "editor.quickSuggestions": true,
@@ -158,12 +156,6 @@
     "suppressShowKeyBindingsNotice": true
   },
   "gitlens.statusBar.command": "gitlens.toggleFileBlame",
-  "gitlens.settings.mode": "advanced",
-  "gitlens.historyExplorer.location": "scm",
-  "gitlens.currentLine.enabled": false,
-  "gitlens.statusBar.enabled": false,
-  "gitlens.historyExplorer.enabled": true,
-  "gitlens.codeLens.enabled": false,
   "workbench.tree.horizontalScrolling": true,
   "python.formatting.provider": "yapf",
   "typescript.updateImportsOnFileMove.enabled": "prompt",
@@ -171,9 +163,9 @@
   "terminal.integrated.scrollback": 10000,
   "editor.formatOnSave": false,
   "gitlens.views.fileHistory.enabled": true,
-  "gitlens.views.fileHistory.location": "scm",
+  "gitlens.views.fileHistory.location": "gitlens",
   "gitlens.views.lineHistory.enabled": true,
-  "gitlens.views.lineHistory.location": "scm",
+  "gitlens.views.lineHistory.location": "gitlens",
   "gitlens.views.repositories.branches.layout": "list",
   "window.zoomLevel": 0,
   // https://github.com/Tyriar/vscode-snazzy
@@ -196,9 +188,9 @@
     "terminal.ansiBrightBlue": "#57c7ff",
     "terminal.ansiBrightMagenta": "#ff6ac1",
     "terminal.ansiBrightCyan": "#9aedfe",
-    "terminal.ansiBrightWhite": "#eff0eb"
+    "terminal.ansiBrightWhite": "#eff0eb",
+    "terminal.selectionBackground": "#ffdb1081"
   },
-  "workbench.statusBar.feedback.visible": false,
   "workbench.list.automaticKeyboardNavigation": false,
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
@@ -219,4 +211,31 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "breadcrumbs.enabled": false,
+  "terminal.integrated.rendererType": "dom",
+  "gitlens.views.compare.files.layout": "tree",
+  "git.autofetch": true,
+  "versionlens.showVersionLensesAtStartup": false,
+  "todo-tree.highlights.customHighlight": {
+    "TODO": {
+      "foreground": "black",
+      "background": "yellow",
+      "opacity": 90,
+      "iconColour": "yellow"
+    },
+    "FIXME": {
+      "foreground": "white",
+      "background": "#f06292",
+      "opacity": 90,
+      "iconColour": "#f06292"
+    }
+  },
+  "todo-tree.general.statusBar": "top three",
+  "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.codeLens.enabled": false,
+  "gitlens.statusBar.enabled": false,
+  "gitlens.views.repositories.location": "gitlens",
+  "gitlens.views.compare.location": "gitlens",
+  "gitlens.views.search.location": "gitlens",
+  "gitlens.gitCommands.closeOnFocusOut": true,
 }
