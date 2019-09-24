@@ -55,24 +55,11 @@
     "node_modules"
   ],
   "gitProjectManager.searchInsideProjects": false,
-  "gitlens.advanced.messages": {
-    "suppressShowKeyBindingsNotice": true
-  },
   "gitlens.codeLens.enabled": false,
   "gitlens.currentLine.enabled": false,
   "gitlens.gitCommands.closeOnFocusOut": true,
-  "gitlens.hovers.currentLine.over": "line",
-  "gitlens.statusBar.command": "gitlens.toggleFileBlame",
   "gitlens.statusBar.enabled": false,
-  "gitlens.views.compare.files.layout": "tree",
-  "gitlens.views.compare.location": "gitlens",
-  "gitlens.views.fileHistory.enabled": true,
-  "gitlens.views.fileHistory.location": "gitlens",
-  "gitlens.views.lineHistory.enabled": true,
-  "gitlens.views.lineHistory.location": "gitlens",
   "gitlens.views.repositories.branches.layout": "list",
-  "gitlens.views.repositories.location": "gitlens",
-  "gitlens.views.search.location": "gitlens",
   "javascript.preferences.renameShorthandProperties": false,
   "local-history.path": "/Users/VincentBel/dev/dotfiles/.vscode/",
   "macros": {
