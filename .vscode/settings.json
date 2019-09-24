@@ -242,7 +242,7 @@
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.list.automaticKeyboardNavigation": false,
+  "workbench.list.horizontalScrolling": true,
   "workbench.settings.editor": "json",
   "workbench.settings.useSplitJSON": true,
-  "workbench.tree.horizontalScrolling": true
 }
