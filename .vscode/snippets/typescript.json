@@ -12,6 +12,17 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
+	"console1": {
+		"prefix": "con",
+		"body": "console.log('$1: ', $1)",
+		"description": "Log output to console"
+	},
+	"console2": {
+		"prefix": "log",
+		"body": "console.log('$1: ', $1)",
+		"description": "Log output to console"
+	},
+
 	"importNamed": {
 		"prefix": "imp",
 		"body": "import { ${2:name} } from '${1:module}'$0",

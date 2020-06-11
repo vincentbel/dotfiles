@@ -12,6 +12,16 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
+	"console1": {
+		"prefix": "con",
+		"body": "console.log('$1: ', $1)",
+		"description": "Log output to console"
+	},
+	"console2": {
+		"prefix": "log",
+		"body": "console.log('$1: ', $1)",
+		"description": "Log output to console"
+	},
 	"importNamed": {
 		"prefix": "imp",
 		"body": "import { ${2:name} } from '${1:module}'$0",
@@ -81,5 +91,84 @@
 		"prefix": "sdp",
 		"body": "static defaultProps = {\n\t$0\n}",
 		"description": "Creates empty defaultProps declaration"
+	},
+	"importReact": {
+		"prefix": "imr",
+		"body": "import * as React from 'react'$0",
+		"description": "import react"
+	},
+	// "importClassNames": {
+	// 	"prefix": "imc",
+	// 	"body": "import cx from 'classnames'$0",
+	// 	"description": "import classnames library"
+	// },
+	"importScssModulesFile": {
+		"prefix": "ims",
+		"body": "import styles from './$TM_FILENAME_BASE.module.scss'$0",
+		"description": "import scss modules file"
+	},
+	"reactClassComponent": {
+		"prefix": "rcc",
+		"body": [
+			"import * as React from 'react'\n",
+			"type ${1:$TM_FILENAME_BASE}Props = {}\n",
+			"export class ${1:$TM_FILENAME_BASE} extends React.Component<${1:$TM_FILENAME_BASE}Props> {",
+			"\trender() {",
+			"\t\treturn (",
+			"\t\t\t<div>",
+			"\t\t\t\t$0",
+			"\t\t\t</div>",
+			"\t\t)",
+			"\t}",
+			"}",
+		],
+		"description": "Create a React component class"
+	},
+	"reactClassPureComponent": {
+		"prefix": "rpcc",
+		"body": [
+			"import * as React from 'react'\n",
+			"type ${1:$TM_FILENAME_BASE}Props = {}\n",
+			"export class ${1:$TM_FILENAME_BASE} extends React.PureComponent<${1:$TM_FILENAME_BASE}Props> {",
+			"\trender() {",
+			"\t\treturn (",
+			"\t\t\t<div>",
+			"\t\t\t\t$0",
+			"\t\t\t</div>",
+			"\t\t)",
+			"\t}",
+			"}",
+		],
+		"description": "Creates a React pure component class"
+	},
+	// "reactFunctionComponent": {
+	// 	"prefix": "rfc",
+	// 	"body": [
+	// 		"import * as React from 'react'\n",
+	// 		"type ${1:$TM_FILENAME_BASE}Props = {}\n",
+	// 		"export const ${1:$TM_FILENAME_BASE}: React.FC<${1:$TM_FILENAME_BASE}Props> = () => {",
+	// 		"\treturn (",
+	// 		"\t\t<div>",
+	// 		"\t\t\t$0",
+	// 		"\t\t</div>",
+	// 		"\t)",
+	// 		"}",
+	// 	],
+	// 	"description": "Creates a stateless React component with PropTypes and ES6 module system"
+	// }
+	"reactFunctionComponent": {
+		"prefix": "rfc",
+		"body": [
+			"import * as React from 'react';\n",
+			"interface ${1:$TM_FILENAME_BASE}Props {}\n",
+			"export const ${1:$TM_FILENAME_BASE}: React.FC<${1:$TM_FILENAME_BASE}Props> = () => {",
+			"\treturn (",
+			"\t\t<div>",
+			"\t\t\t$0",
+			"\t\t</div>",
+			"\t);",
+			"};",
+		],
+		"description": "Creates a stateless React component with PropTypes and ES6 module system"
 	}
 }

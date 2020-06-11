@@ -13,6 +13,17 @@
 		"description": "Log output to console"
 	}
 */
+	"console1": {
+		"prefix": "con",
+		"body": "console.log('$1: ', $1)",
+		"description": "Log output to console"
+	},
+	"console2": {
+		"prefix": "log",
+		"body": "console.log('$1: ', $1)",
+		"description": "Log output to console"
+	},
+
 	"importNamed": {
 		"prefix": "imp",
 		"body": "import { ${2:name} } from '${1:module}'$0",
@@ -28,27 +39,21 @@
 		"body": "import * as ${2:alias} from '${1:module}'$0",
 		"description": "Namespace import"
 	},
-	"constructor": {
-		"prefix": "con",
-		"body": "constructor(${1:params}) {\n\t${0}\n}",
-		"description": "Constructor"
-	},
-
 
 	// React
 	"reactClassComponent": {
 		"prefix": "rcc",
-		"body": "import React, { Component } from 'react'\n\nexport class ${1:ComponentName} extends Component {\n\trender() {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t)\n\t}\n}",
+		"body": "import React, { Component } from 'react'\n\nexport class ${1:$TM_FILENAME_BASE} extends Component {\n\trender() {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t)\n\t}\n}",
 		"description": "Creates a React component class with ES6 module system"
 	},
 	"reactClassPureComponent": {
 		"prefix": "rcpc",
-		"body": "import React, { PureComponent } from 'react'\n\nexport class ${1:ComponentName} extends PureComponent {\n\trender() {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t)\n\t}\n}",
+		"body": "import React, { PureComponent } from 'react'\n\nexport class ${1:$TM_FILENAME_BASE} extends PureComponent {\n\trender() {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t)\n\t}\n}",
 		"description": "Creates a React component class with ES6 module system"
 	},
 	"reactFunctionComponent": {
 		"prefix": "rfc",
-		"body": "import React from 'react'\nimport PropTypes from 'prop-types'\n\nexport function ${1:ComponentName}() {\n\treturn (\n\t\t<div>\n\t\t\t\n\t\t</div>\n\t)\n}\n\n${1:ComponentName}.propTypes = {\n\t$0\n}",
+		"body": "import React from 'react'\nimport PropTypes from 'prop-types'\n\nexport function ${1:$TM_FILENAME_BASE}() {\n\treturn (\n\t\t<div>\n\t\t\t\n\t\t</div>\n\t)\n}\n\n${1:$TM_FILENAME_BASE}.propTypes = {\n\t$0\n}",
 		"description": "Creates a stateless React component with PropTypes and ES6 module system"
 	},
 	"componentWillMount": {
