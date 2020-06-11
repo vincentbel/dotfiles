@@ -12,20 +12,20 @@ brew upgrade
 brew install coreutils
 
 # proxy on terminal
-brew install proxychains-ng
+# brew install proxychains-ng
 
 # a code-searching tool similar to ack, but faster
-brew install the_silver_searcher
+brew install ripgrep
 
-brew install diff-so-fancy
-# use diff-so-fancy globally
-git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
+brew install git-delta
+git config --global core.pager "delta --plus-color=#012800 --minus-color=#340001 --theme='Sublime Snazzy'"
+git config --global interactive.difffilter "delta --color-only"
 
 brew install vim
-brew install macvim
+# brew install macvim
 brew install neovim
 
-brew install git-flow
+# brew install git-flow
 
 ############################################
 # Brew cask time!
@@ -40,7 +40,7 @@ brew cask install google-chrome
 brew cask install google-chrome-canary
 brew cask install firefox
 brew cask install google-backup-and-sync
-brew cask install rescuetime
+# brew cask install rescuetime
 brew cask install iina # video player
 # brew cask install dropbox
 # install from App Store
@@ -79,7 +79,7 @@ brew tap dteoh/sqa
 brew cask install slowquitapps # delay cmd+q
 defaults write com.dteoh.SlowQuitApps delay -int 700
 
-brew cask install shadowsocksx-ng # over the fucking wall
+# brew cask install shadowsocksx-ng # over the fucking wall
 
 
 
