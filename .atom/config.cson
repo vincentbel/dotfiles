@@ -61,6 +61,7 @@
       "vim-mode-clipboard-plus"
       "markdown-scroll-sync"
       "markdown-preview"
+      "platformio-ide-terminal"
     ]
     ignoredNames: [
       ".DS_Store"
