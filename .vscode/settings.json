@@ -1,20 +1,8 @@
 {
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.quickSuggestions": true,
     "editor.wordWrap": "on"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "amVim.smartRelativeLineNumbers": true,
   "breadcrumbs.enabled": false,
@@ -29,7 +17,8 @@
   "editor.fontSize": 14,
   "editor.formatOnPaste": false,
   "editor.formatOnSave": false,
-  "editor.gotoLocation.multiple": "gotoAndPeek",
+  "editor.gotoLocation.multipleDeclarations": "gotoAndPeek",
+  "editor.gotoLocation.multipleDefinitions": "gotoAndPeek",
   "editor.snippetSuggestions": "top",
   "editor.suggestSelection": "first",
   "editor.tabSize": 2,
@@ -38,48 +27,32 @@
   "explorer.confirmDragAndDrop": false,
   "files.autoSave": "onFocusChange",
   "files.defaultLanguage": "markdown",
-  "files.exclude": {
-    "**/*.scss.d.ts": true,
-    "**/.DS_Store": true,
-    "**/.git": true,
-    "**/.hg": true,
-    "**/.svn": true,
-    "**/CVS": true
-  },
   "files.insertFinalNewline": true,
   "git.autofetch": true,
-  "gitProjectManager.baseProjectsFolders": [
-    "/Users/VincentBel/dev/"
-  ],
-  "gitProjectManager.ignoredFolders": [
-    "node_modules"
-  ],
+  "gitProjectManager.baseProjectsFolders": ["/Users/VincentBel/dev/"],
+  "gitProjectManager.ignoredFolders": ["node_modules"],
   "gitProjectManager.searchInsideProjects": false,
   "gitlens.codeLens.enabled": false,
   "gitlens.currentLine.enabled": false,
   "gitlens.gitCommands.closeOnFocusOut": true,
   "gitlens.statusBar.enabled": false,
   "gitlens.views.repositories.branches.layout": "list",
+  "java.configuration.checkProjectSettingsExclusions": false,
   "javascript.preferences.renameShorthandProperties": false,
   "local-history.path": "/Users/VincentBel/dev/dotfiles/.vscode/",
   "macros": {
-    "commentAndCursorDown": [
-      "editor.action.commentLine",
-      "cursorDown"
-    ]
+    "commentAndCursorDown": ["editor.action.commentLine", "cursorDown"]
   },
   "material-icon-theme.folders.color": "#78909c",
   "material-icon-theme.folders.theme": "classic",
   "pasteImage.filePathConfirmInputBoxMode": "onlyName",
   "pasteImage.path": "${currentFileDir}/images",
   "pasteImage.showFilePathConfirmInputBox": true,
-  "prettier.printWidth": 80,
-  "prettier.semi": false,
-  "prettier.singleQuote": true,
-  "prettier.trailingComma": "es5",
   "python.formatting.provider": "yapf",
   "python.jediEnabled": false,
   "python.pythonPath": "/usr/local/bin/python3",
+  "scss.scannerExclude": ["**/.git", "**/bower_components"],
+  "search.enableSearchEditorPreview": true,
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.rendererType": "dom",
   "terminal.integrated.scrollback": 10000,
@@ -99,7 +72,7 @@
     }
   },
   "typescript.preferences.renameShorthandProperties": false,
-  "typescript.updateImportsOnFileMove.enabled": "prompt",
+  "typescript.updateImportsOnFileMove.enabled": "always",
   "versionlens.showVersionLensesAtStartup": false,
   "vim.easymotion": true,
   "vim.leader": " ",
@@ -200,7 +173,7 @@
   "vim.useSystemClipboard": true,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "window.title": "${activeEditorMedium}",
-  "window.zoomLevel": 0,
+  "window.zoomLevel": 1,
   "workbench.activityBar.visible": true,
   // https://github.com/Tyriar/vscode-snazzy
   "workbench.colorCustomizations": {
@@ -232,4 +205,10 @@
   "workbench.list.horizontalScrolling": true,
   "workbench.settings.editor": "json",
   "workbench.settings.useSplitJSON": true,
+  "markdown-pdf.executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+  "todo-tree.tree.showScanModeButton": false,
+  "tabnine.experimentalAutoImports": true,
+  "search.followSymlinks": false,
+  "cssModules.camelCase": true,
+  "eslint.migration.2_x": "off",
 }
