@@ -13,3 +13,6 @@ export PATH="$PATH:$HOME/.local/bin";
 
 # deno <https://deno.land>
 export PATH="/Users/VincentBel/.deno/bin:$PATH"
+
+# Yarn
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

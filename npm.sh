@@ -1,9 +1,7 @@
-npm i -g yarn
-npm i -g trash-cli
-npm i -g emoj
-npm i -g speed-test
-npm i -g fkill-cli
-npm i -g alfred-fkill
+yarn global add trash-cli
+yarn global add emoj
+yarn global add speed-test
+yarn global add fkill-cli
+yarn global add alfred-fkill
 
-npm i -g tldr
-npm i -g npm-check
+yarn global add tldr

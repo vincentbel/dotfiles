@@ -10,7 +10,7 @@ SAVEHIST=100000
 fpath=( "$HOME/.zfunctions" $fpath )
 
 # use antigen to manage plugins!
-source ~/.zsh/antigen/antigen.zsh
+source ~/.zsh/antigen.zsh
 
 # use antigen init to improve startup
 # see more at <https://github.com/zsh-users/antigen/blob/develop/CHANGELOG.md#110---2016-09-10>

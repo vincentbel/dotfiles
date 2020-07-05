@@ -27,12 +27,23 @@ brew install neovim
 
 # brew install git-flow
 
+# Node version manager
+# https://github.com/Schniz/fnm
+brew install Schniz/tap/fnm
+
+fnm install 12
+
+# install global npm dependencies
+./npm.sh
+
+brew install navi
+
 ############################################
 # Brew cask time!
 ############################################
 
-brew install caskroom/cask/brew-cask
-brew tap caskroom/versions
+brew install homebrew/cask-cask
+brew tap homebrew/cask-versions
 
 
 # daily
@@ -46,12 +57,13 @@ brew cask install iina # video player
 # install from App Store
 # brew cask install evernote
 # brew cask install neteasemusic
+brew cask install sogouinput
 
 # dev
 brew cask install iterm2
 # brew cask install hyper
-brew cask install alfred
-brew cask install dash
+# brew cask install alfred
+# brew cask install dash
 brew cask install atom
 brew cask install visual-studio-code
 brew cask install sublime-text
@@ -68,12 +80,15 @@ brew cask install qlcolorcode
 brew cask install qlstephen
 brew cask install qlmarkdown
 brew cask install quicklook-json
-brew cask install betterzipql
+brew cask install betterzip
+brew cask install qlimagesize
+brew cask install webpquicklook
+
 
 # tools
 brew cask install imageoptim # compress image
 brew cask install the-unarchiver # addtional unzipper for .7z .rar
-brew cask install keycastr # keystroke visualizer
+# brew cask install keycastr # keystroke visualizer
 # brew cask install karabiner # custom key binding
 brew tap dteoh/sqa
 brew cask install slowquitapps # delay cmd+q
