@@ -1,4 +1,7 @@
 {
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.quickSuggestions": true,
@@ -29,7 +32,7 @@
   "files.defaultLanguage": "markdown",
   "files.insertFinalNewline": true,
   "git.autofetch": true,
-  "gitProjectManager.baseProjectsFolders": ["/Users/VincentBel/dev/"],
+  "gitProjectManager.baseProjectsFolders": ["~/dev/"],
   "gitProjectManager.ignoredFolders": ["node_modules"],
   "gitProjectManager.searchInsideProjects": false,
   "gitlens.codeLens.enabled": false,
@@ -37,12 +40,14 @@
   "gitlens.gitCommands.closeOnFocusOut": true,
   "gitlens.statusBar.enabled": false,
   "gitlens.views.repositories.branches.layout": "list",
+  "gitlens.views.repositories.files.layout": "tree",
   "java.configuration.checkProjectSettingsExclusions": false,
-  "javascript.preferences.renameShorthandProperties": false,
-  "local-history.path": "/Users/VincentBel/dev/dotfiles/.vscode/",
+  "javascript.preferences.useAliasesForRenames": false,
+  "local-history.path": "~/dev/dotfiles/.vscode/",
   "macros": {
     "commentAndCursorDown": ["editor.action.commentLine", "cursorDown"]
   },
+  "markdown-pdf.executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
   "material-icon-theme.folders.color": "#78909c",
   "material-icon-theme.folders.theme": "classic",
   "pasteImage.filePathConfirmInputBoxMode": "onlyName",
@@ -50,9 +55,10 @@
   "pasteImage.showFilePathConfirmInputBox": true,
   "python.formatting.provider": "yapf",
   "python.jediEnabled": false,
-  "python.pythonPath": "/usr/local/bin/python3",
+  "python.languageServer": "Microsoft",
+  "python.pythonPath": "/usr/bin/python3",
   "scss.scannerExclude": ["**/.git", "**/bower_components"],
-  "search.enableSearchEditorPreview": true,
+  "search.followSymlinks": false,
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.rendererType": "dom",
   "terminal.integrated.scrollback": 10000,
@@ -71,9 +77,9 @@
       "opacity": 90
     }
   },
-  "typescript.preferences.renameShorthandProperties": false,
+  "todo-tree.tree.showScanModeButton": false,
+  "typescript.preferences.useAliasesForRenames": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "versionlens.showVersionLensesAtStartup": false,
   "vim.easymotion": true,
   "vim.leader": " ",
   "vim.otherModesKeyBindingsNonRecursive": [
@@ -173,7 +179,6 @@
   "vim.useSystemClipboard": true,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "window.title": "${activeEditorMedium}",
-  "window.zoomLevel": 1,
   "workbench.activityBar.visible": true,
   // https://github.com/Tyriar/vscode-snazzy
   "workbench.colorCustomizations": {
@@ -205,10 +210,4 @@
   "workbench.list.horizontalScrolling": true,
   "workbench.settings.editor": "json",
   "workbench.settings.useSplitJSON": true,
-  "markdown-pdf.executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
-  "todo-tree.tree.showScanModeButton": false,
-  "tabnine.experimentalAutoImports": true,
-  "search.followSymlinks": false,
-  "cssModules.camelCase": true,
-  "eslint.migration.2_x": "off",
 }
