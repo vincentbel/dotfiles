@@ -74,6 +74,13 @@ brew cask install sketch
 # brew cask install docker
 # brew cask install jetbrains-toolbox
 
+# https://github.com/egoist/devdocs-desktop
+brew cask install devdocs
+
+# https://github.com/federico-terzi/espanso
+brew tap federico-terzi/espanso
+brew install espanso
+
 # quick look plugin
 # <https://github.com/sindresorhus/quick-look-plugins>
 brew cask install qlcolorcode
