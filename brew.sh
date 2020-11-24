@@ -17,6 +17,10 @@ brew install coreutils
 # a code-searching tool similar to ack, but faster
 brew install ripgrep
 
+# A cat(1) clone with wings.
+# https://github.com/sharkdp/bat
+brew install bat
+
 brew install git-delta
 git config --global core.pager "delta --plus-color=#012800 --minus-color=#340001 --theme='Sublime Snazzy'"
 git config --global interactive.difffilter "delta --color-only"
