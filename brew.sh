@@ -84,6 +84,7 @@ brew cask install devdocs
 # https://github.com/federico-terzi/espanso
 brew tap federico-terzi/espanso
 brew install espanso
+espanso install all-emojis
 
 # quick look plugin
 # <https://github.com/sindresorhus/quick-look-plugins>
