@@ -20,8 +20,7 @@ antigen bundle zsh-users/zsh-autosuggestions
 # use pure,
 # https://github.com/sindresorhus/pure#antigen
 antigen bundle mafredri/zsh-async
-antigen bundle sindresorhus/pure
+antigen bundle sindresorhus/pure --branch=main
 
 # tell antigen that you're done.
 antigen apply
- 
