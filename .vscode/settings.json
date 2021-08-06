@@ -1,5 +1,17 @@
 {
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[markdown]": {
@@ -7,62 +19,111 @@
     "editor.quickSuggestions": true,
     "editor.wordWrap": "on"
   },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "octref.vetur"
+  },
   "amVim.smartRelativeLineNumbers": true,
+  "amVim.useSystemClipboard": true,
   "breadcrumbs.enabled": false,
   "cSpell.showStatus": false,
   "cSpell.userWords": [
+    "adcode",
+    "alife",
+    "amap",
     "frontmatter",
     "kubernetes",
     "lifecycle",
     "nginx",
     "polyfill"
   ],
-  "editor.fontSize": 14,
+  "cssVariables.lookupFiles": [
+    "node_modules/@alife/dt-oui-style/es/theme/default.css"
+  ],
+  "editor.fontFamily": "'Comic Mono', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 15,
   "editor.formatOnPaste": false,
   "editor.formatOnSave": false,
   "editor.gotoLocation.multipleDeclarations": "gotoAndPeek",
   "editor.gotoLocation.multipleDefinitions": "gotoAndPeek",
+  "editor.inlineSuggest.enabled": true,
   "editor.snippetSuggestions": "top",
+  "editor.suggest.preview": true,
   "editor.suggestSelection": "first",
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
+  "eslint.migration.2_x": "off",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
+  "extensions.autoUpdate": "onlyEnabledExtensions",
   "files.autoSave": "onFocusChange",
   "files.defaultLanguage": "markdown",
   "files.insertFinalNewline": true,
   "git.autofetch": true,
-  "gitProjectManager.baseProjectsFolders": ["~/dev/"],
-  "gitProjectManager.ignoredFolders": ["node_modules"],
-  "gitProjectManager.searchInsideProjects": false,
+  "git.autoStash": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "gitlens.advanced.fileHistoryFollowsRenames": true,
+  "gitlens.blame.dateFormat": "YYYY-MM-DD",
+  "gitlens.blame.format": "${author|8} ${message|40} ${date|10-}",
   "gitlens.codeLens.enabled": false,
   "gitlens.currentLine.enabled": false,
+  "gitlens.defaultDateFormat": "YYYY-MM-DD HH:mm:ss",
+  "gitlens.defaultDateShortFormat": "YYYY-MM-DD",
+  "gitlens.fileAnnotations.command": "blame",
   "gitlens.gitCommands.closeOnFocusOut": true,
+  "gitlens.hovers.currentLine.over": "line",
   "gitlens.statusBar.enabled": false,
   "gitlens.views.repositories.branches.layout": "list",
   "gitlens.views.repositories.files.layout": "tree",
-  "java.configuration.checkProjectSettingsExclusions": false,
+  "html-css-class-completion.excludeGlobPattern": "**/node_modules",
+  "html-css-class-completion.includeGlobPattern": "**/*.{css,scss}",
   "javascript.preferences.useAliasesForRenames": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
   "local-history.path": "~/dev/dotfiles/.vscode/",
   "macros": {
-    "commentAndCursorDown": ["editor.action.commentLine", "cursorDown"]
+    "commentAndCursorDown": [
+      "editor.action.commentLine",
+      "cursorDown"
+    ]
   },
-  "markdown-pdf.executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
   "material-icon-theme.folders.color": "#78909c",
   "material-icon-theme.folders.theme": "classic",
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
   "pasteImage.filePathConfirmInputBoxMode": "onlyName",
   "pasteImage.path": "${currentFileDir}/images",
   "pasteImage.showFilePathConfirmInputBox": true,
+  "polacode.transparentBackground": true,
+  "prettier.singleQuote": true,
+  "python.defaultInterpreterPath": "/usr/bin/python3",
   "python.formatting.provider": "yapf",
-  "python.jediEnabled": false,
-  "python.languageServer": "Microsoft",
+  "python.languageServer": "Pylance",
   "python.pythonPath": "/usr/bin/python3",
-  "scss.scannerExclude": ["**/.git", "**/bower_components"],
+  "scm.defaultViewMode": "tree",
   "search.followSymlinks": false,
+  "search.searchEditor.defaultNumberOfContextLines": 2,
   "terminal.external.osxExec": "iTerm.app",
-  "terminal.integrated.rendererType": "dom",
   "terminal.integrated.scrollback": 10000,
+  "terminal.integrated.tabs.enabled": true,
+  "terminal.integrated.tabs.location": "left",
   "todo-tree.general.statusBar": "top three",
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]"
+  ],
   "todo-tree.highlights.customHighlight": {
     "FIXME": {
       "background": "#f06292",
@@ -77,108 +138,154 @@
       "opacity": 90
     }
   },
-  "todo-tree.tree.showScanModeButton": false,
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+  "typescript.disableAutomaticTypeAcquisition": true,
   "typescript.preferences.useAliasesForRenames": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "vim.easymotion": true,
   "vim.leader": " ",
   "vim.otherModesKeyBindingsNonRecursive": [
     {
-      "before": ["j"],
-      "after": ["g", "j"]
+      "after": [
+        "g",
+        "j"
+      ],
+      "before": [
+        "j"
+      ]
     },
     {
-      "before": ["k"],
-      "after": ["g", "k"]
+      "after": [
+        "g",
+        "k"
+      ],
+      "before": [
+        "k"
+      ]
     },
     {
-      "before": ["<leader>", "g", "o"],
       "after": [],
+      "before": [
+        "<leader>",
+        "g",
+        "o"
+      ],
       "commands": [
         {
-          "command": "extension.openInGitHub",
-          "args": []
+          "args": [],
+          "command": "extension.openInGitHub"
         }
       ]
     },
     {
-      "before": ["<leader>", "g", "d"],
       "after": [],
+      "before": [
+        "<leader>",
+        "g",
+        "d"
+      ],
       "commands": [
         {
-          "command": "git.openChange",
-          "args": []
+          "args": [],
+          "command": "git.openChange"
         }
       ]
     },
     {
-      "before": ["<leader>", "l", "h"],
       "after": [],
+      "before": [
+        "<leader>",
+        "l",
+        "h"
+      ],
       "commands": [
         {
-          "command": "local-history.compareToActive",
-          "args": []
+          "args": [],
+          "command": "local-history.compareToActive"
         }
       ]
     },
     {
-      "before": ["<leader>", "f", "d"],
       "after": [],
+      "before": [
+        "<leader>",
+        "f",
+        "d"
+      ],
       "commands": [
         {
-          "command": "editor.action.formatDocument",
-          "args": []
+          "args": [],
+          "command": "editor.action.formatDocument"
         }
       ]
     },
     {
-      "before": ["<leader>", "f", "s"],
       "after": [],
+      "before": [
+        "<leader>",
+        "f",
+        "s"
+      ],
       "commands": [
         {
-          "command": "editor.action.formatSelection",
-          "args": []
+          "args": [],
+          "command": "editor.action.formatSelection"
         }
       ]
     },
     {
+      "after": [],
       // lint next
-      "before": ["<leader>", "l", "n"],
-      "after": [],
+      "before": [
+        "<leader>",
+        "l",
+        "n"
+      ],
       "commands": [
         {
-          "command": "editor.action.marker.next",
-          "args": []
+          "args": [],
+          "command": "editor.action.marker.next"
         }
       ]
     },
     {
+      "after": [],
       // rename symbol
-      "before": ["<leader>", "r", "s"],
-      "after": [],
+      "before": [
+        "<leader>",
+        "r",
+        "s"
+      ],
       "commands": [
         {
-          "command": "editor.action.rename",
-          "args": []
+          "args": [],
+          "command": "editor.action.rename"
         }
       ]
     },
     {
-      // open markdown preview
-      "before": ["<leader>", "m", "p"],
       "after": [],
+      // open markdown preview
+      "before": [
+        "<leader>",
+        "m",
+        "p"
+      ],
       "commands": [
         {
-          "command": "markdown.showPreviewToSide",
-          "args": []
+          "args": [],
+          "command": "markdown.showPreviewToSide"
         }
       ]
     }
   ],
   "vim.overrideCopy": false,
   "vim.useSystemClipboard": true,
+  "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "window.title": "${activeEditorMedium}",
+  "window.title": "${rootName}${separator}${activeEditorMedium}",
+  "window.titleSeparator": " —— ",
+  "window.zoomLevel": 1,
   "workbench.activityBar.visible": true,
   // https://github.com/Tyriar/vscode-snazzy
   "workbench.colorCustomizations": {
@@ -204,10 +311,15 @@
     "terminal.selectionBackground": "#ffdb1081"
   },
   "workbench.colorTheme": "One Dark Pro",
+  "workbench.editor.decorations.colors": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
   "workbench.iconTheme": "material-icon-theme",
   "workbench.list.automaticKeyboardNavigation": false,
   "workbench.list.horizontalScrolling": true,
   "workbench.settings.editor": "json",
   "workbench.settings.useSplitJSON": true,
+  "zenMode.fullScreen": false
 }
