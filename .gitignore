@@ -1,4 +1,6 @@
 .DS_Store
+.venv
+.vscode/sync/
 
 # vim
 .vim/.netrwhist
