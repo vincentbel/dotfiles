@@ -63,7 +63,7 @@ source ~/.functions
 
 # fnm: https://github.com/Schniz/fnm
 # `--multi` is for the multishell support
-eval "$(fnm env --multi)"
+eval "$(fnm env)"
 
 # https://github.com/denisidoro/navi
 source <(navi widget zsh)
