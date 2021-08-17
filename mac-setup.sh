@@ -2,7 +2,7 @@
 ./backup.sh
 
 # set up symlink
-./symlinks.sh
+./symlink.sh
 
 # make dir if needed
 mkdir -p ~/.zsh
