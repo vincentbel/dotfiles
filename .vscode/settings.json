@@ -111,6 +111,7 @@
   "search.followSymlinks": false,
   "search.searchEditor.defaultNumberOfContextLines": 2,
   "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.defaultProfile.linux": "zsh",
   "terminal.integrated.scrollback": 10000,
   "terminal.integrated.tabs.enabled": true,
   "terminal.integrated.tabs.location": "left",
