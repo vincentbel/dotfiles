@@ -79,6 +79,16 @@
     "key": "shift+cmd+e",
     "command": "editor.action.marker.prev"
   },
+  {
+    "key": "alt+p",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+n",
+    "command": "editor.action.moveLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
 
   // =========== Explorer ===========
   {
