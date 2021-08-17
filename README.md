@@ -19,8 +19,7 @@
 
 1. fork this repo
 2. clone that repo
-3. read and run [`setup.sh`](./setup.sh)
-4. read and run [`symlink.sh`](./symlink.sh)
+3. read and run [`mac-setup.sh`](./mac-setup.sh)
 
 ## Thanks
 
