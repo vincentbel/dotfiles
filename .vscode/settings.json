@@ -64,8 +64,8 @@
   "files.autoSave": "onFocusChange",
   "files.defaultLanguage": "markdown",
   "files.insertFinalNewline": true,
-  "git.autofetch": true,
   "git.autoStash": true,
+  "git.autofetch": true,
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
   "gitlens.advanced.fileHistoryFollowsRenames": true,
@@ -288,8 +288,15 @@
   "window.titleSeparator": " —— ",
   "window.zoomLevel": 1,
   "workbench.activityBar.visible": true,
-  // https://github.com/Tyriar/vscode-snazzy
   "workbench.colorCustomizations": {
+    "editor.findMatchBackground": "#ff953271",
+    "editor.findMatchBorder": "#ff9632",
+    "editor.findMatchHighlightBackground": "#ffff0059",
+    "editor.findMatchHighlightBorder": "#ffff0096",
+    "minimapSlider.activeBackground": "#ffffff62",
+    "minimapSlider.background": "#ffffff2b",
+    "minimapSlider.hoverBackground": "#ffffff58",
+    // https://github.com/Tyriar/vscode-snazzy
     // The background is optional
     // "terminal.background": "#282a36",
     "terminal.ansiBlack": "#282a36",
@@ -311,7 +318,7 @@
     "terminal.foreground": "#eff0eb",
     "terminal.selectionBackground": "#ffdb1081"
   },
-  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorTheme": "GitHub Dark Dimmed",
   "workbench.editor.decorations.colors": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.editorAssociations": {
