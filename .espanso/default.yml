@@ -31,3 +31,13 @@ matches:
           args:
             - python
             - "%CONFIG%/scripts/week-info.py"
+  
+  - trigger: ":db"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: script
+        params:
+          args:
+            - python
+            - "%CONFIG%/scripts/daily-branch.py"
