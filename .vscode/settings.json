@@ -36,6 +36,7 @@
     "adcode",
     "alife",
     "amap",
+    "databank",
     "frontmatter",
     "kubernetes",
     "lifecycle",
@@ -45,6 +46,7 @@
   "cssVariables.lookupFiles": [
     "node_modules/@alife/dt-oui-style/es/theme/default.css"
   ],
+  "editor.bracketPairColorization.enabled": true,
   "editor.fontFamily": "'Comic Mono', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 15,
   "editor.formatOnPaste": false,
@@ -62,7 +64,6 @@
   "explorer.confirmDragAndDrop": false,
   "extensions.autoUpdate": "onlyEnabledExtensions",
   "files.autoSave": "onFocusChange",
-  "files.defaultLanguage": "markdown",
   "files.insertFinalNewline": true,
   "git.autoStash": true,
   "git.autofetch": true,
@@ -87,10 +88,7 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "local-history.path": "~/dev/dotfiles/.vscode/",
   "macros": {
-    "commentAndCursorDown": [
-      "editor.action.commentLine",
-      "cursorDown"
-    ]
+    "commentAndCursorDown": ["editor.action.commentLine", "cursorDown"]
   },
   "material-icon-theme.folders.color": "#78909c",
   "material-icon-theme.folders.theme": "classic",
@@ -140,6 +138,7 @@
     }
   },
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+  "todo-tree.regex.regexCaseSensitive": false,
   "typescript.disableAutomaticTypeAcquisition": true,
   "typescript.preferences.useAliasesForRenames": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -147,30 +146,16 @@
   "vim.leader": " ",
   "vim.otherModesKeyBindingsNonRecursive": [
     {
-      "after": [
-        "g",
-        "j"
-      ],
-      "before": [
-        "j"
-      ]
+      "after": ["g", "j"],
+      "before": ["j"]
     },
     {
-      "after": [
-        "g",
-        "k"
-      ],
-      "before": [
-        "k"
-      ]
+      "after": ["g", "k"],
+      "before": ["k"]
     },
     {
       "after": [],
-      "before": [
-        "<leader>",
-        "g",
-        "o"
-      ],
+      "before": ["<leader>", "g", "o"],
       "commands": [
         {
           "args": [],
@@ -180,11 +165,7 @@
     },
     {
       "after": [],
-      "before": [
-        "<leader>",
-        "g",
-        "d"
-      ],
+      "before": ["<leader>", "g", "d"],
       "commands": [
         {
           "args": [],
@@ -194,11 +175,7 @@
     },
     {
       "after": [],
-      "before": [
-        "<leader>",
-        "l",
-        "h"
-      ],
+      "before": ["<leader>", "l", "h"],
       "commands": [
         {
           "args": [],
@@ -208,11 +185,7 @@
     },
     {
       "after": [],
-      "before": [
-        "<leader>",
-        "f",
-        "d"
-      ],
+      "before": ["<leader>", "f", "d"],
       "commands": [
         {
           "args": [],
@@ -222,11 +195,7 @@
     },
     {
       "after": [],
-      "before": [
-        "<leader>",
-        "f",
-        "s"
-      ],
+      "before": ["<leader>", "f", "s"],
       "commands": [
         {
           "args": [],
@@ -237,11 +206,7 @@
     {
       "after": [],
       // lint next
-      "before": [
-        "<leader>",
-        "l",
-        "n"
-      ],
+      "before": ["<leader>", "l", "n"],
       "commands": [
         {
           "args": [],
@@ -252,11 +217,7 @@
     {
       "after": [],
       // rename symbol
-      "before": [
-        "<leader>",
-        "r",
-        "s"
-      ],
+      "before": ["<leader>", "r", "s"],
       "commands": [
         {
           "args": [],
@@ -267,11 +228,7 @@
     {
       "after": [],
       // open markdown preview
-      "before": [
-        "<leader>",
-        "m",
-        "p"
-      ],
+      "before": ["<leader>", "m", "p"],
       "commands": [
         {
           "args": [],
