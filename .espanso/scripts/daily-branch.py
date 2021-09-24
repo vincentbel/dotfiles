@@ -2,7 +2,7 @@ import datetime
 
 def main():
     today = datetime.date.today()
-    result = "daily/{}".format(today.strftime("%y.%m.%d"))
+    result = "daily/{}01".format(today.strftime("%y.%m.%d"))
     print(result)
 
 
