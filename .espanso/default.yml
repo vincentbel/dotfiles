@@ -10,9 +10,9 @@ secure_input_notification: false # Disable the notifications
 # Matches are the substitution rules, when you type the "trigger" string
 # it gets replaced by the "replace" string.
 matches:
-  - trigger: [":->", ":ra", ":arr"]
+  - triggers: [":->", ":ra", ":arr"]
     replace: "→"
-  - trigger: [":<-", ":la"]
+  - triggers: [":<-", ":la"]
     replace: "←"
 
   # Dates
