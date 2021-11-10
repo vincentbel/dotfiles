@@ -1,8 +1,6 @@
 # load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
-local b="antigen-bundle"
-
 antigen bundle git
 
 # tracks your most used directories, based on 'frecency'.
@@ -21,6 +19,9 @@ antigen bundle zsh-users/zsh-autosuggestions
 # https://github.com/sindresorhus/pure#antigen
 antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure --branch=main
+
+# https://github.com/romkatv/zsh-defer
+antigen bundle romkatv/zsh-defer
 
 # tell antigen that you're done.
 antigen apply
