@@ -32,3 +32,6 @@ zsh
 
 # GitHub markdown TOC
 wget https://raw.githubusercontent.com/ekalinin/github-markdown-toc/master/gh-md-toc -o .gh-md-toc
+
+# installl jabba <https://github.com/shyiko/jabba>
+curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash -s -- --skip-rc && . ~/.jabba/jabba.sh

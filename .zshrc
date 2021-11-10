@@ -61,9 +61,6 @@ source ~/.functions
 # Load RVM into a shell session *as a function*
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-# jenv init
-# eval "$(jenv init -)"
-
 # fnm: https://github.com/Schniz/fnm
 if [[ -x "$(command -v fnm)" ]]; then
   eval "$(fnm env)"
@@ -81,3 +78,10 @@ elif  [[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]]; then
   # Debian fzf: <https://github.com/junegunn/fzf/issues/1385#issuecomment-627095222>
   source /usr/share/doc/fzf/examples/key-bindings.zsh
 fi
+
+# java verson manager <https://github.com/shyiko/jabba>
+if [[ -f ~/.jabba/jabba.sh ]]; then
+  zsh-defer source ~/.jabba/jabba.sh
+fi
+
+# zprof
