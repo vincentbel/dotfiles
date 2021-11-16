@@ -15,6 +15,13 @@ matches:
   - triggers: [":<-", ":la"]
     replace: "←"
 
+  - trigger: ":yes"
+    replace: "✅"
+  - trigger: ":no"
+    replace: "🛑"
+  - trigger: ":some"
+    replace: "🟡"
+
   # Dates
   - trigger: ":date"
     replace: "{{mydate}}"
