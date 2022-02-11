@@ -59,7 +59,14 @@
   "editor.suggest.preview": true,
   "editor.suggestSelection": "first",
   "editor.tabSize": 2,
+  "editor.unicodeHighlight.allowedLocales": {
+    "zh-hans": true
+  },
   "editor.wordWrap": "on",
+  "errorLens.gutterIconsEnabled": true,
+  "errorLens.gutterIconSet": "defaultOutline",
+  "errorLens.gutterIconSize": "70%",
+  "errorLens.enabledDiagnosticLevels": ["error", "warning"],
   "eslint.migration.2_x": "off",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
@@ -141,6 +148,7 @@
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
   "todo-tree.regex.regexCaseSensitive": false,
   "typescript.disableAutomaticTypeAcquisition": true,
+  "typescript.inlayHints.parameterNames.enabled": "literals",
   "typescript.preferences.useAliasesForRenames": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "vim.easymotion": true,
@@ -245,8 +253,9 @@
   "window.title": "${rootName}${separator}${activeEditorMedium}",
   "window.titleSeparator": " —— ",
   "window.zoomLevel": 1,
-  "workbench.activityBar.visible": true,
   "workbench.colorCustomizations": {
+    "diffEditor.insertedTextBackground": "#1fa9124a",
+    "diffEditor.removedTextBackground": "#ff00003e",
     "editor.findMatchBackground": "#ff953271",
     "editor.findMatchBorder": "#ff9632",
     "editor.findMatchHighlightBackground": "#ffff0059",
@@ -282,10 +291,11 @@
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
   },
+  "workbench.experimental.layoutControl.enabled": true,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.list.automaticKeyboardNavigation": false,
   "workbench.list.horizontalScrolling": true,
   "workbench.settings.editor": "json",
   "workbench.settings.useSplitJSON": true,
-  "zenMode.fullScreen": false
+  "zenMode.fullScreen": false,
 }
