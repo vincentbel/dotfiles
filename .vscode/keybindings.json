@@ -116,6 +116,38 @@
     "command": "-renameFile",
     "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
   },
+  {
+    "key": "cmd+[",
+    "command": "-editor.action.outdentLines",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+[",
+    "command": "-markdown.extension.onOutdentLines",
+    "when": "editorTextFocus && !suggestWidgetVisible && editorLangId == 'markdown'"
+  },
+  {
+    "key": "cmd+b",
+    "command": "-workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "cmd+[",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "cmd+]",
+    "command": "-markdown.extension.onIndentLines",
+    "when": "editorTextFocus && !suggestWidgetVisible && editorLangId == 'markdown'"
+  },
+  {
+    "key": "cmd+]",
+    "command": "-editor.action.indentLines",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+]",
+    "command": "workbench.action.toggleAuxiliaryBar"
+  },
 
   // =========== Terminal ===========
   {
@@ -139,18 +171,8 @@
     "when": "terminalFocus"
   },
   {
-    "key": "cmd+]",
-    "command": "workbench.action.terminal.focusNextPane",
-    "when": "terminalFocus"
-  },
-  {
     "key": "alt+cmd+right",
     "command": "-workbench.action.terminal.focusNextPane",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "cmd+[",
-    "command": "workbench.action.terminal.focusPreviousPane",
     "when": "terminalFocus"
   },
   {
@@ -190,10 +212,6 @@
     "command": "workbench.action.gotoSymbol"
   },
   {
-    "key": "shift+cmd+o",
-    "command": "-workbench.action.gotoSymbol"
-  },
-  {
     "key": "cmd+right",
     "command": "-extension.vim_cmd+right",
     "when": "editorTextFocus && vim.active && vim.use<D-right> && !inDebugRepl && vim.mode != 'Insert'"
@@ -226,5 +244,5 @@
   {
     "key": "cmd+r cmd+p",
     "command": "editor.action.referenceSearch.trigger"
-  },
+  }
 ]
