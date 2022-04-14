@@ -15,6 +15,10 @@ matches:
   - triggers: [":<-", "<--", ":la"]
     replace: "←"
 
+  # middle dot: <https://en.wikipedia.org/wiki/Interpunct>
+  - trigger: ":mdot"
+    replace: "·"
+
   - trigger: ":yes"
     replace: "✅"
   - trigger: ":no"
