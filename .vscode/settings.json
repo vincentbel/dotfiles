@@ -1,4 +1,7 @@
 {
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -9,15 +12,25 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[less]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.quickSuggestions": true,
+    "editor.quickSuggestions": {
+      "comments": "on",
+      "other": "on",
+      "strings": "on"
+    },
     "editor.wordWrap": "on"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -60,19 +73,24 @@
   "editor.suggestSelection": "first",
   "editor.tabSize": 2,
   "editor.unicodeHighlight.allowedLocales": {
-    "zh-hans": true
+    "zh-hans": true,
+    "zh-hant": true
   },
   "editor.wordWrap": "on",
-  "errorLens.gutterIconsEnabled": true,
+  "errorLens.enabledDiagnosticLevels": [
+    "error",
+    "warning"
+  ],
   "errorLens.gutterIconSet": "defaultOutline",
   "errorLens.gutterIconSize": "70%",
-  "errorLens.enabledDiagnosticLevels": ["error", "warning"],
+  "errorLens.gutterIconsEnabled": true,
   "eslint.migration.2_x": "off",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "extensions.autoUpdate": "onlyEnabledExtensions",
   "files.autoSave": "onFocusChange",
   "files.insertFinalNewline": true,
+  "git.allowNoVerifyCommit": true,
   "git.autoStash": true,
   "git.autofetch": true,
   "git.confirmSync": false,
@@ -119,8 +137,7 @@
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.defaultProfile.linux": "zsh",
   "terminal.integrated.scrollback": 10000,
-  "terminal.integrated.tabs.enabled": true,
-  "terminal.integrated.tabs.location": "left",
+  "terminal.integrated.tabs.enabled": false,
   "todo-tree.general.statusBar": "top three",
   "todo-tree.general.tags": [
     "BUG",
@@ -288,11 +305,14 @@
   "workbench.colorTheme": "GitHub Dark Dimmed",
   "workbench.editor.decorations.colors": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.editor.historyBasedLanguageDetection": true,
+  "workbench.editor.navigationScope": "editor",
+  "workbench.editor.preferHistoryBasedLanguageDetection": true,
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
   },
-  "workbench.experimental.layoutControl.enabled": true,
   "workbench.iconTheme": "material-icon-theme",
+  "workbench.layoutControl.enabled": false,
   "workbench.list.automaticKeyboardNavigation": false,
   "workbench.list.horizontalScrolling": true,
   "workbench.settings.editor": "json",
