@@ -63,7 +63,7 @@ source ~/.functions
 
 # fnm: https://github.com/Schniz/fnm
 if [[ -x "$(command -v fnm)" ]]; then
-  eval "$(fnm env)"
+  eval "$(fnm env --use-on-cd)"
 fi
 
 # https://github.com/denisidoro/navi
