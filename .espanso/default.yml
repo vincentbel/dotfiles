@@ -10,24 +10,24 @@ secure_input_notification: false # Disable the notifications
 # Matches are the substitution rules, when you type the "trigger" string
 # it gets replaced by the "replace" string.
 matches:
-  - triggers: [":->", "->>", ":ra", ":arr"]
+  - triggers: [":-> ", "->>"]
     replace: "→"
-  - triggers: [":<-", "<--", ":la"]
+  - triggers: [":<- ", "<--"]
     replace: "←"
 
   # middle dot: <https://en.wikipedia.org/wiki/Interpunct>
-  - trigger: ":mdot"
+  - trigger: ":mdot "
     replace: "·"
 
-  - trigger: ":yes"
+  - trigger: ":yes "
     replace: "✅"
-  - trigger: ":no"
+  - trigger: ":no "
     replace: "🛑"
-  - trigger: ":some"
+  - trigger: ":some "
     replace: "🟡"
 
   # Dates
-  - trigger: ":date"
+  - trigger: ":date "
     replace: "{{mydate}}"
     vars:
       - name: mydate
@@ -35,7 +35,7 @@ matches:
         params:
           format: "%Y-%m-%d"
 
-  - trigger: ":week"
+  - trigger: ":week "
     replace: "{{output}}"
     vars:
       - name: output
@@ -44,8 +44,8 @@ matches:
           args:
             - python
             - "%CONFIG%/scripts/week-info.py"
-  
-  - trigger: ":db"
+
+  - trigger: ":db "
     replace: "{{output}}"
     vars:
       - name: output
