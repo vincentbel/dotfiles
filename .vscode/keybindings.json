@@ -205,12 +205,32 @@
     "command": "workbench.action.terminal.focusAtIndex5",
     "when": "terminalFocus"
   },
+  {
+    "key": "ctrl+r",
+    "command": "workbench.action.terminal.runRecentCommand",
+    "when": "terminalFocus"
+  },
+  // Allow ctrl+r again to go to the next command in the quick pick
+  {
+    "key": "ctrl+r",
+    "command": "workbench.action.quickOpenNavigateNextInViewPicker",
+    "when": "inQuickOpen && inTerminalRunCommandPicker"
+  },
+  // Fallback to the shell's native ctrl+r
+  {
+    "key": "ctrl+alt+r",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": "\u0012"/*^R*/ },
+    "when": "terminalFocus"
+  },
+  // Have ctrl+c close the quick pick
+  {
+    "key": "ctrl+c",
+    "command": "workbench.action.closeQuickOpen",
+    "when": "inQuickOpen && inTerminalRunCommandPicker"
+  },
 
   // =========== Misc ===========
-  {
-    "key": "cmd+t",
-    "command": "workbench.action.gotoSymbol"
-  },
   {
     "key": "cmd+right",
     "command": "-extension.vim_cmd+right",
