@@ -84,4 +84,8 @@ if [[ -f ~/.jabba/jabba.sh ]]; then
   zsh-defer source ~/.jabba/jabba.sh
 fi
 
+# local env
+if [[ -f ~/.env.local ]]; then
+  source ~/.env.local
+fi
 # zprof
