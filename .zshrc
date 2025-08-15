@@ -45,12 +45,12 @@ function f_notifyme {
   notifyme "$TERM_PROGRAM_NAME" "$CMD" "$LAST_EXIT_CODE" &
 }
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  # need to set PROMPT_SUBST in order to make `f_notifyme` works in prompt
-  # see more at <http://superuser.com/questions/142099/get-function-into-ps1-zsh>
-  setopt PROMPT_SUBST
-  export PS1='$(f_notifyme)'$PS1
-fi
+# if [[ "$OSTYPE" == "darwin"* ]]; then
+#   # need to set PROMPT_SUBST in order to make `f_notifyme` works in prompt
+#   # see more at <http://superuser.com/questions/142099/get-function-into-ps1-zsh>
+#   setopt PROMPT_SUBST
+#   export PS1='$(f_notifyme)'$PS1
+# fi
 
 source ~/.aliases
 source ~/.functions
