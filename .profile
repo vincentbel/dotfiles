@@ -16,3 +16,6 @@ export PATH="/Users/VincentBel/.deno/bin:$PATH"
 
 # Yarn
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
