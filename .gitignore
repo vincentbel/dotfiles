@@ -13,3 +13,7 @@
 # claude
 .claude/*
 !.claude/CLAUDE.md
+
+
+# vscode
+.vscode/profiles/
