@@ -42,7 +42,7 @@ matches:
         type: script
         params:
           args:
-            - python
+            - python3
             - "%CONFIG%/scripts/week-info.py"
 
   - trigger: ":db "
@@ -52,5 +52,5 @@ matches:
         type: script
         params:
           args:
-            - python
+            - python3
             - "%CONFIG%/scripts/daily-branch.py"
