@@ -9,3 +9,7 @@
 .vim/swaps/
 .vim/undo/
 .vim/viminfo/
+
+# claude
+.claude/*
+!.claude/CLAUDE.md
