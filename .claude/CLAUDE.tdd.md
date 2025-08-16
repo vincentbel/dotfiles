@@ -4,7 +4,7 @@
 
 ### Core Beliefs
 
-- **Incremental progress over big bangs** - Small changes that compile/running without lint error
+- **Incremental progress over big bangs** - Small changes that compile and pass tests
 - **Learning from existing code** - Study and plan before implementing
 - **Pragmatic over dogmatic** - Adapt to project reality
 - **Clear intent over clever code** - Be boring and obvious
@@ -25,7 +25,8 @@ Break complex work into 3-5 stages. Document in `IMPLEMENTATION_PLAN.md`:
 ```markdown
 ## Stage N: [Name]
 **Goal**: [Specific deliverable]
-**Success Criteria**: [Runnable outcomes]
+**Success Criteria**: [Testable outcomes]
+**Tests**: [Specific test cases]
 **Status**: [Not Started|In Progress|Complete]
 ```
 - Update status as you progress
@@ -34,8 +35,9 @@ Break complex work into 3-5 stages. Document in `IMPLEMENTATION_PLAN.md`:
 ### 2. Implementation Flow
 
 1. **Understand** - Study existing patterns in codebase
+2. **Test** - Write test first (red)
 3. **Implement** - Minimal code to pass (green)
-4. **Refactor** - Clean up with runnable code
+4. **Refactor** - Clean up with tests passing
 5. **Commit** - With clear message linking to plan
 
 ### 3. When Stuck (After 3 Attempts)
@@ -66,12 +68,16 @@ Break complex work into 3-5 stages. Document in `IMPLEMENTATION_PLAN.md`:
 ### Architecture Principles
 
 - **Composition over inheritance** - Use dependency injection
+- **Interfaces over singletons** - Enable testing and flexibility
 - **Explicit over implicit** - Clear data flow and dependencies
+- **Test-driven when possible** - Never disable tests, fix them
 
 ### Code Quality
 
 - **Every commit must**:
   - Compile successfully
+  - Pass all existing tests
+  - Include tests for new functionality
   - Follow project formatting/linting
 
 - **Before committing**:
@@ -90,6 +96,7 @@ Break complex work into 3-5 stages. Document in `IMPLEMENTATION_PLAN.md`:
 
 When multiple valid approaches exist, choose based on:
 
+1. **Testability** - Can I easily test this?
 2. **Readability** - Will someone understand this in 6 months?
 3. **Consistency** - Does this match project patterns?
 4. **Simplicity** - Is this the simplest solution that works?
@@ -102,10 +109,12 @@ When multiple valid approaches exist, choose based on:
 - Find 3 similar features/components
 - Identify common patterns and conventions
 - Use same libraries/utilities when possible
+- Follow existing test patterns
 
 ### Tooling
 
 - Use project's existing build system
+- Use project's test framework
 - Use project's formatter/linter settings
 - Don't introduce new tools without strong justification
 
@@ -113,16 +122,26 @@ When multiple valid approaches exist, choose based on:
 
 ### Definition of Done
 
+- [ ] Tests written and passing
 - [ ] Code follows project conventions
 - [ ] No linter/formatter warnings
 - [ ] Commit messages are clear
 - [ ] Implementation matches plan
 - [ ] No TODOs without issue numbers
 
+### Test Guidelines
+
+- Test behavior, not implementation
+- One assertion per test when possible
+- Clear test names describing scenario
+- Use existing test utilities/helpers
+- Tests should be deterministic
+
 ## Important Reminders
 
 **NEVER**:
 - Use `--no-verify` to bypass commit hooks
+- Disable tests instead of fixing them
 - Commit code that doesn't compile
 - Make assumptions - verify with existing code
 

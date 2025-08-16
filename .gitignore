@@ -13,6 +13,7 @@
 # claude
 .claude/*
 !.claude/CLAUDE.md
+!.claude/CLAUDE.*.md
 
 
 # vscode
