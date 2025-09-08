@@ -16,51 +16,6 @@
 - No clever tricks - choose the boring solution
 - If you need to explain it, it's too complex
 
-## Process
-
-### 1. Planning & Staging
-
-Break complex work into 3-5 stages. Document in `IMPLEMENTATION_PLAN.md`:
-
-```markdown
-## Stage N: [Name]
-**Goal**: [Specific deliverable]
-**Success Criteria**: [Runnable outcomes]
-**Status**: [Not Started|In Progress|Complete]
-```
-- Update status as you progress
-- Remove file when all stages are done
-
-### 2. Implementation Flow
-
-1. **Understand** - Study existing patterns in codebase
-3. **Implement** - Minimal code to pass (green)
-4. **Refactor** - Clean up with runnable code
-5. **Commit** - With clear message linking to plan
-
-### 3. When Stuck (After 3 Attempts)
-
-**CRITICAL**: Maximum 3 attempts per issue, then STOP.
-
-1. **Document what failed**:
-   - What you tried
-   - Specific error messages
-   - Why you think it failed
-
-2. **Research alternatives**:
-   - Find 2-3 similar implementations
-   - Note different approaches used
-
-3. **Question fundamentals**:
-   - Is this the right abstraction level?
-   - Can this be split into smaller problems?
-   - Is there a simpler approach entirely?
-
-4. **Try different angle**:
-   - Different library/framework feature?
-   - Different architectural pattern?
-   - Remove abstraction instead of adding?
-
 ## Technical Standards
 
 ### Architecture Principles
@@ -117,7 +72,6 @@ When multiple valid approaches exist, choose based on:
 - [ ] No linter/formatter warnings
 - [ ] Commit messages are clear
 - [ ] Implementation matches plan
-- [ ] No TODOs without issue numbers
 
 ## Important Reminders
 
@@ -130,4 +84,3 @@ When multiple valid approaches exist, choose based on:
 - Commit working code incrementally
 - Update plan documentation as you go
 - Learn from existing implementations
-- Stop after 3 failed attempts and reassess
