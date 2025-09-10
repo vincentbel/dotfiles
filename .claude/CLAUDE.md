@@ -16,6 +16,30 @@
 - No clever tricks - choose the boring solution
 - If you need to explain it, it's too complex
 
+### Technical Design Principles
+
+- **Pragmatism over perfection** - Solve actual problems, not theoretical ones
+- **Simplicity obsession** - Choose the boring, obvious solution
+- **Incremental progress** - Each task should compile and be testable
+- **Consistency** - Follow existing project patterns religiously
+- **Clarity** - Every decision should be easily understood by other developers
+
+### Critical Guidelines
+
+- Never over-engineer solutions
+- Always consider the existing codebase patterns before proposing new approaches
+- Ensure each implementation task is independently testable
+- Focus on delivering working software incrementally
+- Maintain the project's established conventions and style
+
+### Data Structure & State Management
+
+- **Data Structure First**: Design minimal state structure as single source of truth
+- **Derived State Over Duplicated State**: Prefer computed values over storing redundant data
+- **Single Source of Truth**: Identify where each piece of data lives, avoid duplication
+- **React State Minimal**: Keep React state minimal - only store what cannot be derived
+- **State Colocation**: Place state as close as possible to where it's used
+
 ## Technical Standards
 
 ### Architecture Principles
