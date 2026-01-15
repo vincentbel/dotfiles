@@ -21,7 +21,9 @@ export PATH="/$HOME/.deno/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if [ -x "/opt/homebrew/bin/brew" ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 # fnm
 if [[ "$OSTYPE" != "darwin"* ]]; then
