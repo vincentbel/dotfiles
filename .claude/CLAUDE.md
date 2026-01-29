@@ -1,110 +1,103 @@
 # Development Guidelines
 
-## Philosophy
+## 1. Think Before Coding
 
-### Core Beliefs
+**Don't assume. Don't hide confusion. Surface tradeoffs.**
 
-- **Incremental progress over big bangs** - Small changes that compile/running without lint error
-- **Learning from existing code** - Study and plan before implementing
-- **Pragmatic over dogmatic** - Adapt to project reality
-- **Clear intent over clever code** - Be boring and obvious
+Before implementing:
+- State assumptions explicitly. If uncertain, ask.
+- If multiple interpretations exist, present them - don't pick silently.
+- If a simpler approach exists, say so. Push back when warranted.
+- If something is unclear, stop. Name what's confusing. Ask.
+- Study existing code and patterns before proposing new approaches.
 
-### Simplicity Means
+## 2. Simplicity First
 
-- Single responsibility per function/class
-- Avoid premature abstractions
-- No clever tricks - choose the boring solution
-- If you need to explain it, it's too complex
+**Minimum code that solves the problem. Nothing speculative.**
 
-### Technical Design Principles
+Core principles:
+- No features beyond what was asked.
+- No abstractions for single-use code.
+- No "flexibility" or "configurability" that wasn't requested.
+- No error handling for impossible scenarios.
+- If you write 200 lines and it could be 50, rewrite it.
 
-- **Pragmatism over perfection** - Solve actual problems, not theoretical ones
-- **Simplicity obsession** - Choose the boring, obvious solution
-- **Incremental progress** - Each task should compile and be testable
-- **Consistency** - Follow existing project patterns religiously
-- **Clarity** - Every decision should be easily understood by other developers
+What simplicity means in practice:
+- Single responsibility per function/class.
+- Choose the boring, obvious solution over clever tricks.
+- If you need to explain it, it's too complex.
+- Solve actual problems, not theoretical ones.
 
-### Critical Guidelines
+Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, simplify.
 
-- Never over-engineer solutions
-- Always consider the existing codebase patterns before proposing new approaches
-- Ensure each implementation task is independently testable
-- Focus on delivering working software incrementally
-- Maintain the project's established conventions and style
+## 3. Surgical Changes
 
-### Data Structure & State Management
+**Touch only what you must. Clean up only your own mess.**
 
-- **Data Structure First**: Design minimal state structure as single source of truth
-- **Derived State Over Duplicated State**: Prefer computed values over storing redundant data
-- **Single Source of Truth**: Identify where each piece of data lives, avoid duplication
-- **React State Minimal**: Keep React state minimal - only store what cannot be derived
-- **State Colocation**: Place state as close as possible to where it's used
+When editing existing code:
+- Don't "improve" adjacent code, comments, or formatting.
+- Don't refactor things that aren't broken.
+- Match existing style, even if you'd do it differently.
+- If you notice unrelated issues, mention them - don't fix them silently.
 
-## Technical Standards
+When your changes create orphans:
+- Remove imports/variables/functions that YOUR changes made unused.
+- Don't remove pre-existing dead code unless asked.
 
-### Architecture Principles
+The test: Every changed line should trace directly to the user's request.
 
-- **Composition over inheritance** - Use dependency injection
-- **Explicit over implicit** - Clear data flow and dependencies
+## 4. Goal-Driven Execution
 
-### Code Quality
+**Define success criteria. Loop until verified.**
 
-- **Every commit must**:
-  - Compile successfully
-  - Follow project formatting/linting
+Transform tasks into verifiable goals:
+- "Add validation" → "Write tests for invalid inputs, then make them pass"
+- "Fix the bug" → "Write a test that reproduces it, then make it pass"
+- "Refactor X" → "Ensure tests pass before and after"
 
-- **Before committing**:
-  - Run formatters/linters
-  - Self-review changes
-  - Ensure commit message explains "why"
+For multi-step tasks, state a brief plan:
+```
+1. [Step] → verify: [check]
+2. [Step] → verify: [check]
+3. [Step] → verify: [check]
+```
+
+Each step should compile and be independently testable.
+
+## 5. Technical Standards
+
+### Architecture
+
+- **Composition over inheritance** - Use dependency injection.
+- **Explicit over implicit** - Clear data flow and dependencies.
+
+### State Management
+
+- Design minimal state as single source of truth.
+- Prefer derived/computed values over duplicated state.
+- Place state as close as possible to where it's used.
 
 ### Error Handling
 
-- Fail fast with descriptive messages
-- Include context for debugging
-- Handle errors at appropriate level
-- Never silently swallow exceptions
+- Fail fast with descriptive messages.
+- Include context for debugging.
+- Handle errors at appropriate level.
+- Never silently swallow exceptions.
 
-## Decision Framework
+### Code Quality
 
-When multiple valid approaches exist, choose based on:
+Every commit must:
+- Compile successfully.
+- Follow project formatting/linting.
 
-2. **Readability** - Will someone understand this in 6 months?
-3. **Consistency** - Does this match project patterns?
-4. **Simplicity** - Is this the simplest solution that works?
-5. **Reversibility** - How hard to change later?
+Before committing:
+- Run formatters/linters.
+- Self-review changes.
+- Ensure commit message explains "why".
 
-## Project Integration
+## 6. Project Integration
 
-### Learning the Codebase
-
-- Find 3 similar features/components
-- Identify common patterns and conventions
-- Use same libraries/utilities when possible
-
-### Tooling
-
-- Use project's existing build system
-- Use project's formatter/linter settings
-- Don't introduce new tools without strong justification
-
-## Quality Gates
-
-### Definition of Done
-
-- [ ] Code follows project conventions
-- [ ] No linter/formatter warnings
-- [ ] Commit messages are clear
-- [ ] Implementation matches plan
-
-## Important Reminders
-
-**NEVER**:
-- Use `--no-verify` to bypass commit hooks
-- Commit code that doesn't compile
-- Make assumptions - verify with existing code
-
-**ALWAYS**:
-- Commit working code incrementally
-- Update plan documentation as you go
-- Learn from existing implementations
+- Use project's existing build system and tools.
+- Follow project's formatter/linter settings.
+- Don't introduce new tools without strong justification.
+- Follow existing project patterns religiously.
