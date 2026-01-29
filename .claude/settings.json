@@ -1,5 +1,11 @@
 {
+  "model": "opusplan",
   "permissions": {
     "defaultMode": "plan"
+  },
+  "statusLine": {
+    "command": "npx -y ccstatusline@latest",
+    "padding": 0,
+    "type": "command"
   }
 }
