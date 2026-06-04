@@ -127,6 +127,7 @@ if executable('ag')
     let g:ackprg = 'ag --vimgrep'
   endif
 
+let g:polyglot_disabled = ['autoindent']
 Plug 'sheerun/vim-polyglot'
 
 " preview colors in source code while editing
