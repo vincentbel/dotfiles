@@ -1,0 +1,639 @@
+#!/usr/bin/env node
+import { spawn, spawnSync } from "node:child_process";
+import fs from "node:fs";
+import http from "node:http";
+import path from "node:path";
+import process from "node:process";
+
+const DEFAULT_PROMPT = "Trace capture only. Reply with exactly OK. Do not run tools.";
+
+const usage = () => {
+  console.log(`Usage:
+  codex-capture-request SESSION_ID [PROMPT...]
+  codex-capture-request --last [PROMPT...]
+  codex-capture-request --new [PROMPT...]
+
+Captures the next Codex Responses API request body by routing one run to a
+temporary local provider. The captured files are written under:
+
+  ./codex-request-captures/<timestamp>/
+
+Options:
+  --out DIR       Write capture files to DIR.
+  --model MODEL   Override the model for this probe run.
+  --last          Resume the most recent recorded session.
+  --new           Start a new ephemeral Codex run instead of resuming.
+  -h, --help      Show this help.
+
+Notes:
+  - Default mode is: codex exec resume --ephemeral SESSION_ID PROMPT
+  - This captures the new probe request, not a historical request.
+  - The local provider is fake, so no model call is sent to OpenAI.`);
+};
+
+const die = (message, code = 1) => {
+  console.error(`error: ${message}`);
+  process.exit(code);
+};
+
+const timestamp = () => {
+  const d = new Date();
+  const pad = (n) => String(n).padStart(2, "0");
+  return [
+    d.getFullYear(),
+    pad(d.getMonth() + 1),
+    pad(d.getDate()),
+    "-",
+    pad(d.getHours()),
+    pad(d.getMinutes()),
+    pad(d.getSeconds()),
+  ].join("");
+};
+
+const parseArgs = (argv) => {
+  const state = {
+    mode: "resume",
+    sessionId: "",
+    outDir: "",
+    model: "",
+    promptParts: [],
+  };
+
+  for (let i = 0; i < argv.length; i += 1) {
+    const arg = argv[i];
+    if (arg === "-h" || arg === "--help") {
+      usage();
+      process.exit(0);
+    }
+
+    if (arg === "--last") {
+      if (state.mode !== "resume") die("--last cannot be combined with --new");
+      state.sessionId = "__LAST__";
+      continue;
+    }
+
+    if (arg === "--new") {
+      if (state.sessionId) die("--new cannot be combined with a session id or --last");
+      state.mode = "new";
+      continue;
+    }
+
+    if (arg === "--out") {
+      const value = argv[++i];
+      if (!value) die("--out requires a directory");
+      state.outDir = value;
+      continue;
+    }
+
+    if (arg === "--model") {
+      const value = argv[++i];
+      if (!value) die("--model requires a model id");
+      state.model = value;
+      continue;
+    }
+
+    if (arg === "--") {
+      state.promptParts.push(...argv.slice(i + 1));
+      break;
+    }
+
+    if (arg.startsWith("-")) {
+      die(`unknown option: ${arg}`);
+    }
+
+    if (state.mode === "resume" && !state.sessionId) {
+      state.sessionId = arg;
+    } else {
+      state.promptParts.push(arg);
+    }
+  }
+
+  if (state.mode === "resume" && !state.sessionId) {
+    die("missing SESSION_ID. Use --last to resume the newest session, or --new for a fresh probe.");
+  }
+
+  return {
+    ...state,
+    prompt: state.promptParts.length > 0 ? state.promptParts.join(" ") : DEFAULT_PROMPT,
+  };
+};
+
+const ensureCommand = (command) => {
+  const result = spawnSync(command, ["--version"], { stdio: "ignore" });
+  if (result.error?.code === "ENOENT") die(`missing required command: ${command}`);
+};
+
+const writeJson = (outDir, fileName, value) => {
+  fs.writeFileSync(path.join(outDir, fileName), `${JSON.stringify(value, null, 2)}\n`);
+};
+
+const markdownFence = (value, language = "text") => {
+  const serialized = typeof value === "string" ? value : JSON.stringify(value, null, 2);
+  const text = serialized === undefined ? String(value) : serialized;
+  let fence = "```";
+  while (text.includes(fence)) fence += "`";
+  return `${fence}${language}\n${text}\n${fence}`;
+};
+
+const markdownJson = (value) => markdownFence(value, "json");
+
+const headingText = (value) =>
+  String(value ?? "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 120);
+
+const humanize = (value) => {
+  const text = String(value || "item")
+    .replace(/[_-]+/g, " ")
+    .replace(/([a-z])([A-Z])/g, "$1 $2")
+    .trim();
+  return text.replace(/\b\w/g, (ch) => ch.toUpperCase());
+};
+
+const inputItemTitle = (item, index) => {
+  if (item?.type === "message") {
+    return `${index + 1}. ${humanize(item.role || "unknown")} Message`;
+  }
+  if (item?.type === "function_call") {
+    return `${index + 1}. Function Call${item.name ? `: ${headingText(item.name)}` : ""}`;
+  }
+  if (item?.type === "function_call_output") {
+    return `${index + 1}. Function Call Output${item.call_id ? `: ${headingText(item.call_id)}` : ""}`;
+  }
+  if (item?.type === "local_shell_call") {
+    const command = item.action?.command || item.action?.cmd;
+    return `${index + 1}. Local Shell Call${command ? `: ${headingText(command)}` : ""}`;
+  }
+  if (item?.type === "reasoning") return `${index + 1}. Reasoning`;
+  return `${index + 1}. ${humanize(item?.type || "Input Item")}`;
+};
+
+const toolTitle = (tool, index) => {
+  const name = tool?.name || tool?.function?.name || tool?.server_label || tool?.type;
+  return `${index + 1}. ${humanize(tool?.type || "Tool")}${name ? `: ${headingText(name)}` : ""}`;
+};
+
+const contentText = (contentItem) => {
+  if (typeof contentItem === "string") return contentItem;
+  if (!contentItem || typeof contentItem !== "object") return null;
+  if (typeof contentItem.text === "string") return contentItem.text;
+  if (typeof contentItem.input === "string") return contentItem.input;
+  if (typeof contentItem.output === "string") return contentItem.output;
+  return null;
+};
+
+const appendContentMarkdown = (lines, content, headingLevel = "####") => {
+  if (!Array.isArray(content)) {
+    if (content == null) return;
+    lines.push(markdownJson(content), "");
+    return;
+  }
+
+  content.forEach((contentItem, index) => {
+    const type = contentItem?.type || typeof contentItem;
+    const text = contentText(contentItem);
+    if (content.length > 1) lines.push(`${headingLevel} Content ${index + 1}: ${type}`, "");
+    if (text != null) {
+      lines.push(markdownFence(text), "");
+      return;
+    }
+    lines.push(markdownJson(contentItem), "");
+  });
+};
+
+const appendInputItemMarkdown = (lines, item, index) => {
+  lines.push(`### ${inputItemTitle(item, index)}`, "");
+
+  if (item?.id) lines.push(`- id: \`${item.id}\``);
+  if (item?.status) lines.push(`- status: \`${item.status}\``);
+  if (item?.call_id) lines.push(`- call_id: \`${item.call_id}\``);
+  if (item?.name) lines.push(`- name: \`${item.name}\``);
+  if (item?.role) lines.push(`- role: \`${item.role}\``);
+  if (item?.id || item?.status || item?.call_id || item?.name || item?.role) lines.push("");
+
+  if (item?.type === "message") {
+    appendContentMarkdown(lines, item.content);
+    return;
+  }
+
+  if (item?.type === "function_call") {
+    if (item.arguments != null) {
+      const parsedArguments = (() => {
+        if (typeof item.arguments !== "string") return item.arguments;
+        try {
+          return JSON.parse(item.arguments);
+        } catch {
+          return item.arguments;
+        }
+      })();
+      lines.push("#### Arguments", "");
+      lines.push(typeof parsedArguments === "string" ? markdownFence(parsedArguments) : markdownJson(parsedArguments), "");
+    }
+    return;
+  }
+
+  if (item?.type === "function_call_output") {
+    lines.push("#### Output", "");
+    if (typeof item.output === "string") lines.push(markdownFence(item.output), "");
+    else lines.push(markdownJson(item.output), "");
+    return;
+  }
+
+  lines.push(markdownJson(item), "");
+};
+
+const appendToolMarkdown = (lines, tool, index) => {
+  lines.push(`### ${toolTitle(tool, index)}`, "");
+
+  const description = tool?.description || tool?.function?.description;
+  if (description) {
+    lines.push("#### Description", "");
+    lines.push(markdownFence(description), "");
+  }
+
+  const parameters = tool?.parameters || tool?.function?.parameters;
+  if (parameters) {
+    lines.push("#### Parameters", "");
+    lines.push(markdownJson(parameters), "");
+  }
+
+  lines.push("#### Raw Tool", "");
+  lines.push(markdownJson(tool), "");
+};
+
+const writeRequestMarkdown = (outDir, request) => {
+  const lines = ["# Codex Responses Request", ""];
+
+  lines.push("## Metadata", "");
+  const metadataKeys = [
+    "model",
+    "stream",
+    "tool_choice",
+    "parallel_tool_calls",
+    "store",
+    "prompt_cache_key",
+  ];
+  metadataKeys.forEach((key) => {
+    if (request?.[key] !== undefined) lines.push(`- ${key}: \`${JSON.stringify(request[key])}\``);
+  });
+  if (request?.reasoning !== undefined) lines.push(`- reasoning: \`${JSON.stringify(request.reasoning)}\``);
+  if (request?.text !== undefined) lines.push(`- text: \`${JSON.stringify(request.text)}\``);
+  lines.push("");
+
+  lines.push("## Instructions (System Prompt)", "");
+  if (typeof request?.instructions === "string") {
+    lines.push(markdownFence(request.instructions, "markdown"), "");
+  } else if (request?.instructions == null) {
+    lines.push("_No instructions field captured._", "");
+  } else {
+    lines.push(markdownJson(request.instructions), "");
+  }
+
+  lines.push("## Input", "");
+  if (Array.isArray(request?.input) && request.input.length > 0) {
+    request.input.forEach((item, index) => appendInputItemMarkdown(lines, item, index));
+  } else {
+    lines.push("_No input items captured._", "");
+  }
+
+  lines.push("## Tools", "");
+  if (Array.isArray(request?.tools) && request.tools.length > 0) {
+    request.tools.forEach((tool, index) => appendToolMarkdown(lines, tool, index));
+  } else {
+    lines.push("_No tools captured._", "");
+  }
+
+  const coreFields = new Set(["instructions", "input", "tools"]);
+  const otherFields = Object.fromEntries(
+    Object.entries(request || {}).filter(([key]) => !coreFields.has(key)),
+  );
+  lines.push("## Other Fields", "");
+  lines.push(markdownJson(otherFields), "");
+
+  fs.writeFileSync(path.join(outDir, "request.md"), `${lines.join("\n").replace(/\n{3,}/g, "\n\n")}\n`);
+};
+
+const responseObject = (model = "capture") => {
+  const now = Date.now();
+  const messageId = `msg_capture_${now}`;
+  return {
+    id: `resp_capture_${now}`,
+    object: "response",
+    created_at: Math.floor(now / 1000),
+    status: "completed",
+    error: null,
+    incomplete_details: null,
+    instructions: null,
+    max_output_tokens: null,
+    model,
+    output: [
+      {
+        id: messageId,
+        type: "message",
+        status: "completed",
+        role: "assistant",
+        content: [
+          {
+            type: "output_text",
+            text: "OK",
+            annotations: [],
+          },
+        ],
+      },
+    ],
+    parallel_tool_calls: true,
+    previous_response_id: null,
+    reasoning: null,
+    store: false,
+    temperature: null,
+    text: { format: { type: "text" } },
+    tool_choice: "auto",
+    tools: [],
+    top_p: null,
+    truncation: "disabled",
+    usage: {
+      input_tokens: 0,
+      input_tokens_details: { cached_tokens: 0 },
+      output_tokens: 1,
+      output_tokens_details: { reasoning_tokens: 0 },
+      total_tokens: 1,
+    },
+    user: null,
+    metadata: {},
+  };
+};
+
+const sendSse = (res, model) => {
+  const response = responseObject(model);
+  const item = response.output[0];
+  const part = item.content[0];
+
+  res.writeHead(200, {
+    "content-type": "text/event-stream; charset=utf-8",
+    "cache-control": "no-cache",
+    connection: "keep-alive",
+  });
+
+  const emit = (type, data) => {
+    res.write(`event: ${type}\n`);
+    res.write(`data: ${JSON.stringify({ type, ...data })}\n\n`);
+  };
+
+  emit("response.created", { response: { ...response, output: [] } });
+  emit("response.output_item.added", {
+    output_index: 0,
+    item: { ...item, content: [], status: "in_progress" },
+  });
+  emit("response.content_part.added", {
+    item_id: item.id,
+    output_index: 0,
+    content_index: 0,
+    part: { ...part, text: "" },
+  });
+  emit("response.output_text.delta", {
+    item_id: item.id,
+    output_index: 0,
+    content_index: 0,
+    delta: "OK",
+  });
+  emit("response.output_text.done", {
+    item_id: item.id,
+    output_index: 0,
+    content_index: 0,
+    text: "OK",
+  });
+  emit("response.content_part.done", {
+    item_id: item.id,
+    output_index: 0,
+    content_index: 0,
+    part,
+  });
+  emit("response.output_item.done", {
+    output_index: 0,
+    item,
+  });
+  emit("response.completed", { response });
+  res.write("data: [DONE]\n\n");
+  res.end();
+};
+
+const loadBundledModelCatalog = () => {
+  const result = spawnSync("codex", ["debug", "models", "--bundled"], {
+    encoding: "utf8",
+    maxBuffer: 32 * 1024 * 1024,
+  });
+
+  if (result.error) die(`failed to run codex debug models --bundled: ${result.error.message}`);
+  if (result.status !== 0) {
+    die(`codex debug models --bundled failed: ${result.stderr || `exit ${result.status}`}`);
+  }
+
+  try {
+    return JSON.parse(result.stdout);
+  } catch (error) {
+    die(`failed to parse bundled model catalog JSON: ${error?.message || error}`);
+  }
+};
+
+const readBody = (req) =>
+  new Promise((resolve, reject) => {
+    const chunks = [];
+    req.on("data", (chunk) => chunks.push(chunk));
+    req.on("end", () => resolve(Buffer.concat(chunks).toString("utf8")));
+    req.on("error", reject);
+  });
+
+const startCaptureServer = (outDir, serverLogPath, modelCatalog) =>
+  new Promise((resolve, reject) => {
+    const log = (line) => fs.appendFileSync(serverLogPath, `${line}\n`);
+    const server = http.createServer(async (req, res) => {
+      try {
+        if (req.method === "GET" && req.url?.startsWith("/v1/models")) {
+          res.writeHead(200, { "content-type": "application/json" });
+          res.end(JSON.stringify(modelCatalog));
+          return;
+        }
+
+        if (req.method === "GET" && (req.url === "/healthz" || req.url === "/readyz")) {
+          res.writeHead(200, { "content-type": "text/plain" });
+          res.end("ok\n");
+          return;
+        }
+
+        const rawBody = await readBody(req);
+
+        if (req.method === "POST" && req.url?.endsWith("/responses")) {
+          fs.writeFileSync(path.join(outDir, "request.raw.json"), rawBody);
+          writeJson(outDir, "request.headers.json", {
+            method: req.method,
+            url: req.url,
+            headers: {
+              ...req.headers,
+              authorization: req.headers.authorization ? "<redacted>" : undefined,
+            },
+          });
+
+          let parsed = null;
+          try {
+            parsed = rawBody ? JSON.parse(rawBody) : null;
+            writeJson(outDir, "request.pretty.json", parsed);
+            writeJson(outDir, "request.json", parsed);
+            writeRequestMarkdown(outDir, parsed);
+          } catch (error) {
+            writeJson(outDir, "request.parse-error.json", {
+              message: String(error?.message || error),
+            });
+          }
+
+          if (parsed?.stream !== false) {
+            sendSse(res, parsed?.model);
+          } else {
+            res.writeHead(200, { "content-type": "application/json" });
+            res.end(JSON.stringify(responseObject(parsed?.model)));
+          }
+          return;
+        }
+
+        res.writeHead(404, { "content-type": "application/json" });
+        res.end(JSON.stringify({ error: { message: `Unhandled ${req.method} ${req.url}` } }));
+      } catch (error) {
+        log(`server error: ${error?.stack || error}`);
+        if (!res.headersSent) res.writeHead(500, { "content-type": "application/json" });
+        res.end(JSON.stringify({ error: { message: "capture server error" } }));
+      }
+    });
+
+    server.on("error", reject);
+    server.listen(0, "127.0.0.1", () => {
+      const address = server.address();
+      if (!address || typeof address === "string") {
+        reject(new Error("capture server did not return a TCP address"));
+        return;
+      }
+      log(`capture server listening on 127.0.0.1:${address.port}`);
+      resolve({ server, port: address.port });
+    });
+  });
+
+const shellQuote = (value) => {
+  if (/^[A-Za-z0-9_/:=.,+-]+$/.test(value)) return value;
+  return `'${value.replaceAll("'", "'\\''")}'`;
+};
+
+const buildCodexArgs = ({ mode, sessionId, model, prompt, baseUrl }) => {
+  const commonArgs = [
+    "-c",
+    'model_provider="capture"',
+    "-c",
+    'model_providers.capture.name="Capture"',
+    "-c",
+    `model_providers.capture.base_url="${baseUrl}"`,
+    "-c",
+    'model_providers.capture.wire_api="responses"',
+    "-c",
+    'model_providers.capture.env_key="CAPTURE_KEY"',
+    "--ephemeral",
+    "--skip-git-repo-check",
+    "--json",
+  ];
+
+  if (model) commonArgs.push("-m", model);
+
+  if (mode === "new") return ["exec", ...commonArgs, prompt];
+  if (sessionId === "__LAST__") return ["exec", "resume", ...commonArgs, "--last", prompt];
+  return ["exec", "resume", ...commonArgs, sessionId, prompt];
+};
+
+const runCodex = ({ args, outDir }) =>
+  new Promise((resolve, reject) => {
+    const stdout = fs.openSync(path.join(outDir, "codex.stdout.jsonl"), "w");
+    const stderr = fs.openSync(path.join(outDir, "codex.stderr.log"), "w");
+    const child = spawn("codex", args, {
+      env: { ...process.env, CAPTURE_KEY: "dummy" },
+      stdio: ["ignore", stdout, stderr],
+    });
+
+    child.on("error", (error) => {
+      fs.closeSync(stdout);
+      fs.closeSync(stderr);
+      reject(error);
+    });
+
+    child.on("close", (code, signal) => {
+      fs.closeSync(stdout);
+      fs.closeSync(stderr);
+      if (signal) resolve(128);
+      else resolve(code ?? 1);
+    });
+  });
+
+const closeServer = (server) =>
+  new Promise((resolve) => {
+    server.close(() => resolve());
+  });
+
+const main = async () => {
+  const options = parseArgs(process.argv.slice(2));
+  ensureCommand("codex");
+  const modelCatalog = loadBundledModelCatalog();
+
+  const outDir = path.resolve(options.outDir || path.join(process.cwd(), "codex-request-captures", timestamp()));
+  fs.mkdirSync(outDir, { recursive: true });
+  const serverLogPath = path.join(outDir, "server.log");
+
+  const { server, port } = await startCaptureServer(outDir, serverLogPath, modelCatalog);
+  const baseUrl = `http://127.0.0.1:${port}/v1`;
+  const codexArgs = buildCodexArgs({ ...options, baseUrl });
+
+  fs.writeFileSync(
+    path.join(outDir, "run.txt"),
+    [
+      `out_dir=${outDir}`,
+      `base_url=${baseUrl}`,
+      `mode=${options.mode}`,
+      `session_id=${options.sessionId}`,
+      `prompt=${options.prompt}`,
+      `command: codex ${codexArgs.map(shellQuote).join(" ")}`,
+      "",
+    ].join("\n"),
+  );
+
+  console.log(`Capture output: ${outDir}`);
+  console.log("Running Codex probe...");
+
+  let codexStatus = 1;
+  try {
+    codexStatus = await runCodex({ args: codexArgs, outDir });
+  } finally {
+    await closeServer(server);
+  }
+
+  const rawRequestPath = path.join(outDir, "request.raw.json");
+  if (!fs.existsSync(rawRequestPath) || fs.statSync(rawRequestPath).size === 0) {
+    console.error("No /responses request was captured.");
+    console.error(`See: ${path.join(outDir, "codex.stderr.log")}`);
+    process.exit(codexStatus);
+  }
+
+  console.log("Captured request:");
+  console.log(`  ${path.join(outDir, "request.json")}`);
+  console.log("Pretty request alias:");
+  console.log(`  ${path.join(outDir, "request.pretty.json")}`);
+  console.log("Markdown view:");
+  console.log(`  ${path.join(outDir, "request.md")}`);
+  console.log("Raw request:");
+  console.log(`  ${rawRequestPath}`);
+  console.log("Headers:");
+  console.log(`  ${path.join(outDir, "request.headers.json")}`);
+  console.log("Codex stdout/stderr:");
+  console.log(`  ${path.join(outDir, "codex.stdout.jsonl")}`);
+  console.log(`  ${path.join(outDir, "codex.stderr.log")}`);
+
+  process.exit(codexStatus);
+};
+
+main().catch((error) => {
+  console.error(`error: ${error?.stack || error}`);
+  process.exit(1);
+});
