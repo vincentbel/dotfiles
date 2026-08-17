@@ -4,7 +4,15 @@
 # larger history
 SAVEHIST=100000
 
-[ -f ~/.profile ] && source ~/.profile
+# shared profile
+if [[ -f ~/.profile ]]; then
+  source ~/.profile
+fi
+
+# local profile
+if [[ -f ~/.profile.local ]]; then
+  source ~/.profile.local
+fi
 
 # zsh function path
 fpath=( "$HOME/.zfunctions" $fpath )
@@ -61,11 +69,6 @@ source ~/.functions
 # Load RVM into a shell session *as a function*
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-# fnm: https://github.com/Schniz/fnm
-if [[ -x "$(command -v fnm)" ]]; then
-  eval "$(fnm env --use-on-cd)"
-fi
-
 # https://github.com/denisidoro/navi
 if [[ -x "$(command -v navi)" ]]; then
   source <(navi widget zsh)
@@ -84,8 +87,4 @@ if [[ -f ~/.jabba/jabba.sh ]]; then
   zsh-defer source ~/.jabba/jabba.sh
 fi
 
-# local env
-if [[ -f ~/.env.local ]]; then
-  source ~/.env.local
-fi
 # zprof
