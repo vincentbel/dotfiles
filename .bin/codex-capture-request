@@ -183,7 +183,7 @@ const contentText = (contentItem) => {
   return null;
 };
 
-const appendContentMarkdown = (lines, content, headingLevel = "####") => {
+const appendContentMarkdown = (lines, content, headingLevel = "####", language = "text") => {
   if (!Array.isArray(content)) {
     if (content == null) return;
     lines.push(markdownJson(content), "");
@@ -195,7 +195,7 @@ const appendContentMarkdown = (lines, content, headingLevel = "####") => {
     const text = contentText(contentItem);
     if (content.length > 1) lines.push(`${headingLevel} Content ${index + 1}: ${type}`, "");
     if (text != null) {
-      lines.push(markdownFence(text), "");
+      lines.push(markdownFence(text, language), "");
       return;
     }
     lines.push(markdownJson(contentItem), "");
@@ -213,7 +213,7 @@ const appendInputItemMarkdown = (lines, item, index) => {
   if (item?.id || item?.status || item?.call_id || item?.name || item?.role) lines.push("");
 
   if (item?.type === "message") {
-    appendContentMarkdown(lines, item.content);
+    appendContentMarkdown(lines, item.content, "####", "markdown");
     return;
   }
 
