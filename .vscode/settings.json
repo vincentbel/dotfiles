@@ -61,7 +61,6 @@
   ],
   "editor.bracketPairColorization.enabled": true,
   "editor.fontFamily": "'Comic Mono', Menlo, Monaco, 'Courier New', monospace",
-  "editor.fontSize": 15,
   "editor.formatOnPaste": false,
   "editor.formatOnSave": false,
   "editor.gotoLocation.multipleDeclarations": "gotoAndPeek",
@@ -77,17 +76,12 @@
     "zh-hant": true
   },
   "editor.wordWrap": "on",
-  "errorLens.enabledDiagnosticLevels": [
-    "error",
-    "warning"
-  ],
+  "errorLens.enabledDiagnosticLevels": ["error", "warning"],
   "errorLens.gutterIconSet": "defaultOutline",
   "errorLens.gutterIconSize": "70%",
   "errorLens.gutterIconsEnabled": true,
-  "eslint.migration.2_x": "off",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
-  "extensions.autoUpdate": "onlyEnabledExtensions",
   "files.autoSave": "onFocusChange",
   "files.insertFinalNewline": true,
   "git.allowNoVerifyCommit": true,
@@ -98,7 +92,6 @@
   "gitlens.advanced.fileHistoryFollowsRenames": true,
   "gitlens.blame.dateFormat": "YYYY-MM-DD",
   "gitlens.blame.format": "${author|8} ${message|40} ${date|10-}",
-  "gitlens.codeLens.enabled": false,
   "gitlens.currentLine.enabled": false,
   "gitlens.defaultDateFormat": "YYYY-MM-DD HH:mm:ss",
   "gitlens.defaultDateShortFormat": "YYYY-MM-DD",
@@ -122,12 +115,12 @@
     "default": "right",
     "jupyter-notebook": "left"
   },
+  "outline.collapseItems": "alwaysCollapse",
   "pasteImage.filePathConfirmInputBoxMode": "onlyName",
   "pasteImage.path": "${currentFileDir}/images",
   "pasteImage.showFilePathConfirmInputBox": true,
   "polacode.transparentBackground": true,
   "prettier.singleQuote": true,
-  "python.defaultInterpreterPath": "/usr/local/bin/python3",
   "python.formatting.provider": "yapf",
   "python.languageServer": "Pylance",
   "python.pythonPath": "/usr/bin/python3",
@@ -137,7 +130,6 @@
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.defaultProfile.linux": "zsh",
   "terminal.integrated.scrollback": 10000,
-  "terminal.integrated.tabs.enabled": false,
   "todo-tree.general.statusBar": "top three",
   "todo-tree.general.tags": [
     "BUG",
@@ -164,7 +156,6 @@
   },
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
   "todo-tree.regex.regexCaseSensitive": false,
-  "typescript.disableAutomaticTypeAcquisition": true,
   "typescript.inlayHints.parameterNames.enabled": "literals",
   "typescript.preferences.useAliasesForRenames": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -269,7 +260,6 @@
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "window.title": "${rootName}${separator}${activeEditorMedium}",
   "window.titleSeparator": " —— ",
-  "window.zoomLevel": 1,
   "workbench.colorCustomizations": {
     "diffEditor.insertedTextBackground": "#1fa9124a",
     "diffEditor.removedTextBackground": "#ff00003e",
@@ -302,7 +292,7 @@
     "terminal.foreground": "#eff0eb",
     "terminal.selectionBackground": "#ffdb1081"
   },
-  "workbench.colorTheme": "GitHub Dark Dimmed",
+  "workbench.colorTheme": "GitHub Dark",
   "workbench.editor.decorations.colors": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.editor.historyBasedLanguageDetection": true,
@@ -311,11 +301,123 @@
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
   },
-  "workbench.iconTheme": "material-icon-theme",
-  "workbench.layoutControl.enabled": false,
   "workbench.list.automaticKeyboardNavigation": false,
   "workbench.list.horizontalScrolling": true,
-  "workbench.settings.editor": "json",
+  "workbench.settings.editor": "ui",
   "workbench.settings.useSplitJSON": true,
   "zenMode.fullScreen": false,
+  "redhat.telemetry.enabled": false,
+  "codeswing.layout": "splitLeftTabbed",
+  "goofyBlume.version": "bytecycle",
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "marscode.enableCodelens": {
+    "enableInlineDocumentation": false,
+    "enableInlineUnitTest": false,
+    "enableInlineExplain": false
+  },
+  "marscode.codeCompletionPro": {
+    "enableCodeCompletionPro": true
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "window.zoomLevel": 1,
+  "chat.commandCenter.enabled": false,
+  "sherlock.userId": "be53e8aa-a6e5-4f91-b301-1dbe752b6e99",
+  "githubPullRequests.pullBranch": "never",
+  "terminal.integrated.tabs.enabled": false,
+  "claudeCode.preferredLocation": "sidebar",
+  "go.toolsManagement.autoUpdate": true,
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+  "gitlens.codeLens.enabled": false,
+  "gitlens.views.commitDetails.files.layout": "tree",
+  "gitlens.menus": {
+    "editor": {
+      "blame": true,
+      "clipboard": true,
+      "compare": true,
+      "history": true,
+      "remote": true
+    },
+    "editorGroup": {
+      "blame": true,
+      "compare": true
+    },
+    "editorGutter": {
+      "compare": true,
+      "remote": true,
+      "share": true
+    },
+    "editorTab": {
+      "clipboard": true,
+      "compare": true,
+      "history": true,
+      "remote": true
+    },
+    "explorer": {
+      "clipboard": true,
+      "compare": true,
+      "history": true,
+      "remote": true
+    },
+    "ghpr": {
+      "worktree": true
+    },
+    "scm": {
+      "graph": true,
+      "visualHistory": true
+    },
+    "scmRepositoryInline": {
+      "generateCommitMessage": true,
+      "graph": true,
+      "stash": true
+    },
+    "scmRepository": {
+      "authors": true,
+      "generateCommitMessage": true,
+      "graph": true,
+      "patch": true,
+      "visualHistory": true
+    },
+    "scmGroupInline": {
+      "stash": true
+    },
+    "scmGroup": {
+      "compare": true,
+      "openClose": true,
+      "patch": true,
+      "stash": true
+    },
+    "scmItemInline": {
+      "stash": false
+    }
+  },
+  "gitlens.plusFeatures.enabled": false,
+  "gitlens.virtualRepositories.enabled": false,
+  "gitlens.views.scm.grouped.views": {
+    "commits": false,
+    "branches": false,
+    "remotes": true,
+    "stashes": false,
+    "tags": true,
+    "worktrees": true,
+    "contributors": true,
+    "fileHistory": false,
+    "repositories": true,
+    "searchAndCompare": false,
+    "launchpad": true
+  },
+  "gitlens.views.scm.grouped.hiddenViews": {
+    "worktrees": true,
+    "launchpad": true
+  },
+  "workbench.productIconTheme": "icons-carbon",
+  "editor.fontSize": 14,
+  "workbench.iconTheme": "symbols",
+  "diffEditor.ignoreTrimWhitespace": true,
+  "window.commandCenter": false,
+  "git.confirmNoVerifyCommit": false,
+  "chat.disableAIFeatures": true,
+  "window.newWindowProfile": "Minimal"
 }
