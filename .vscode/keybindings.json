@@ -264,5 +264,9 @@
   {
     "key": "cmd+r cmd+p",
     "command": "editor.action.referenceSearch.trigger"
+  },
+  {
+    "key": "cmd+l",
+    "command": "chatgpt.addToThread"
   }
 ]
